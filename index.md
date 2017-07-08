@@ -2,6 +2,11 @@
 layout: index
 ref: index
 lang: en
+landing:
+    title:  Welcome to <span class="brand-heading">St. Vladimir Memorial Church</span>
+    subtitle: Russian Orthodox Church
+    action: Learn More
+
 sections:
     - tag: intro
       title: Intro

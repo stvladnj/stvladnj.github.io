@@ -15,9 +15,9 @@
     <div class="container">
       <div class="row">
         <div class="col-md-10 col-md-offset-1">
-          <h1>Welcome to <span class="brand-heading">St. Vladimir Memorial Church</span></h1>
-          <p class="intro-text">Russian Orthodox Church</p>
-          <a href="#about" class="btn btn-default page-scroll">Learn More</a> </div>
+          <h1>{{ page.landing.title | textilize }}</h1>
+          <p class="intro-text">{{ page.landing.subtitle }}</p>
+          <a href="#about" class="btn btn-default page-scroll">{{ page.landing.action }}</a> </div>
       </div>
     </div>
   </div>
