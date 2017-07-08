@@ -162,7 +162,7 @@ hr {
 	padding: 100px 0;
 	text-align: center;
 	color: #fff;
-	background: url(../img/st-vlad.jpg) no-repeat center center fixed;
+	background: url(../img/st-vlad-bg.jpg) no-repeat center center fixed;
 	background-color: #000;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
@@ -259,7 +259,7 @@ hr {
 /* Services Section */
 #services {
 	padding: 140px 0;
-	background: url(../img/front.jpg);
+	background: url(../img/front-bg.jpg);
 	background-size: cover;
 	background-attachment: fixed;
 }
