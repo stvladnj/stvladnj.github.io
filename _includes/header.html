@@ -12,12 +12,10 @@
       <ul class="nav navbar-nav">
         <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
         <li class="hidden"> <a href="#page-top"></a> </li>
-        <li> <a class="page-scroll" href="#about">About</a> </li>
-        <li> <a class="page-scroll" href="#services">Services</a> </li>
-        <li> <a class="page-scroll" href="#works">Donate</a> </li>
-        <li> <a class="page-scroll" href="#team">Clergy</a> </li>
-        <li> <a class="page-scroll" href="#testimonials">Projects</a> </li>
-        <li> <a class="page-scroll" href="#contact">Contact</a> </li>
+        {% for section in page.sections %}
+        <li>{{ section | textilize }}</div>
+        <li> <a class="page-scroll" href="#{{ section.tag }}">{{ section.title }}</a> </li>
+        {% endfor %}
       </ul>
     </div>
     <!-- /.navbar-collapse -->
