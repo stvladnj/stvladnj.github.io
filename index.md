@@ -9,18 +9,16 @@ landing:
     action: Learn More
 
 sections:
-    - tag: intro
-      title: Intro
     - tag: about
-      title: About
+      title: About Us
     - tag: services
       title: Services
-    - tag: works
-      title: Donate
-    - tag: team
-      title: Clergy
-    - tag: testimonials
+    - tag: projects
       title: Projects
+    - tag: clergy
+      title: Clergy
+    - tag: donate
+      title: Donate
     - tag: contact
       title: Contact
 ---

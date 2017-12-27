@@ -286,7 +286,7 @@ hr {
 	transition: all 0.5s;
 }
 /* Gallery Section */
-#works {
+#projects {
 	padding: 120px 0;
 	background: #f6f6f6;
 }
@@ -408,13 +408,13 @@ ol.type li a:hover {
 .hover-bg:hover .hover-text {
 	opacity: 1;
 }
-#works i.fa {
+#projects i.fa {
 	font-size: 20px;
 	padding: 5px;
 	color: #F4D03F;
 }
 /* Team Section */
-#team {
+#clergy {
 	padding: 140px 0;
 	background: #e6e6e6;
 }
@@ -425,38 +425,38 @@ img.img-thumbnail.team-img {
 	border-radius: 0;
 	background-color: #f6f6f6;
 }
-#team .thumbnail {
+#clergy .thumbnail {
 	background: transparent;
 	border: 0;
 }
-#team .thumbnail .caption {
+#clergy .thumbnail .caption {
 	padding: 9px;
 	color: #777;
 }
 /* Testimonials Section */
-#testimonials {
+#donate {
 	background: url(../img/inside-bg.jpg);
 	background-size: cover;
 	background-attachment: fixed;
 	color: #ddd;
 	padding: 140px 0;
 }
-#testimonials h2 {
+#donate h2 {
 	color: #f6f6f6;
 }
-#testimonials blockquote {
+#donate blockquote {
 	position: relative;
 	margin-top: 20px;
 	border: 0;
 	text-align: center;
 	color: rgba(255,255,255,0.8);
 }
-#testimonials i {
+#donate i {
 	font-size: 24px;
 	color: rgba(255,255,255,0.3);
 	margin-bottom: 14px;
 }
-#testimonials .clients-name {
+#donate .clients-name {
 	display: inline-block;
 	border-top: 1px solid rgba(255,255,255,0.3);
 	padding: 20px 0;

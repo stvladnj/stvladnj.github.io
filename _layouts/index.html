@@ -37,8 +37,9 @@
         <div class="about-text">
           <h4>Who We Are</h4>
           <p>St. Vladimir Memorial Church is a Russian Orthodox Church in the jurisdiction
-              of Russian Orthodox Church Outside of Russia (ROCOR). Our magnificent church was build in commemoration of
-              1000 year anniversary of the Baptizm of Rus' by Prince Vladimir.
+              of Russian Orthodox Church Outside of Russia (ROCOR).</p>
+          <p>Our magnificent church was build in commemoration of
+              1000 year anniversary of the Baptizm of Rus' by Prince Vladimir.</p>
         </div>
       </div>
       <div class="col-md-4">
@@ -124,10 +125,10 @@
 </div>
 
 <!-- Portfolio Section -->
-<div id="works">
+<div id="projects">
   <div class="container"> <!-- Container -->
     <div class="section-title text-center center">
-      <h2>Our Portfolio</h2>
+      <h2>Our Projects</h2>
       <hr>
       <div class="clearfix"></div>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diamcommodo nibh ante facilisis.</p>
@@ -232,17 +233,18 @@
   </div>
 </div>
 
-<!-- Team Section -->
-<div id="team" class="text-center">
+<!-- Clergy Section -->
+<div id="clergy" class="text-center">
   <div class="container">
     <div class="section-title center">
-      <h2>Administration</h2>
+      <h2>Clergy</h2>
       <hr>
       <p>Church Rector is His Eminence Metropolitan HILARION of Eastern America and New York,
-FIRST HIERARCH of the Russian Orthodox Church Outside of Russia.</p>
+         FIRST HIERARCH of the Russian Orthodox Church Outside of Russia.</p>
+      <p>Deputy Rector is Priest Serge LEDKOVSKY.</p>
     </div>
     <div id="row">
-      <div class="col-xs-6 col-md-3 col-sm-6">
+      <div class="col-md-4 col-md-offset-2">
         <div class="thumbnail"> <img src="img/metr_hilarion.png" alt="..." class="img-thumbnail team-img">
           <div class="caption">
             <h3>Rector</h3>
@@ -250,7 +252,7 @@ FIRST HIERARCH of the Russian Orthodox Church Outside of Russia.</p>
           </div>
         </div>
       </div>
-      <div class="col-xs-6 col-md-3 col-sm-6">
+      <div class="col-md-4">
         <div class="thumbnail"> <img src="img/rev_serge_ledk.png" alt="..." class="img-thumbnail team-img">
           <div class="caption">
             <h3>Deputy Rector</h3>
@@ -258,33 +260,24 @@ FIRST HIERARCH of the Russian Orthodox Church Outside of Russia.</p>
           </div>
         </div>
       </div>
-      <div class="col-xs-6 col-md-3 col-sm-6">
-        <div class="thumbnail"> <img src="img/metr_hilarion.png" alt="..." class="img-thumbnail team-img">
-          <div class="caption">
-            <h3>Diakon</h3>
-            <p>Father Nathan MOUSSELLI</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-xs-6 col-md-3 col-sm-6">
-        <div class="thumbnail"> <img src="img/metr_hilarion.png" alt="..." class="img-thumbnail team-img">
-          <div class="caption">
-            <h3>Reader</h3>
-            <p>James STORMES</p>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 </div>
 
-<!-- Testimonials Section -->
-<div id="testimonials" class="text-center">
+<!-- Projects and Donation -->
+<div id="donate" class="text-center">
   <div class="container">
     <div class="section-title center">
-      <h2>What our clients say</h2>
+      <h2>Donate to our church</h2>
       <hr>
     </div>
+    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+        <input type="hidden" name="cmd" value="_s-xclick">
+        <input type="hidden" name="hosted_button_id" value="AHW38JCEJ29NC">
+        <input type="hidden" name="amount" value="15.00">
+        <button type="submit" class="btn btn-primary">Donate now</button>
+    </form>
+
     <div class="row">
       <div class="col-md-10 col-md-offset-1">
         <div class="row testimonials">
@@ -327,34 +320,37 @@ FIRST HIERARCH of the Russian Orthodox Church Outside of Russia.</p>
     <div class="section-title center">
       <h2>Contact us</h2>
       <hr>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diamcommodo nibh ante facilisis.</p>
     </div>
-    <div class="col-md-8 col-md-offset-2">
-      <div class="col-md-3">
+    <div class="row">
+      <div class="col-md-4 col-md-offset-2">
         <div class="contact-item"> <i class="fa fa-map-marker fa-2x"></i>
           <p>P.O. Box 143<br>
              Jackson, NJ 08527</p>
         </div>
       </div>
-      <div class="col-md-3">
+      <div class="col-md-4">
         <div class="contact-item"> <i class="fa fa-envelope-o fa-2x"></i>
           <p><a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
         </div>
       </div>
-      <div class="col-md-3">
+    </div>
+    <div class="row">
+      <div class="col-md-4 col-md-offset-2">
         <div class="contact-item"> <i class="fa fa-phone fa-2x"></i>
           <p>{{ site.phone }}</p>
         </div>
       </div>
-      <div class="col-md-3">
+      <div class="col-md-4">
         <div class="contact-item"> <i class="fa fa-facebook fa-2x"></i>
-          <p><a href="{{ site.facebook }}">{{ site.facebook }}</a></p>
+          <p><a href="{{ site.facebook }}" target="_blank">{{ site.facebook }}</a></p>
         </div>
       </div>
       <div class="clearfix"></div>
     </div>
-    <div class="col-md-8 col-md-offset-2 map-responsive">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4533.699324836069!2d-74.39322800768292!3d40.112477283932286!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c164ad8c6eadc9%3A0x44ca9ac5bdcb157a!2sSt.+Vladimir+Memorial+Church!5e0!3m2!1sen!2sus!4v1499520149761" width="800" height="600" frameborder="0" style="border:0" allowfullscreen></iframe>
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2 map-responsive">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4533.699324836069!2d-74.39322800768292!3d40.112477283932286!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c164ad8c6eadc9%3A0x44ca9ac5bdcb157a!2sSt.+Vladimir+Memorial+Church!5e0!3m2!1sen!2sus!4v1499520149761" width="800" height="600" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div>
     </div>
   </div>
 </div>
