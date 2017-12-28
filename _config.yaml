@@ -16,3 +16,6 @@ google_analytics: "XX-XXXXXXX-XX"
 
 markdown:
   kramdown
+
+collections:
+- sections

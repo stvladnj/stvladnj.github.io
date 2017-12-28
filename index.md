@@ -13,8 +13,6 @@ sections:
       title: About Us
     - tag: services
       title: Services
-    - tag: projects
-      title: Projects
     - tag: clergy
       title: Clergy
     - tag: donate
