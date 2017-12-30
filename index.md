@@ -12,7 +12,7 @@ sections:
     - tag: about
       title: About Us
     - tag: services
-      title: Services
+      title: Parish
     - tag: clergy
       title: Clergy
     - tag: donate
