@@ -1,13 +1,34 @@
-<div class="container text-center" id="{{page.anchor}}">
-	<style>
-	#{{page.anchor}} div {
-		padding: 140px 0;
-		background: url(../img/front-bg.jpg);
-		background-size: cover;
-		background-attachment: fixed;
-	}
-	</style>
-	<div>
-		{{content}}
-	</div>
+<style>
+div#{{ page.anchor }} {
+  padding: 140px 0;
+  background: url({{ page.bgimage }});
+  background-size: cover;
+  background-attachment: fixed;
+}
+#{{ page.anchor }} h2 {
+  color: #f6f6f6;
+}
+#{{ page.anchor }} h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #f6f6f6;
+}
+#{{ page.anchor }} i.fa {
+  font-size: 36px;
+  color: #E75926;
+  transition: all 0.5s;
+}
+#{{ page.anchor }} .service {
+  padding: 20px 10px;
+}
+#{{ page.anchor }} p {
+  color: rgba(255,255,255,0.8);
+}
+#{{ page.anchor }} a {
+  color: rgba(255,255,255,0.8);
+  text-decoration: underline;
+}
+</style>
+{{content}}
 </div>
+<script>$('#{{ page.anchor }}').parallax("100%", 0.3);</script>
