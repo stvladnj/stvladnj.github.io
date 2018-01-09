@@ -2,6 +2,7 @@
 title: About
 layout: section
 anchor: about
+lang: en
 ---
 <div class="section-title center" markdown="1">
 ##  About us
@@ -16,7 +17,8 @@ anchor: about
 
 <div class="col-md-4 text-left" markdown="1">
 #### Who We are
-St. Vladimir Memorial Church is a Russian Orthodox Church in the jurisdiction of Russian Orthodox Church Outside of Russia (ROCOR).
+St. Vladimir Memorial Church is a Russian Orthodox Church in the jurisdiction of Russian Orthodox Church Outside
+of Russia ([ROCOR](http://www.synod.com)).
 
 Our magnificent church was built in commemoration of 1000 year anniversary of the Baptism of Rus' by Prince Vladimir.
 </div>

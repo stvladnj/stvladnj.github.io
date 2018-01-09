@@ -3,6 +3,7 @@ title: Parish
 layout: section-parallax
 anchor: parish
 bgimage: ../img/front-bg.jpg
+lang: en
 ---
 <div class="section-title center" markdown="1">
 ##  Parish Life

@@ -34,11 +34,13 @@ div.section-block {
 </style>
 
 {% for item in site.sections %}
+{% if item.lang == page.lang %}
 <div id="{{ item.anchor }}" class="text-center section-block">
   <div class="container">
     {{ item.output }}
   </div>
 </div>
+{% endif %}
 {% endfor %}
 
 {% include footer.html %}

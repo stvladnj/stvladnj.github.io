@@ -1,13 +1,13 @@
 ---
-title: Contact
+title: Связь
 layout: section
 anchor: contact
-lang: en
+lang: ru
 ---
 {::options auto_ids="false"/}
 
 <div class="section-title center" markdown="1">
-## Contact us
+## Как с нами связаться
 -------------
 </div>
 

@@ -3,6 +3,7 @@ title: Clergy
 short_title: Clergy
 layout: section
 anchor: clergy
+lang: en
 ---
 {::options auto_ids="false"/}
 <div class="section-title center" markdown="1">
