@@ -53,9 +53,9 @@ lang: ru
 
 <div class="row">
 <div class="col-md-4 col-md-offset-2 text-center center" markdown="1">
-[Расписание богослужение (англ.)](/files/schedule-en.pdf){: .btn .btn-default}
+[Расписание богослужений (англ.)](/files/schedule-en.pdf){: .btn .btn-default}
 </div>
 <div class="col-md-4 text-center center" markdown="1">
-[Расписание богослужение (русск.)](/files/schedule-ru.pdf){: .btn .btn-default}
+[Расписание богослужений (русск.)](/files/schedule-ru.pdf){: .btn .btn-default}
 </div>
 </div>
