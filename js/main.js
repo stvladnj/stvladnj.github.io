@@ -89,17 +89,7 @@ function main() {
 
     });
 
-
-
-  // jQuery Parallax
-  function initParallax() {
-    $('#intro').parallax("100%", 0.3);
-    $('#services').parallax("100%", 0.3);
-    $('#donate').parallax("100%", 0.3);
- }
-  initParallax();
-
-  	// Pretty Photo
+	// Pretty Photo
 	$("a[rel^='prettyPhoto']").prettyPhoto({
 		social_tools: false
 	});

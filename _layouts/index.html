@@ -24,196 +24,24 @@
   </div>
 </div>
 
-<!-- About Section -->
-<div id="about">
+{% include js.html %}
+
+<style>
+div.section-block {
+    padding: 40px 0;
+    background: #f6f6f6;
+}
+</style>
+
+{% for item in site.sections %}
+<div id="{{ item.anchor }}" class="text-center section-block">
   <div class="container">
-    <div class="section-title text-center center">
-      <h2>About us</h2>
-      <hr>
-    </div>
-    <div class="row">
-      <div class="col-md-4"><img src="img/st_vlad_st_olga.jpg" class="img-responsive"></div>
-      <div class="col-md-4">
-        <div class="about-text">
-          <h4>Who We Are</h4>
-          <p>St. Vladimir Memorial Church is a Russian Orthodox Church in the jurisdiction
-              of Russian Orthodox Church Outside of Russia (ROCOR).</p>
-          <p>Our magnificent church was built in commemoration of
-              1000 year anniversary of the Baptism of Rus' by Prince Vladimir.</p>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="about-text">
-          <h4>Church Life</h4>
-          <p>Every Sunday we serve Divine Liturgy.</p>
-          <p>Sunday school - pupils learn Russian, Theology, Classic Literature.</p>
-          <p>Sisterhood makes luncheons every Sunday, following the Divine Liturgy.</p>
-          <p>Twelve major Orthodox Feast Days are celebrated.</p>
-          <p>Special events during the year:
-          <ul>
-            <li>Bliny Feast - on Sunday before Great Lent starts.
-                Fish, Caviar, Raffles, Music.
-                This year we will be having our traditional
-                Bliny celebration on Sunday, Feb. 4 following Divine Liturgy.</li>
-            <li>St. Vladimir's Day - the last Sunday of July. Festival at our church includes Praying, Blessing of Water,
-                Cultural Music, Russian Food, Market and Book Store. This year we will be celebrating our church's feast
-                day on Sunday, July 29.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="space"></div>
-    <div class="row">
-      <div class="col-md-4 col-md-offset-2 text-center center">
-          <a class="btn btn-default" href="/files/schedule-en.pdf" target="_blank">Service schedule (in English)</a>
-      </div>
-      <div class="col-md-4 text-center center">
-          <a class="btn btn-default" href="/files/schedule-ru.pdf" target="_blank">Service schedule (in Russian)</a>
-      </div>
-    </div>
+    {{ item.output }}
   </div>
 </div>
-
-<!-- Services Section -->
-<div id="services" class="text-center">
-  <div class="container">
-    <div class="section-title center">
-      <h2>Parish Life</h2>
-      <hr>
-    </div>
-    <div class="space"></div>
-    <div class="row">
-      <div class="col-md-3 col-sm-6">
-        <div class="service"> <i class="fa fa-desktop"></i>
-          <h3>Book Store</h3>
-          <p>Our book kiosk carries books, icons, crosses. It is open after church service on Sundays.</p>
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-6">
-        <div class="service"> <i class="fa fa-cogs"></i>
-          <h3>Sunday School</h3>
-          <p>This is where children of our parishioners learn Russian, Theology, Classic Literatire, and more.</p>
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-6">
-        <div class="service"> <i class="fa fa-tablet"></i>
-          <h3>Sisterhood</h3>
-          <p>Sisters make luncheons every Sunday, following the Divine Liturgy.</p>
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-6">
-        <div class="service"><i class="fa fa-leaf"></i>
-          <h3>Help Needed</h3>
-          <p>We welcome yor contribution. Be it a candle, a donation, or time spent beatifying the church and the grounds.
-             If you can help, please <a href="#contact">contact us</a>.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Clergy Section -->
-<div id="clergy" class="text-center">
-  <div class="container">
-    <div class="section-title center">
-      <h2>Clergy</h2>
-      <hr>
-      <p>Church Rector is His Eminence Metropolitan HILARION of Eastern America and New York,
-         FIRST HIERARCH of the Russian Orthodox Church Outside of Russia.</p>
-      <p>Deputy Rector is Priest Serge LEDKOVSKY.</p>
-    </div>
-    <div id="row">
-      <div class="col-md-4 col-md-offset-2">
-        <div class="thumbnail"> <img src="img/metr_hilarion.png" alt="..." class="img-thumbnail team-img">
-          <div class="caption">
-            <h3>Rector</h3>
-            <p>Metropolitan HILARION</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="thumbnail"> <img src="img/rev_serge_ledk.png" alt="..." class="img-thumbnail team-img">
-          <div class="caption">
-            <h3>Deputy Rector</h3>
-            <p>Priest Serge LEDKOVSKY</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Donate section -->
-<div id="donate" class="text-center">
-  <div class="container">
-    <div class="section-title center">
-      <h2>Donate to our church</h2>
-      <hr>
-      <p>Your donations support our projects and are greately appreciated.</p>
-    </div>
-
-    <div class="space"></div>
-    <div class="row">
-        <div class="col-md-4 col-md-offset-4 text-center">
-          <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-            <input type="hidden" name="cmd" value="_s-xclick">
-            <input type="hidden" name="hosted_button_id" value="AHW38JCEJ29NC">
-            <input type="hidden" name="amount" value="15.00">
-            <button type="submit" class="btn btn-primary">Donate now</button>
-          </form>
-      </div>
-    </div>
-    <div class="space"></div>
-
-  </div>
-</div>
-
-<!-- Contact Section -->
-<div id="contact" class="text-center">
-  <div class="container">
-    <div class="section-title center">
-      <h2>Contact us</h2>
-      <hr>
-    </div>
-    <div class="row">
-      <div class="col-md-4 col-md-offset-2">
-        <div class="contact-item"> <i class="fa fa-envelope-o fa-2x"></i>
-          <p><a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
-          <p>P.O. Box 143<br>
-             Jackson, NJ 08527</p>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="contact-item"> <i class="fa fa-map-marker fa-2x"></i>
-          <p>134 Perrineville Rd<br>
-             Jackson, NJ 08527</p>
-        </div>
-      </div>
-    </div>
-    <div class="space"></div>
-    <div class="row">
-      <div class="col-md-4 col-md-offset-2">
-        <div class="contact-item"> <i class="fa fa-phone fa-2x"></i>
-          <p>{{ site.phone }}</p>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="contact-item"> <i class="fa fa-facebook fa-2x"></i>
-          <p><a href="{{ site.facebook }}" target="_blank">{{ site.facebook }}</a></p>
-        </div>
-      </div>
-      <div class="clearfix"></div>
-    </div>
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2 map-responsive">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4533.699324836069!2d-74.39322800768292!3d40.112477283932286!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c164ad8c6eadc9%3A0x44ca9ac5bdcb157a!2sSt.+Vladimir+Memorial+Church!5e0!3m2!1sen!2sus!4v1499520149761" width="800" height="600" frameborder="0" style="border:0" allowfullscreen></iframe>
-        </div>
-    </div>
-  </div>
-</div>
+{% endfor %}
 
 {% include footer.html %}
-{% include js.html %}
 
 </body>
 </html>
