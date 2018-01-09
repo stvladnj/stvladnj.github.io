@@ -5,7 +5,7 @@
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse"> <i class="fa fa-bars"></i> </button>
-      <a class="navbar-brand page-scroll" href="#page-top"> <i class="fa fa-fire"></i> St. Vladimir</a> </div>
+      <a class="navbar-brand page-scroll" href="#page-top"> <i class="fa fa-fire"></i>&nbsp;{{ page.title }}</a> </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
@@ -13,8 +13,15 @@
         <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
         <li class="hidden"> <a href="#page-top"></a> </li>
         {% for section in site.sections %}
+        {% if page.lang == section.lang %}
         <li> <a class="page-scroll" href="#{{ section.anchor }}">{{ section.title }}</a> </li>
+        {% endif %}
         {% endfor %}
+        {% if page.lang == 'en' %}
+        <!-- <li> <a class="page-scroll" href="/ru">RU</a> </li> -->
+        {% else %}
+        <li> <a class="page-scroll" href="/">EN</a> </li>
+        {% endif %}
       </ul>
     </div>
     <!-- /.navbar-collapse -->

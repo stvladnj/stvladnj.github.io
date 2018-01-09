@@ -1,16 +1,16 @@
 ---
-title: Donate
+title: Пожертвования
 layout: section-parallax
 anchor: donate
 bgimage: ../img/inside-bg.jpg
-lang: en
+lang: ru
 ---
 {::options auto_ids="false"/}
 
 <div class="section-title center" markdown="1">
-## Donate to our church
+## Денежные пожертвования
 -----------------------
-Your donations support our projects and are greately appreciated.
+Ваши пожертвования идут на украшение храма и поддержку наших благотворительных проектов. Спаси вас Господь!
 </div>
 
 <div class="space"></div>
@@ -20,7 +20,7 @@ Your donations support our projects and are greately appreciated.
     <input type="hidden" name="cmd" value="_s-xclick">
     <input type="hidden" name="hosted_button_id" value="AHW38JCEJ29NC">
     <input type="hidden" name="amount" value="15.00">
-    <button type="submit" class="btn btn-primary">Donate now</button>
+    <button type="submit" class="btn btn-primary">Пожертвовать</button>
   </form>
 </div>
 </div>
