@@ -1,6 +1,5 @@
 ---
-title: Parish Life
-short_title: Parish
+title: Parish
 layout: section-parallax
 anchor: parish
 bgimage: ../img/front-bg.jpg

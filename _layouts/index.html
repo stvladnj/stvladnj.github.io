@@ -26,8 +26,15 @@
 
 {% include js.html %}
 
+<style>
+div.section-block {
+    padding: 40px 0;
+    background: #f6f6f6;
+}
+</style>
+
 {% for item in site.sections %}
-<div id="{{ item.anchor }}" class="text-center">
+<div id="{{ item.anchor }}" class="text-center section-block">
   <div class="container">
     {{ item.output }}
   </div>
