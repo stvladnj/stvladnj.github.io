@@ -1,14 +1,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-{% if page.title %}
-<title>{{ page.title }}</title>
-{% else %}
+<meta name="description" content="{{ site.description[page.lang] }}">
+<meta name="keywords" content="{{ site.keywords[page.lang] }}">
+
 <title>{{ site.title[page.lang] }}</title>
-{% endif %}
 
 <meta http-equiv="content-type" content="text/html; charset=utf-8">
-<meta name="keywords" content="{{site.keywords[page.lang]}}">
 
 <!-- Favicon -->
 <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
