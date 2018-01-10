@@ -33,7 +33,7 @@ lang: en
     <div class="service"><i class="fa fa-leaf"></i>
       <h3>Help Needed</h3>
       <p>We welcome your contribution. Be it a candle, a donation, or time spent beatifying the church and the grounds.
-         If you can help, please <a href="#contact">contact us</a>.</p>
+         If you can help, please <a class="page-scroll" href="#contact">contact us</a>.</p>
     </div>
   </div>
 </div>

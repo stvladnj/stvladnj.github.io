@@ -14,7 +14,7 @@ h1 strong {
 }
 h2 {
 	text-transform: uppercase;
-	line-height: 20px;
+	/* line-height: 20px; */
 	font-weight: 600;
 	margin: 0;
 	color: #555;
@@ -31,7 +31,7 @@ h4 {
 h5 {
 	text-transform: uppercase;
 	font-weight: 700;
-	line-height: 20px;
+	/* line-height: 20px; */
 }
 p {
 	font-size: 14px;
