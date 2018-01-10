@@ -32,7 +32,7 @@ lang: en
 
 </div>
 
-<div class="space"></div>
+<div class="space hidden-sm hidden-xs"></div>
 
 <div class="row">
 <div class="col-md-4 col-md-offset-2">

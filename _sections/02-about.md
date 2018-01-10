@@ -35,7 +35,7 @@ Twelve major Orthodox Feast Days are celebrated.
 
 Special feasts during the year:
 * Bliny Feast - on Sunday before Great Lent starts.
-  Fish, Caviar, Raffles, Music.
+  Crepes, Fish, Caviar, Raffles, Music.
   This year we will be having our traditional
   Bliny celebration on Sunday, Feb. 4 following Divine Liturgy.
 * St. Vladimir's Day - the last Sunday of July. Festival at our church includes Praying, Blessing of Water,

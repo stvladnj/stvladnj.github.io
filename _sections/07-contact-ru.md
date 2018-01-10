@@ -1,5 +1,5 @@
 ---
-title: Связь
+title: Контакты
 layout: section
 anchor: contact
 lang: ru
@@ -7,7 +7,7 @@ lang: ru
 {::options auto_ids="false"/}
 
 <div class="section-title center" markdown="1">
-## Как с нами связаться
+## Контакты
 -------------
 </div>
 
@@ -32,7 +32,7 @@ lang: ru
 
 </div>
 
-<div class="space"></div>
+<div class="space hidden-sm hidden-xs"></div>
 
 <div class="row">
 <div class="col-md-4 col-md-offset-2">
