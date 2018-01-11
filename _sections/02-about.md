@@ -27,7 +27,7 @@ Our magnificent church was built in commemoration of 1000 year anniversary of th
 #### Church Life
 Every Sunday we serve Divine Liturgy.
 
-Sunday school - pupils learn Russian, Theology, Classic Literature.
+Sunday school - pupils learn Russian and Law of God.
 
 Sisterhood makes luncheons every Sunday, following the Divine Liturgy.
 
