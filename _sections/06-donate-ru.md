@@ -16,7 +16,7 @@ lang: ru
 <div class="space"></div>
 <div class="row">
 <div class="col-md-4 col-md-offset-4 text-center">
-  <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+  <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" rel="noopener">
     <input type="hidden" name="cmd" value="_s-xclick">
     <input type="hidden" name="hosted_button_id" value="AHW38JCEJ29NC">
     <input type="hidden" name="amount" value="15.00">

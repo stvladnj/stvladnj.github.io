@@ -45,7 +45,7 @@ lang: en
 <div class="col-md-4">
 <div class="contact-item">
 <i class="fa fa-facebook fa-2x"></i>
-<p><a href="{{ site.facebook }}" target="_blank">{{ site.facebook }}</a></p>
+<p><a href="{{ site.facebook }}" target="_blank" rel="noopener">{{ site.facebook }}</a></p>
 </div>
 </div>
 
