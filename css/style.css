@@ -164,10 +164,10 @@ hr {
 	color: #fff;
 	background: url(../img/st-vlad-bg.jpg) no-repeat center center fixed;
 	background-color: #000;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	background-size: cover;
-	-o-background-size: cover;
+	-webkit-background-size: cover !important;
+	-moz-background-size: cover !important;
+	background-size: cover !important;
+	-o-background-size: cover !important;
 }
 #intro .intro-body {
 	display: table-cell;
