@@ -162,7 +162,7 @@ hr {
 	padding: 100px 0;
 	text-align: center;
 	color: #fff;
-	background: url(../img/st-vlad-bg.jpg) no-repeat center center fixed;
+	background: url(../img/st-vlad-bg.jpg) no-repeat center center scroll;
 	background-color: #000;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
