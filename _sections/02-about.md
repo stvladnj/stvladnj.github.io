@@ -36,11 +36,16 @@ Twelve major Orthodox Feast Days are celebrated.
 Special feasts during the year:
 * Bliny Feast - on Sunday before Great Lent starts.
   Crepes, Fish, Caviar, Raffles, Music.
-  This year we will be having our traditional
-  Bliny celebration on Sunday, Feb. 4 following Divine Liturgy.
-* St. Vladimir's Day - the last Sunday of July. Festival at our church includes Praying, Blessing of Water,
-  Cultural Music, Russian Food, Market and Book Store. This year we will be celebrating our church's feast
-  day on Sunday, July 29.
+  This year we had our traditional
+  Bliny celebration on Sunday, Feb. 4 following Divine Liturgy. Join us next year!
+* St. Vladimir's Day - the last Sunday of July. 
+  This year we will be celebrating our church's feast
+  day on Sunday, July 29. 
+  Festival at our church includes Praying,
+  Blessing of Water,
+  Cultural Music, Russian Food, Market and Book Store. 
+  <b>This year Cossacks from Philly will set up a special "Cossack's Outpost", featuring
+  the display of traditional cossack's armory, archery contests, a real warhorse, and more!</b>
 </div>
 </div>
 
