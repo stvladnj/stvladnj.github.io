@@ -12,7 +12,7 @@ lang: en
 Church Rector is His Eminence Metropolitan HILARION of Eastern America and New York,
 FIRST HIERARCH of the Russian Orthodox Church Outside of Russia.
 
-Deputy Rector is Priest Serge LEDKOVSKY.
+Deputy Rector is Archpriest Serge LEDKOVSKY.
 </div>
 
 <div class="row">
@@ -32,7 +32,7 @@ Metropolitan HILARION
 <img alt="..." src="img/rev_serge_ledk.png" class="img-thumbnail team-img">
 <div class="caption" markdown="1">
 ### Deputy Rector
-Priest Serge LEDKOVSKY
+Archpriest Serge LEDKOVSKY
 </div>
 </div>
 </div>
