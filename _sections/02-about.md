@@ -39,7 +39,7 @@ Special feasts during the year:
   This year we will have our traditional
   Bliny celebration on **Sunday, Feb. 17** following Divine Liturgy. Please join us for
   traditional food (Russian-style pancakes, fish, caviar), folk music, raffles and more!
-  Parish hall searing is limited, please contact matushka Tamara and RSVP in advance.
+  Parish hall seating is limited, please contact matushka Tamara and RSVP in advance.
 * St. Vladimir's Day - the last Sunday of July. 
   Last year we celebrated our church's feast
   day on Sunday, July 29. Please, come this year! 
