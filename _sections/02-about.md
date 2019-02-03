@@ -37,7 +37,7 @@ Special feasts during the year:
 * Bliny Feast - on Sunday before Great Lent starts.
   Crepes, Fish, Caviar, Raffles, Music.
   This year we will have our traditional
-  Bliny celebration on Sunday, Feb. 17 following Divine Liturgy. Please join us for
+  Bliny celebration on **Sunday, Feb. 17** following Divine Liturgy. Please join us for
   traditional food (Russian-style pancakes, fish, caviar), folk music, raffles and more!
   Parish hall searing is limited, please contact matushka Tamara and RSVP in advance.
 * St. Vladimir's Day - the last Sunday of July. 
