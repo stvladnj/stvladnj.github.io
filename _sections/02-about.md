@@ -48,7 +48,7 @@ Special feasts during the year:
   Cultural Music, Russian Food, Market and Book Store. 
   <b>Last year Cossacks from Philly set up a special "Cossack's Outpost", featuring
   the display of traditional cossack's armory, archery contests, a real warhorse, and more!</b>
-  Thuis year we are looking forward for another Cossack's exposition.
+  This year we are looking forward for another thrilling Cossack's Outpost!
 </div>
 </div>
 
