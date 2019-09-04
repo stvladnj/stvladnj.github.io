@@ -39,10 +39,10 @@ Special feasts during the year:
   Please join us for
   traditional food (Russian-style pancakes, fish, caviar), folk music, raffles and more!
 * St. Vladimir's Day - the last Sunday of July.
-  Please join us on Sunday, July 28th for our church's feast.
+  <!-- Please join us on Sunday, July 28th for our church's feast. -->
   Festival at our church includes Praying,
   Blessing of Water,
-  Cultural Music, Russian Food, Market and Book Store.
+  Cultural Music, Horse Rides, Russian Food, Market and Book Store.
   <!-- <b>Last year Cossacks from Philly set up a special "Cossack's Outpost", featuring
   the display of traditional cossack's armory, archery contests, a real warhorse, and more!</b>
   This year we are looking forward for another thrilling Cossack's Outpost! -->
