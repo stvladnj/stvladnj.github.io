@@ -14,9 +14,9 @@ cry_header:
   ru: "Внимание"
   en: "Attention"
 
-cry:
-  ru: "В четверг вечером (3 окт) и пятницу утром (4 окт) служб не будет"
-  en: "There will be no services on the evening of Thursday, October 3rd, and morning of Friday, October 4th"
+# cry:
+#   ru: "В четверг вечером (3 окт) и пятницу утром (4 окт) служб не будет"
+#   en: "There will be no services on the evening of Thursday, October 3rd, and morning of Friday, October 4th"
 
 facebook: https://facebook.com/stvladimirsnj
 email: info@stvladnj.org
