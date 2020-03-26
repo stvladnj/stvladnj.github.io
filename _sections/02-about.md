@@ -5,27 +5,27 @@ anchor: about
 lang: en
 ---
 <div class="section-title center" markdown="1">
-## ВНИМАНИЕ!
+## ATTENTION!
 
 -----
 </div>
 
 <div class="row">
 <div class="col-md-10 offset-md-2 text-left" markdown="1"><b>
-  ВСЕМ ПРИХОЖАНАМ СВЯТО-ВЛАДИМИРСКОГО ХРАМА-ПАМЯТНИКА И ВСЕМ ЖЕЛАЮЩИМ ПОСЕТИТЬ ХРАМ-ПАМЯТНИК:
+TO ALL PARISHONERS OF ST. VLADIMIR MEMORIAL CHURCH, AND TO ALL WHO MAY WISH TO VISIT ST.VLADIMIR MEMORIAL CHURCH:
 <br><br>
-ПО РАСПОРЯЖЕНИЮ  ЕПАРХИАЛЬНОГО СВЯЩЕННОНАЧАЛИЯ МЫ ВЫНУЖДЕНЫ ВСЕМ ОБЪЯВИТЬ О ВРЕМЕННОМ ЗАКРЫТИИ НАШЕГО ХРАМА НА НЕОБОЗРИМЫЙ СРОК.
+DUE TO THE ON-GOING COVID-19 EPIDEMIC IN NJ, OUR DIOCESAN AUTHORITY HAS INSTRUCTED US THAT THE CHURCH MUST BE CLOSED TO THE PUBLIC FOR AN INDETERMINATE TIME-FRAME.
 <br><br>
-РЕШЕНИЕ О СОБЛЮДЕНИИ ТАКИХ  КРАЙНИХ МЕР ПРЕДОСТОРОЖНОСТИ ВО ВРЕМЯ ЕПИДЕМИИ КОРОНАВИРУСА ПРИНИМАЕТСЯ С ТЯЖЕЛЫМ СЕРДЦЕМ, НО С  НАДЕЖДОЙ НА МИЛОСТЬ БОЖИЮ КАК ДЛЯ СЕБЯ, ТАК И ДЛЯ НАШЕГО БЛИЖНЕГО.
+THIS DECISION TO TAKE SUCH DRASTIC ACTION IS NOT MADE LIGHTLY, BUT IS IN KEEPING WITH RECOMMENDATIONS OF CIVIL HEALTH AUTHORITIES, AND IS TAKEN WITH HOPE IN OUR LORD FOR THE GOOD OF OURSELVES AND OUR NEIGHBORS.
 <br><br>
-БОЖЬЕЙ МИЛОСТЬЮ МЫ ПРОДОЛЖАЕМ СЛУЖИТЬ ВСЕ БОГОСЛУЖЕНИЯ ПО НАШЕМУ РАСПИСАНИЮ, ОДНАКО СЛУЖБЫ ПРОВОДИМ ПРИ МИНИМАЛЬНОМ СОСТАВЕ СВЯЩЕННОСЛУЖИТЕЛЕЙ И ПОМОЩНИКОВ, НЕОБХОДИМЫХ ДЛЯ СОВЕРШЕНИЯ ЧИННОГО БОГОСЛУЖЕНИЯ.
+PLEASE BE ASSURED THAT ALL DIVINE SERVICES WILL REMAIN  AS SCHEDULED. THE MINIMAL STAFF NEEDED IN ORDER TO PROPERLY  EXECUTE THE SERVICES SHALL BE PRESENT.
 <br><br>
-ПРИЗЫВАЕМ ВСЕХ ВЕРУЮЩИХ К УСЕРДНОЙ МОЛИТВЕ ГОСПОДУ НАШЕМУ ИИСУСУ ХРИСТУ О  СКОРОМ ИЗБАВЛЕНИИ ОТ УГРОЗЫ И О СПАСЕНИИ СТРАЖДУЩИХ.
+WE CALL UPON ALL OF THE FAITHFUL TO PRAY HEARTFULLY TO OUR LORD JESUS CHRIST, THAT HE MAY SEE US AND ALL OF SOCIETY THROUGH THIS CHALLENGING TIME, AND THAT HE MAY BESTOW HIS GREAT MERCY UPON THE SUFFERING.
+MAY THE BLESSING OF OUR LORD BE WITH ALL OF YOU.
 <br><br>
-БЛАГОСЛОВЕНИЕ ГОСПОДНЕ ДА БУДЕТ СО ВСЕМИ ВАМИ.
-<br><br>
-ПРОТОИЕРЕЙ СЕРГИЙ ЛЕДКОВСКИЙ И ЧЛЕНЫ СОВЕТА СВЯТО-ВЛАДИМИРСКОГО ОБЩЕСТВА<br>
-26 МАРТА, 2020
+ARCHPRIEST SERGE LEDKOVSKY
+<br>
+MARCH 26, 2020
 </b>
 </div>
 </div>
