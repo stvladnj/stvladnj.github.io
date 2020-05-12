@@ -31,22 +31,6 @@ MARCH 26, 2020
 </div>
 
 <div class="section-title center" markdown="1">
-## ATTENTION!
-
------
-</div>
-
-<div class="row">
-<div class="col-md-10 offset-md-2 text-left" markdown="1"><b>
-THERE WILL BE NO PUBLIC BUSKET BLESSING THIS YEAR.
-<br><br>
-PARISHIONERS AND GUESTS CAN COME ANY TIME <b>AFTER 10 AM ON SUNDAY</b> AND HAVE YOUR BUSKET
-BLESSED PRIVATELY BY FR. SERGE.
-<br><br>
-</div>
-</div>
-
-<div class="section-title center" markdown="1">
 ##  About us
 
 -----

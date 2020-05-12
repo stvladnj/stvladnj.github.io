@@ -31,22 +31,6 @@ lang: ru
 </div>
 
 <div class="section-title center" markdown="1">
-## ВНИМАНИЕ!
-
------
-</div>
-
-<div class="row">
-<div class="col-md-10 offset-md-2 text-left" markdown="1"><b>
-В ЭТОМ ГОДУ НЕ БУДЕТ ОБЩЕГО ОСВЯЩЕНИЯ КУЛИЧЕЙ И ПАСХАЛЬНЫХ КОРЗИН.
-<br><br>
-ПРИХОЖАНЕ И ГОСТИ НАШЕГО ХРАМА МОГУТ ПРИЙТИ В ЛЮБОЕ ВРЕМЯ <b>ПОСЛЕ 10 ЧАСОВ УТРА В ВОСКРЕСЕНИЕ</b>
-И ОСВЯТИТЬ ПАСХАЛЬНУЮ КОРЗИНУ В ЧАСТНОМ ПОРЯДКЕ.
-<br><br>
-</div>
-</div>
-
-<div class="section-title center" markdown="1">
 ## О нас
 
 -----
