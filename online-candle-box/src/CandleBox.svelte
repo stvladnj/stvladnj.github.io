@@ -192,7 +192,7 @@
 
 <div class="row" bind:this={element}>
 	{#each locations as loc}
-		<div class="col-md-4 col-sm-12">
+		<div class="col-md-3 col-sm-12">
 		<div class="candle-location">
 		<img src={loc.image} alt="">
 		{#each getCandles(loc, order) as candle (candle.key)}
