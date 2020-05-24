@@ -31,3 +31,12 @@ markdown:
 
 collections:
 - sections
+
+exclude:
+- online-candle-box
+- svelte-components
+- node_modules
+- package.json
+- package-lock.json
+# - _sections/02a-candles.md
+# - _sections/02a-candles-ru.md
