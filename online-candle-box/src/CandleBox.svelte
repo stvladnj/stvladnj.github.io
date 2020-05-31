@@ -258,13 +258,15 @@
 
 .paypal-ugly {
 	margin-top: 5px;
+	margin-left: 5px;
 	flex-grow: 1;
 }
 .btn-circle {
-	width: 3rem;
-	height: 3rem;
-	line-height: 3rem; /* adjust line height to align vertically*/
-	padding:0;
+    height: 38px;
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 18px;
+	padding: 0 12px;
 	border-radius: 50%;
 	font-weight: bold;
 }
@@ -283,8 +285,7 @@
 	margin-right: 1rem;
 }
 .cancel {
-	margin-top: 1em;
-	margin-bottom: 1em;
+	margin-left: 1rem;
 }
 .thanks {
 	font-size: 3em;

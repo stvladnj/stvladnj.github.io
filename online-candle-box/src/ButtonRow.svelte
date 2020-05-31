@@ -23,9 +23,9 @@
     }
 </script>
 <div class="button-row">
-    <button class="btn btn-default button-circle" on:click={decrement}><i class="fa fa-minus"></i></button>
+    <button class="btn btn-default btn-sm button-circle" on:click={decrement}><i class="fa fa-minus"></i></button>
     <div class="button-title">{label} ${price.toFixed(2)} &times;<span class="quantity">{quantity}</span></div>
-    <button class="btn btn-default button-circle" on:click={increment}><i class="fa fa-plus"></i></button>
+    <button class="btn btn-default btn-sm button-circle" on:click={increment}><i class="fa fa-plus"></i></button>
 </div>
 <style>
 :root {
@@ -41,10 +41,11 @@
 	flex-wrap: nowrap;
 }
 .button-circle {
-	width: 3rem; /* calc(2rem * var(--responsive-scale)); */
-	height: 3rem; /* calc(2rem * var(--responsive-scale)); */
-	line-height: 100%; /* adjust line height to align vertically*/
-	padding:0;
+    height: 38px;
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 18px;
+	padding: 0 12px;
 	border-radius: 50%;
 	font-weight: bold;
 	color: lightyellow;
@@ -52,7 +53,9 @@
 .button-title {
 	flex-grow: 1;
 	line-height: 3rem; /* calc(2rem * var(--responsive-scale)); */
-	font-size: 2rem; /* calc(1rem * var(--responsive-scale)); */
+    font-size: 2rem; /* calc(1rem * var(--responsive-scale)); */
+    margin-top: auto;
+    margin-bottom: auto;
 }
 .quantity {
     display: inline-block;
