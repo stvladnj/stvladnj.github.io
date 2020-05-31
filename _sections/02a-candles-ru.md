@@ -20,7 +20,7 @@ new app.CandleBox({
     target: document.querySelector('#online-candle-box'),
     props: {
         lang: 'ru',
-        locations, products, paypalClientId, brandName, thankYouMessage
+        locations, candles, paypalClientId, brandName, thankYouMessage
     },
 });
 </script>

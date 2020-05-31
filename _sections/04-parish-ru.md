@@ -10,7 +10,7 @@ lang: ru
 
 -----
 </div>
-<div class="row" class="text-center">
+<div class="row text-center">
   <div class="col-md-3 col-sm-6">
     <div class="service"> <i class="fa fa-desktop"></i>
       <h3>Церковная лавка</h3>

@@ -8,7 +8,7 @@ const locations = [
         image: '/img/icon_theotokos.png',
     },
 	{
-        id: 'icon_nicolas',
+        id: 'icon_nicholas',
         description: {
             en: 'Icon of St. Nicholas',
             ru: 'У иконы св. Николая',
@@ -24,16 +24,32 @@ const locations = [
         image: '/img/center_icon.png',
 	},
     {
+        id: 'icon_vladimir',
+        description: {
+            en: 'Icon of St. Vladimir',
+            ru: 'У иконы св. Владимира',
+        },
+        image: '/img/st_vladimir.png',
+    },
+    {
     id: 'icon_cross',
         description: {
             en: 'Commemoration Table',
             ru: 'На поминальный столик',
 		},
         image: '/img/comm_table.png',
+    },
+    {
+        id: 'icon_jesus',
+        description: {
+            en: 'The Saviour Not Made by Hands',
+            ru: 'Спас Нерукотворный',
+        },
+        image: '/img/jesus_on_towel.png',
     }
 ];
 
-const products = [
+const candles = [
     {
         id: 'candle_large',
         price: 6.00,
