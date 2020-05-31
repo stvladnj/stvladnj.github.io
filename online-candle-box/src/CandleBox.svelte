@@ -1,98 +1,64 @@
 <script>
 	import { onMount } from 'svelte';
 	import { fade, fly } from 'svelte/transition';
+	import Icon from './Icon.svelte';
+	import Note from './Note.svelte';
 
-	export let lang = 'ru';
-	export let locations = [];
-	export let products = [];
+	export let lang = 'en';
+	export let locations = [];  // where candles can be placed
+	export let candles = [];    // candle types (Large, Medium, Small)
 	export let paypalClientId;
-	export let brandName = {};
+	export let brandName = {};  // brand to send to PayPal
 	export let thankYouMessage = {};
+	export let order = {};  // output is a dictionary of location ids, with values being a dictionary of landle ids
 
-	let order = {};
-	const getQuantity = (loc, prod) => order[loc.id + '/' + prod.id] || 0;
+	const clearOrder = () => {
+		for (const loc of locations) {
+			order[loc.id] = {};
+			for (const c of candles) {
+				order[loc.id][c.id] = 0;
+			}
+		}
+		activeLiving = false;
+		activeDeceased = false;
+		onQuantityChanged();
+	};
+
+	const getQuantity = (loc, candle) => order[loc.id][candle.id] || 0;
 
 	const computeTotal = () => {
 		let temp =0;
 		for (const loc of locations) {
-			for (const prod of products) {
-				const quantity = getQuantity(loc, prod);
-				temp += quantity * prod.price;
+			for (const c of candles) {
+				const quantity = getQuantity(loc, c);
+				temp += quantity * c.price;
 			}
 		}
-		return temp;
+		const forLiving = activeLiving ? Math.floor( (namesLiving.length+7) / 8) : 0;
+		const forDeceased = activeDeceased ? Math.floor( (namesDeceased.length+7) / 8): 0;
+		return temp + forLiving + forDeceased;
 	};
 
 	let total = 0;
-	$: {
-		total = computeTotal(order);
-		if (total === 0) shuffleCandlePositions();
-	}
+	let namesLiving = [];
+	try {
+		namesLiving = JSON.parse(localStorage.getItem('names-living') || '[]');
+	} catch {}
+	let activeLiving = false;
 
-	const clearOrder = () => {
-		order = {};
-	}
+	let namesDeceased = [];
+	try {
+		namesDeceased = JSON.parse(localStorage.getItem('names-deceased') || '[]');
+	} catch {}
+	let activeDeceased = false;
 
-	const increment = (loc, prod) => {
-		const quantity = getQuantity(loc, prod);
-		if (quantity < prod.limit) {
-			order[loc.id + '/' + prod.id] = quantity + 1;
-			order = order;
-		}
-	};
-	const decrement = (loc, prod) => {
-		const quantity = getQuantity(loc, prod);
-		if (quantity > 0) {
-			order[loc.id + '/' + prod.id] = quantity - 1;
-			order = order;
-		}
-	};
-
-	const shuffle = array => {
-		for(let i = array.length - 1; i > 0; i--) {
-			const j = Math.floor(Math.random() * i)
-			const temp = array[i]
-			array[i] = array[j]
-			array[j] = temp
-		}
-		return array;
-	};
-
-	const maxCandles = products.reduce((a,b)=>a + b.limit, 0)
-	const positions = {};
-
-	function shuffleCandlePositions() {
-
-		for (const loc of locations) {
-			positions[loc.id] = {
-				pos: shuffle([...Array(maxCandles).keys()]),
-				rotation: [...Array(maxCandles).keys()].map(()=>Math.random() * 10 - 5),
-			};
-		}
-	}
-
-	const getCandles = loc => {
-		const candles = [];
-		var pos_index = 0;
-		for (const prod of products) {
-			const q = getQuantity(loc, prod);
-			for (let i = 0; i < q; i++) {
-				candles.push({
-					image: prod.image,
-					pos: 100 * (0.5 + positions[loc.id].pos[pos_index+i]) / maxCandles,
-					height: prod.height,
-					rotate: positions[loc.id].rotation[pos_index+i],
-					key: loc.id + '/' + (pos_index + i),
-				});
-			}
-			pos_index += prod.limit;
-		}
-		return candles;
+	function onQuantityChanged() {
+		console.log('quantity changed:', order);
+		total = computeTotal();
 	}
 
     let paypalReady = false;
 	let mounted = false;
-	let element;
 
     onMount(() => {
 		mounted = true;
@@ -111,21 +77,59 @@
 	function createOrder(data, actions) {
 		const items = [];
 		for (const loc of locations) {
-			for (const prod of products) {
-				const q = getQuantity(loc, prod);
+			for (const c of candles) {
+				const q = getQuantity(loc, c);
 				if (q > 0) {
 					items.push({
 						name: 'candles',
-						sku : prod.id + '/' + loc.id,
+						sku : c.id + '/' + loc.id,
 						unit_amount: {
 							currency_code: 'USD',
-							value: prod.price.toFixed(2),
+							value: c.price.toFixed(2),
 						},
 						quantity: q,
-						description: prod.description[lang] + ' :: ' + loc.description[lang],
+						description: c.description[lang] + ' :: ' + c.description[lang],
 						category: 'DIGITAL_GOODS',
 					});
 				}
+			}
+		}
+
+		if (activeLiving && namesLiving.length > 0) {
+			localStorage.setItem('names-living', JSON.stringify(namesLiving));
+			let amount = Math.floor((namesLiving.length + 7) / 8);
+			for (const name of namesLiving) {
+				items.push({
+					name: 'names',
+					sku : 'names/living',
+					unit_amount: {
+						currency_code: 'USD',
+						value: amount.toFixed(2),
+					},
+					quantity: 1,
+					description: name,
+					category: 'DIGITAL_GOODS',
+				});
+				amount = 0;  // we charge full price to the first name
+			}
+		}
+
+		if (activeDeceased && namesDeceased.length > 0) {
+			localStorage.setItem('names-deceased', JSON.stringify(namesDeceased));
+			let amount = Math.floor((namesDeceased.length + 7) / 8);
+			for (const name of namesDeceased) {
+				items.push({
+					name: 'names',
+					sku : 'names/deceased',
+					unit_amount: {
+						currency_code: 'USD',
+						value: amount.toFixed(2),
+					},
+					quantity: 1,
+					description: name,
+					category: 'DIGITAL_GOODS',
+				});
+				amount = 0;  // we charge full price to the first name
 			}
 		}
 
@@ -143,6 +147,8 @@
 			description: 'Candles',
 			items: items,
 		};
+
+		console.log(purchase_unit);
 
 		return actions.order.create({
 			purchase_units: [purchase_unit],
@@ -188,42 +194,38 @@
 		setTimeout(()=>{thanks=false}, 2500);
 	}
 
+	clearOrder();
+
+	const groups = [
+		locations.slice(0, 3),
+		locations.slice(3),
+	];
+
 </script>
 
-<div class="row" bind:this={element}>
-	{#each locations as loc}
-		<div class="col-md-3 col-sm-12">
-		<div class="candle-location">
-		<img src={loc.image} alt="">
-		{#each getCandles(loc, order) as candle (candle.key)}
-			<div transition:fly={{y:100, duration:500}} class="candle" style="left: {candle.pos}%; height: {candle.height};">
-				<img src={candle.image} style="transform: rotate({candle.rotate}deg);" alt="">
-			</div>
-		{/each}
-		<div class="button-group">
-		<div class="row">
-			<div class="col-md-12 icon-header">{loc.description[lang]}</div>
-		</div>
-		{#each products as prod}
-		<div class="row">
-		<div class="col-sm-12">
-		<div class="button-row">
-			<button class="btn btn-default btn-circle button-left" on:click={()=>decrement(loc, prod)}>-</button>
-			<span class="descr">{prod.description[lang]}: ${prod.price.toFixed(2)} &times;{getQuantity(loc, prod, order)}</span>
-			<button class="btn btn-default btn-circle button-right" on:click={()=>increment(loc, prod)}>+</button>
-		</div>
-		</div>
-		</div>
-		{/each}
-		</div>
-		</div>
+{#each groups as group}
+<div class="row">
+	{#each group as loc}
+		<div class="col-lg-4 col-md-12 icon">
+			<Icon {candles} src={loc.image} order={order[loc.id]} name={loc.description} lang={lang} on:quantity={onQuantityChanged} />
 		</div>
 	{/each}
 </div>
-<div class="row total" class:flex={total > 0}>
-	<div id="paypal-button-container" class="col-sm-6 paypal-ugly"></div>
-	<div class="amount col-sm-3">${total.toFixed(2)}</div>
-	<div class="col-sm-3"><button class="btn btn-circle btn-danger cancel" on:click={clearOrder}><i class="fa fa-times"></i></button></div>
+{/each}
+<div class="row">
+	<div class="col-lg-4 col-lg-offset-2">
+		<Note bind:names={namesLiving} bind:active={activeLiving} on:names={onQuantityChanged} {lang} />
+	</div>
+	<div class="col-lg-4">
+		<Note living={false} bind:names={namesDeceased} bind:active={activeDeceased} on:names={onQuantityChanged} {lang} />
+	</div>
+</div>
+<div class="total" class:visible={total > 0}>
+	<div id="paypal-button-container" class="paypal-ugly"></div>
+	<div class="amount">
+		<span class="number">${total.toFixed(2)}</span>
+		<button class="btn btn-circle btn-danger cancel" on:click={clearOrder}><i class="fa fa-times"></i></button>
+	</div>
 </div>
 {#if thanks}
 <div class="row thanks" transition:fade>
@@ -239,100 +241,45 @@
 <style>
 .total {
 	background-color: #777e;
-	position:fixed;
-	top: 0;
-	left: 15px;
+	position: fixed;
+	top: -50%;
+	left: 0;
 	width:100%;
 	z-index: 2000;
-	line-height: 2em;
+	line-height: 2rem;
+	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
 	justify-content: center;
-	display: none;
+	transition-property: top;
+	transition-duration: 2s;
 }
 
 .paypal-ugly {
-	margin-top: 0.5em;
-}
-
-.candle-location > img {
-	width: 100%;
-	max-width: 1660px;
-	height: auto;
-}
-.icon-header {
-	text-align: center;
-	font-size: 1.35rem;
-	font-weight: bolder;
-	color: lightyellow;
-}
-.candle-location {
-	position: relative;
-	padding-top: 0.5em;
-	padding-bottom: 0.5em;
-}
-.button-group {
-	position: absolute;
-	bottom: 0.5em;
-	background-color: #00000075;
-	width: 100%;
-	text-align: center;
+	margin-top: 1.5rem;
 }
 .btn-circle {
-	width: 2em;
-	height: 2em;
-	line-height: 2em; /* adjust line height to align vertically*/
+	width: 3rem;
+	height: 3rem;
+	line-height: 3rem; /* adjust line height to align vertically*/
 	padding:0;
 	border-radius: 50%;
 	font-weight: bold;
 }
-.button-row {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: nowrap;
-	width: 100%;
-}
-.descr {
-	display: inline-block;
-	color: lightyellow;
-	font-size: 1.35rem;
-	flex-grow: 1;
-	line-height: 2.5rem;
-}
-@media (max-width: 996px) {
-	.descr {
-		font-size: 2.35rem;
-	}
-	.icon-header {
-		font-size: 2.5rem;
-	}
-}
-.button-left {
-	flex-shrink: 0;
-}
-.button-right {
-	flex-shrink: 0;
-}
 .amount {
-	font-size: 2.5em;
+	font-size: 3rem;
 	font-weight: bolder;
-	line-height: 2.0em;
+	line-height: 3rem;
 	color: lightgray
+}
+.number {
+	margin-left: 1rem;
+	margin-right: 1rem;
 }
 .cancel {
 	margin-top: 1em;
 	margin-bottom: 1em;
 	font-size: 18px;
-}
-.candle {
-	position: absolute;
-	bottom: 7em;
-	width: 3%;
-	/* background-color: white; */
-}
-.candle > img {
-	max-height: 100%;
-	width: auto;
 }
 .thanks {
 	font-size: 3em;
@@ -346,7 +293,11 @@
 	text-align: center;
 	padding: 1em;
 }
-.flex {
-	display: flex;
+.visible {
+	top: 0;
+}
+
+.icon {
+	margin-bottom: 1rem;
 }
 </style>

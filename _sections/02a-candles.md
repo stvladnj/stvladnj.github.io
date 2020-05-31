@@ -14,6 +14,7 @@ the purchase.
 
 We will <b>light the candles</b> during the next liturgy service at the designated location.
 
+You can submit a list of names for commemoration during the liturgy. The donation is $1 per <b>every</b> 8 names.
 <div id="online-candle-box"></div>
 <script>
 {% include inventory.js %}
@@ -21,7 +22,7 @@ new app.CandleBox({
   target: document.querySelector('#online-candle-box'),
   props: {
     lang: 'en',
-    locations, products, paypalClientId, brandName, thankYouMessage
+    locations, candles, paypalClientId, brandName, thankYouMessage
   }
 });
 </script>
