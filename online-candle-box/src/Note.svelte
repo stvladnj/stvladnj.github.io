@@ -43,7 +43,7 @@
 
 	const titleDeceased = {
 		ru: 'О УПОКОЕНИИ',
-		en: 'FOR DEAD',
+		en: 'FOR DECEASED',
 	}
 
 </script>

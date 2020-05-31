@@ -41,8 +41,8 @@
 	flex-wrap: nowrap;
 }
 .button-circle {
-	width: 4rem; /* calc(2rem * var(--responsive-scale)); */
-	height: 4rem; /* calc(2rem * var(--responsive-scale)); */
+	width: 3rem; /* calc(2rem * var(--responsive-scale)); */
+	height: 3rem; /* calc(2rem * var(--responsive-scale)); */
 	line-height: 100%; /* adjust line height to align vertically*/
 	padding:0;
 	border-radius: 50%;
@@ -51,7 +51,7 @@
 }
 .button-title {
 	flex-grow: 1;
-	line-height: 4rem; /* calc(2rem * var(--responsive-scale)); */
+	line-height: 3rem; /* calc(2rem * var(--responsive-scale)); */
 	font-size: 2rem; /* calc(1rem * var(--responsive-scale)); */
 }
 .quantity {

@@ -206,17 +206,17 @@
 {#each groups as group}
 <div class="row">
 	{#each group as loc}
-		<div class="col-lg-4 col-md-12 icon">
+		<div class="col-md-4 spaced">
 			<Icon {candles} src={loc.image} order={order[loc.id]} name={loc.description} lang={lang} on:quantity={onQuantityChanged} />
 		</div>
 	{/each}
 </div>
 {/each}
 <div class="row">
-	<div class="col-lg-4 col-lg-offset-2">
+	<div class="col-md-4 col-md-offset-2 spaced">
 		<Note bind:names={namesLiving} bind:active={activeLiving} on:names={onQuantityChanged} {lang} />
 	</div>
-	<div class="col-lg-4">
+	<div class="col-md-4 spaced">
 		<Note living={false} bind:names={namesDeceased} bind:active={activeDeceased} on:names={onQuantityChanged} {lang} />
 	</div>
 </div>
@@ -253,10 +253,12 @@
 	justify-content: center;
 	transition-property: top;
 	transition-duration: 2s;
+	align-items: center;
 }
 
 .paypal-ugly {
-	margin-top: 1.5rem;
+	margin-top: 5px;
+	flex-grow: 1;
 }
 .btn-circle {
 	width: 3rem;
@@ -267,10 +269,14 @@
 	font-weight: bold;
 }
 .amount {
+	flex-grow: 1;
 	font-size: 3rem;
 	font-weight: bolder;
 	line-height: 3rem;
-	color: lightgray
+	color: lightgray;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 .number {
 	margin-left: 1rem;
@@ -279,7 +285,6 @@
 .cancel {
 	margin-top: 1em;
 	margin-bottom: 1em;
-	font-size: 18px;
 }
 .thanks {
 	font-size: 3em;
@@ -297,7 +302,7 @@
 	top: 0;
 }
 
-.icon {
+.spaced {
 	margin-bottom: 1rem;
 }
 </style>
