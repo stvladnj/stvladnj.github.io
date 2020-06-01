@@ -12,6 +12,10 @@
 	export let thankYouMessage = {};
 	export let order = {};  // output is a dictionary of location ids, with values being a dictionary of landle ids
 
+	const namesPerNote = 10;
+	const notePrice = 1.00;
+	const priceForNames = num => Math.floor((num + namesPerNote - 1) / namesPerNote) * notePrice;
+
 	const clearOrder = () => {
 		for (const loc of locations) {
 			order[loc.id] = {};
@@ -34,8 +38,8 @@
 				temp += quantity * c.price;
 			}
 		}
-		const forLiving = activeLiving ? Math.floor( (namesLiving.length+7) / 8) : 0;
-		const forDeceased = activeDeceased ? Math.floor( (namesDeceased.length+7) / 8): 0;
+		const forLiving = activeLiving ? priceForNames(namesLiving.length) : 0;
+		const forDeceased = activeDeceased ? priceForNames(namesDeceased.length): 0;
 		return temp + forLiving + forDeceased;
 	};
 
@@ -53,7 +57,6 @@
 	let activeDeceased = false;
 
 	function onQuantityChanged() {
-		console.log('quantity changed:', order);
 		total = computeTotal();
 	}
 
@@ -97,7 +100,7 @@
 
 		if (activeLiving && namesLiving.length > 0) {
 			localStorage.setItem('names-living', JSON.stringify(namesLiving));
-			let amount = Math.floor((namesLiving.length + 7) / 8);
+			let amount = priceForNames(namesLiving.length);
 			for (const name of namesLiving) {
 				items.push({
 					name: 'names',
@@ -116,7 +119,7 @@
 
 		if (activeDeceased && namesDeceased.length > 0) {
 			localStorage.setItem('names-deceased', JSON.stringify(namesDeceased));
-			let amount = Math.floor((namesDeceased.length + 7) / 8);
+			let amount = priceForNames(namesDeceased.length);
 			for (const name of namesDeceased) {
 				items.push({
 					name: 'names',
@@ -147,8 +150,6 @@
 			description: 'Candles',
 			items: items,
 		};
-
-		console.log(purchase_unit);
 
 		return actions.order.create({
 			purchase_units: [purchase_unit],
