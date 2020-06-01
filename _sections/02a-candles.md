@@ -14,7 +14,8 @@ the purchase.
 
 We will <b>light the candles</b> during the next liturgy service at the designated location.
 
-You can submit a list of names for commemoration during the liturgy. The donation is $1 per <b>every</b> 8 names.
+You can submit a list of names for Proskomedia (without prosphora).
+The donation is $1 per <b>every 10</b> names.
 <div id="online-candle-box"></div>
 <script>
 {% include inventory.js %}
