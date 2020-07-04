@@ -38,13 +38,13 @@ Special feasts during the year:
 * Bliny Feast - on Sunday before Great Lent starts.
   Crepes, fish, caviar, raffles, folk music and more!
   Please join us - its fun!
-  This year Bliny Feats is held on **Sunday, Feb 9th**, following the Liturgy.
-  We advise to reserve tickets ahead of time. For tickets contact matushka Tamara.
-* St. Vladimir's Day - the last Sunday of July.
+  This year Bliny Feats was held on **Sunday, Feb 9th**. <!--, following the Liturgy. -->
+  Come and check this page often - do not miss the opportunity next yer!
+  * St. Vladimir's Day - the last Sunday of July.
   <!-- Please join us on Sunday, July 28th for our church's feast. -->
   Festival at our church includes Praying,
-  Blessing of Water,
-  Cultural Music, Horse Rides, Russian Food, Market and Book Store.
+  and Blessing of Water. <b>ATTENTION: because of the ongoing COVID-19, all visitor must wear face masks and obey social distancing.</b>
+  <!-- Cultural Music, Horse Rides, Russian Food, Market and Book Store. -->
   <!-- <b>Last year Cossacks from Philly set up a special "Cossack's Outpost", featuring
   the display of traditional cossack's armory, archery contests, a real warhorse, and more!</b>
   This year we are looking forward for another thrilling Cossack's Outpost! -->
