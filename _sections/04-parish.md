@@ -20,7 +20,7 @@ lang: en
   <div class="col-md-3 col-sm-6">
     <div class="service"> <i class="fa fa-cogs"></i>
       <h3>Sunday School</h3>
-      <p>This is where children of our parishioners learn Russian, Theology, Classic Literatire, and more.</p>
+      <p>This is where children of our parishioners learn Russian, Theology, Classic Literature, and more.</p>
     </div>
   </div>
   <div class="col-md-3 col-sm-6">
