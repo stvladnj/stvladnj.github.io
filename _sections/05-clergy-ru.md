@@ -16,7 +16,7 @@ lang: ru
 
 <div class="row">
 
-<div class="col-md-4 col-md-offset-2">
+<div class="col-md-4">
 <div class="thumbnail">
 <img alt="..." src="/img/metr_hilarion.png" class="img-thumbnail team-img">
 <div class="caption" markdown="1">
@@ -31,7 +31,18 @@ lang: ru
 <img alt="..." src="/img/rev_serge_ledk.png" class="img-thumbnail team-img">
 <div class="caption" markdown="1">
 ### Заместитель настоятеля
-Отец Сергий ЛЕДКОВСКИЙ
+Протоиерей Сергий ЛЕДКОВСКИЙ
+</div>
+</div>
+</div>
+
+
+<div class="col-md-4">
+<div class="thumbnail">
+<img alt="..." src="/img/chemodakov2.jpg" class="img-thumbnail team-img">
+<div class="caption" markdown="1">
+### Протоиерей
+Серафим ЧЕМОДАКОВ
 </div>
 </div>
 </div>

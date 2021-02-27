@@ -40,12 +40,12 @@ const locations = [
         image: '/img/comm_table.png',
     },
     {
-        id: 'icon_jesus',
+        id: 'icon_kiev_sobor',
         description: {
-            en: 'The Saviour Not Made by Hands',
-            ru: 'Спас Нерукотворный',
+            en: 'Saints of Kyiv-Pechersk',
+            ru: 'Собор святых Киево-Печерских',
         },
-        image: '/img/jesus_on_towel.png',
+        image: '/img/kiev-sobor.png',
     }
 ];
 

@@ -31,11 +31,11 @@ Your donations support our projects and are greately appreciated.
   <div class="space"></div>
   <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" rel="noopener">
     <input type="hidden" name="cmd" value="_s-xclick">
-    <input type="hidden" name="hosted_button_id" value="8Z8V3FHCRQLYW">
-    <input type="hidden" name="amount" value="20.00">
-    <button type="submit" class="btn btn-primary">Donate to Kitchen Improvement</button>
+    <input type="hidden" name="hosted_button_id" value="T7PE9T2TWTHYQ">
+    <input type="hidden" name="amount" value="50.00">
+    <button type="submit" class="btn btn-primary">New wall icons</button>
   </form>
-  <p>(<a href="donate-kitchen.pdf">details</a>)</p>
+  <p>(<a href="donate-icons.pdf">details</a>)</p>
 </div>
 <div class="col-md-4 text-center">
   <div class="space"></div>
@@ -51,11 +51,11 @@ Your donations support our projects and are greately appreciated.
   <div class="space"></div>
   <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" rel="noopener">
     <input type="hidden" name="cmd" value="_s-xclick">
-    <input type="hidden" name="hosted_button_id" value="8WJ7HMKRLSW4S">
-    <input type="hidden" name="amount" value="100.00">
-    <button type="submit" class="btn btn-primary">Help with Central Gas project</button>
+    <input type="hidden" name="hosted_button_id" value="C5ZN58RSN84G2">
+    <input type="hidden" name="amount" value="50.00">
+    <button type="submit" class="btn btn-primary">Parish Hall roof</button>
   </form>
-  <p>(<a href="donate-gas.pdf">details</a>)</p>
+  <p>(<a href="donate-roof.pdf">details</a>)</p>
 </div>
 </div>
 <div class="space"></div>

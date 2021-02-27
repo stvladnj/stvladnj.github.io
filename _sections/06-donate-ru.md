@@ -32,11 +32,11 @@ lang: ru
   <div class="space"></div>
   <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" rel="noopener">
     <input type="hidden" name="cmd" value="_s-xclick">
-    <input type="hidden" name="hosted_button_id" value="8Z8V3FHCRQLYW">
-    <input type="hidden" name="amount" value="20.00">
-    <button type="submit" class="btn btn-primary">Помочь обустроить кухню</button>
+    <input type="hidden" name="hosted_button_id" value="T7PE9T2TWTHYQ">
+    <input type="hidden" name="amount" value="50.00">
+    <button type="submit" class="btn btn-primary">Новые настенные иконы</button>
   </form>
-  <p>(<a href="donate-kitchen.pdf">подробнее</a>)</p>
+  <p>(<a href="donate-icons.pdf">подробнее</a>)</p>
 </div>
 <div class="col-md-4 text-center">
   <div class="space"></div>
@@ -52,11 +52,11 @@ lang: ru
   <div class="space"></div>
   <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" rel="noopener">
     <input type="hidden" name="cmd" value="_s-xclick">
-    <input type="hidden" name="hosted_button_id" value="8WJ7HMKRLSW4S">
-    <input type="hidden" name="amount" value="100.00">
-    <button type="submit" class="btn btn-primary">Центральное газоснабжение</button>
+    <input type="hidden" name="hosted_button_id" value="C5ZN58RSN84G2">
+    <input type="hidden" name="amount" value="50.00">
+    <button type="submit" class="btn btn-primary">На новую крышу трапезной</button>
   </form>
-  <p>(<a href="donate-gas.pdf">подробнее</a>)</p>
+  <p>(<a href="donate-roof.pdf">подробнее</a>)</p>
 </div>
 </div>
 <div class="space"></div>
