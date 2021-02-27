@@ -36,7 +36,7 @@ lang: ru
     <input type="hidden" name="amount" value="50.00">
     <button type="submit" class="btn btn-primary">Новые настенные иконы</button>
   </form>
-  <p>(<a href="donate-icons.pdf">подробнее</a>)</p>
+  <p>(<a href="donate-frescos.pdf" target="_blank">подробнее</a>)</p>
 </div>
 <div class="col-md-4 text-center">
   <div class="space"></div>
@@ -46,7 +46,7 @@ lang: ru
     <input type="hidden" name="amount" value="50.00">
     <button type="submit" class="btn btn-primary">Ремонт церкви св. Ольги</button>
   </form>
-  <p>(<a href="donate-olga.pdf">подробнее</a>)</p>
+  <p>(<a href="donate-olga.pdf" target="_blank">подробнее</a>)</p>
 </div>
 <div class="col-md-4 text-center">
   <div class="space"></div>
@@ -56,7 +56,7 @@ lang: ru
     <input type="hidden" name="amount" value="50.00">
     <button type="submit" class="btn btn-primary">На новую крышу трапезной</button>
   </form>
-  <p>(<a href="donate-roof.pdf">подробнее</a>)</p>
+  <p>(<a href="donate-parish-hall.pdf" target="_blank">подробнее</a>)</p>
 </div>
 </div>
 <div class="space"></div>

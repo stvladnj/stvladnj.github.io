@@ -33,9 +33,9 @@ Your donations support our projects and are greately appreciated.
     <input type="hidden" name="cmd" value="_s-xclick">
     <input type="hidden" name="hosted_button_id" value="T7PE9T2TWTHYQ">
     <input type="hidden" name="amount" value="50.00">
-    <button type="submit" class="btn btn-primary">New wall icons</button>
+    <button type="submit" class="btn btn-primary">New fresco icons</button>
   </form>
-  <p>(<a href="donate-icons.pdf">details</a>)</p>
+  <p>(<a href="donate-frescos.pdf" target="_blank">details</a>)</p>
 </div>
 <div class="col-md-4 text-center">
   <div class="space"></div>
@@ -45,7 +45,7 @@ Your donations support our projects and are greately appreciated.
     <input type="hidden" name="amount" value="50.00">
     <button type="submit" class="btn btn-primary">Help repair St. Olga church</button>
   </form>
-  <p>(<a href="donate-olga.pdf">details</a>)</p>
+  <p>(<a href="donate-olga.pdf" target="_blank">details</a>)</p>
 </div>
 <div class="col-md-4 text-center">
   <div class="space"></div>
@@ -53,9 +53,9 @@ Your donations support our projects and are greately appreciated.
     <input type="hidden" name="cmd" value="_s-xclick">
     <input type="hidden" name="hosted_button_id" value="C5ZN58RSN84G2">
     <input type="hidden" name="amount" value="50.00">
-    <button type="submit" class="btn btn-primary">Parish Hall roof</button>
+    <button type="submit" class="btn btn-primary">Parish Hall repairs</button>
   </form>
-  <p>(<a href="donate-roof.pdf">details</a>)</p>
+  <p>(<a href="donate-parish-hall.pdf" target="_blank">details</a>)</p>
 </div>
 </div>
 <div class="space"></div>
