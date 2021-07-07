@@ -17,8 +17,6 @@ lang: en
 <div class="contact-item">
 <i class="fa fa-envelope-o fa-2x"></i>
 <p><a href="mailto:info@stvladnj.org">info@stvladnj.org</a></p>
-<p>P.O. Box 143<br>
-   Jackson, NJ 08527</p>
 </div>
 </div>
 
