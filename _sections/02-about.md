@@ -12,7 +12,7 @@ lang: en
 </div>
 
 <div class="row">
-<div class="col-md-8 col-md-offset-2" markdown="1">
+<div class="col-md-8 col-md-offset-2" style="margin-bottom: 2em" markdown="1">
 ## Dear friends, all services are temporarily suspended till Saturday September 25th.
 </div>
 
