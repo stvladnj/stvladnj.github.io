@@ -12,6 +12,9 @@ lang: ru
 </div>
 
 <div class="row">
+<div class="col-md-8 col-md-offset-2" markdown="1">
+#### Дорогие о Господе прихожане, богослужения отменены до 25-го Сентября.
+</div>
 <div class="col-md-4" markdown="1">
 ![Свв. Владимир и Ольга](/img/st_vlad_st_olga.jpg){: .img-responsive}
 </div>
