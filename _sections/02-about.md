@@ -13,7 +13,7 @@ lang: en
 
 <div class="row">
 <div class="col-md-8 col-md-offset-2" style="margin-bottom: 2em" markdown="1">
-## Dear friends, all services are temporarily suspended till Saturday September 25th.
+## Dear friends, all services are temporarily suspended till Saturday <s>September 25th</s> October 2nd.
 </div>
 
 <div class="col-md-4" markdown="1">

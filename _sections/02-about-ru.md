@@ -13,7 +13,7 @@ lang: ru
 
 <div class="row">
 <div class="col-md-8 col-md-offset-2" style="margin-bottom: 2em" markdown="1">
-## Дорогие о Господе прихожане, богослужения отменены до 25-го Сентября.
+## Дорогие о Господе прихожане, богослужения отменены до <s>25-го Сентября</s> 2-го Октября.
 </div>
 
 <div class="col-md-4" markdown="1">
