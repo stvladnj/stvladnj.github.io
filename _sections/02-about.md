@@ -46,7 +46,7 @@ Special feasts during the year:
   Festival at our church included Praying,
   and Blessing of Water. After servicees parishiners and guests could
   buy books, souveniers, and icons. Rusian music and food was surely there!
-  Cossacks from Philly put up a "Cossack's outpost",
+  Cossacks from Philly sut up a "Cossack's outpost",
   featuring the display of traditional cossack's armory, archery contests for children,
   horse-riding, and more!
   <!-- Cultural Music, Horse Rides, Russian Food, Market and Book Store. -->
