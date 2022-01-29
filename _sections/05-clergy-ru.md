@@ -36,7 +36,7 @@ lang: ru
 </div>
 </div>
 
-
+<!-- 
 <div class="col-md-4">
 <div class="thumbnail">
 <img alt="..." src="/img/chemodakov2.jpg" class="img-thumbnail team-img">
@@ -45,6 +45,6 @@ lang: ru
 Серафим ЧЕМОДАКОВ
 </div>
 </div>
-</div>
+</div> -->
 
 </div>
