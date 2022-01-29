@@ -18,7 +18,7 @@ Deputy Rector is Archpriest Serge LEDKOVSKY.
 
 <div class="row">
 
-<div class="col-md-4">
+<div class="col-md-6">
 <div class="thumbnail">
 <img alt="..." src="img/metr_hilarion.png" class="img-thumbnail team-img">
 <div class="caption" markdown="1">
@@ -28,7 +28,7 @@ Metropolitan HILARION
 </div>
 </div>
 
-<div class="col-md-4">
+<div class="col-md-6">
 <div class="thumbnail">
 <img alt="..." src="img/rev_serge_ledk.png" class="img-thumbnail team-img">
 <div class="caption" markdown="1">
