@@ -68,12 +68,3 @@ lang: ru
 [Расписание богослужений (русск.)](/files/schedule-ru.pdf){: .btn .btn-default}
 </div>
 </div>
-
-<div class="row">
-<div class="col-md-4 col-md-offset-2 text-center center" markdown="1">
-[Пасхальные богослужения (англ.)](/files/schedule-en-bis.pdf){: .btn .btn-default}
-</div>
-<div class="col-md-4 text-center center" markdown="1">
-[Пасхальные богослужения (русск.)](/files/schedule-ru-bis.pdf){: .btn .btn-default}
-</div>
-</div>
