@@ -28,7 +28,7 @@ lang: ru
 
 ### Целевые пожертвования
 <div class="row">
-<div class="col-md-4 text-center" markdown>
+<!-- <div class="col-md-4 text-center" markdown>
   <div class="space"></div>
   <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" rel="noopener">
     <input type="hidden" name="cmd" value="_s-xclick">
@@ -37,7 +37,7 @@ lang: ru
     <button type="submit" class="btn btn-primary">Новые настенные иконы</button>
   </form>
   <p>(<a href="donate-frescos.pdf" target="_blank">подробнее</a>)</p>
-</div>
+</div> -->
 <div class="col-md-4 text-center">
   <div class="space"></div>
   <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" rel="noopener">
@@ -46,9 +46,9 @@ lang: ru
     <input type="hidden" name="amount" value="50.00">
     <button type="submit" class="btn btn-primary">Ремонт церкви св. Ольги</button>
   </form>
-  <p>(<a href="donate-olga.pdf" target="_blank">подробнее</a>)</p>
+  <!-- <p>(<a href="donate-olga.pdf" target="_blank">подробнее</a>)</p> -->
 </div>
-<div class="col-md-4 text-center">
+<!-- <div class="col-md-4 text-center">
   <div class="space"></div>
   <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" rel="noopener">
     <input type="hidden" name="cmd" value="_s-xclick">
@@ -57,6 +57,6 @@ lang: ru
     <button type="submit" class="btn btn-primary">На новую крышу трапезной</button>
   </form>
   <p>(<a href="donate-parish-hall.pdf" target="_blank">подробнее</a>)</p>
-</div>
+</div> -->
 </div>
 <div class="space"></div>
