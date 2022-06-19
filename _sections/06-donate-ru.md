@@ -38,7 +38,7 @@ lang: ru
   </form>
   <p>(<a href="donate-frescos.pdf" target="_blank">подробнее</a>)</p>
 </div> -->
-<div class="col-md-4 text-center">
+<div class="col-md-12 text-center">
   <div class="space"></div>
   <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" rel="noopener">
     <input type="hidden" name="cmd" value="_s-xclick">
