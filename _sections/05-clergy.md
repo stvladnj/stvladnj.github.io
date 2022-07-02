@@ -9,26 +9,13 @@ lang: en
 <div class="section-title center" markdown="1">
 ##  Clergy
 ---------------
-Church Rector is His Eminence Metropolitan HILARION of Eastern America and New York,
-FIRST HIERARCH of the Russian Orthodox Church Outside of Russia.
-
-Deputy Rector is Archpriest Serge LEDKOVSKY.
+Church Deputy Rector is Archpriest Serge LEDKOVSKY.
 <!-- Diakon Rostislav WOJTENKO. Sub-diakon Alexey Enikeyev. Sub-diakon James Storms. -->
 </div>
 
 <div class="row">
 
-<div class="col-md-6">
-<div class="thumbnail">
-<img alt="..." src="img/metr_hilarion.png" class="img-thumbnail team-img">
-<div class="caption" markdown="1">
-### Rector
-Metropolitan HILARION
-</div>
-</div>
-</div>
-
-<div class="col-md-6">
+<div class="col-md-6 col-md-offset-3">
 <div class="thumbnail">
 <img alt="..." src="img/rev_serge_ledk.png" class="img-thumbnail team-img">
 <div class="caption" markdown="1">

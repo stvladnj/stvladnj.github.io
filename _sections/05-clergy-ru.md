@@ -8,25 +8,13 @@ lang: ru
 <div class="section-title center" markdown="1">
 ## Клир
 ---------------
-Настоятелем нашего храма является Высокопреосвященнейший ИЛАРИОН, митрополит восточно-американский и нью-йоркский,
-первоиерарх русской православной церкви заграницей.
 
-Заместитель настоятеля - протоиерей Сергий ЛЕДКОВСКИЙ.
+Заместитель настоятеля нашего храма - протоиерей Сергий ЛЕДКОВСКИЙ.
 </div>
 
 <div class="row">
 
-<div class="col-md-6">
-<div class="thumbnail">
-<img alt="..." src="/img/metr_hilarion.png" class="img-thumbnail team-img">
-<div class="caption" markdown="1">
-### Настоятель
-Митрополит ИЛАРИОН
-</div>
-</div>
-</div>
-
-<div class="col-md-6">
+<div class="col-md-6 col-md-offset-3">
 <div class="thumbnail">
 <img alt="..." src="/img/rev_serge_ledk.png" class="img-thumbnail team-img">
 <div class="caption" markdown="1">
