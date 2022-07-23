@@ -10,6 +10,9 @@ lang: en
 <div class="section-title center" markdown="1">
 ## Donate to our church
 -----------------------
+Our church is a public charity, as recognised by IRS section 501(c)(3)
+(charity number 74-3224137). Donation are tax-exempt.
+<br>
 Your donations support our projects and are greately appreciated.
 </div>
 
