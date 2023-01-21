@@ -39,8 +39,8 @@ Special feasts during the year:
 * Bliny Feast - on Sunday before Great Lent starts.
   Crepes, fish, caviar, raffles, folk music and more!
   Please join us - its fun!
-  This year Bliny Feast was on **Sunday, Feb 13th 2022**.
-  Please come next year and help us raise funds for St. Vladimir Memorial Church. Everyone is Welcome!
+  This year Bliny Feast will be on **Sunday, Feb 5th 2023**. Everyone is welcome!
+  <!-- Please come next year and help us raise funds for St. Vladimir Memorial Church. Everyone is Welcome! -->
   <!-- Come and check this page often - do not miss the opportunity next yer! -->
   * St. Vladimir's Day - the last Sunday of July.
   This year our church feast day was on July 26th.
