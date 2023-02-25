@@ -9,17 +9,27 @@ lang: ru
 ## Клир
 ---------------
 
-Заместитель настоятеля нашего храма - протоиерей Сергий ЛЕДКОВСКИЙ.
+Настоятель нашего храма - митрополит восточно-американский и Нью-Йоркский Николай (ОЛЬХОВСКИЙ), первоиерарх русской зарубежной церкви.
 </div>
 
 <div class="row">
 
-<div class="col-md-6 col-md-offset-3">
+<div class="col-md-4 col-md-offset-2">
+<div class="thumbnail">
+<img alt="..." src="/img/mn_official_portrait_rus-scaled.jpg" class="img-thumbnail team-img">
+<div class="caption" markdown="1">
+### Настоятель
+Митрополит Николай (ОЛЬХОВСКИЙ)
+</div>
+</div>
+</div>
+
+<div class="col-md-4 col-md-offset-0">
 <div class="thumbnail">
 <img alt="..." src="/img/rev_serge_ledk.png" class="img-thumbnail team-img">
 <div class="caption" markdown="1">
 ### Заместитель настоятеля
-Протоиерей Сергий ЛЕДКОВСКИЙ
+Протоиерей Сергий (ЛЕДКОВСКИЙ)
 </div>
 </div>
 </div>
