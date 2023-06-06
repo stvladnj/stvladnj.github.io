@@ -6,7 +6,7 @@ lang: en
 ---
 
 <div class="section-title center" markdown="1">
-##  Attention
+##  ATTENTION
 -----
 </div>
 
@@ -16,6 +16,7 @@ lang: en
 
 * Wednesday June, 7, 6:00pm: Panikhida, followed by small compline
 * Thursday June 8, 8:00am: Divine liturgy, and at 10:00am funeral at St Vladimir's Russian Orthodox cemetery
+</div>
 </div>
 
 <div class="section-title center" markdown="1">
