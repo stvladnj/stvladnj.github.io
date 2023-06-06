@@ -5,6 +5,20 @@ anchor: about
 lang: ru
 ---
 
+
+<div class="section-title center" markdown="1">
+##  Внимание
+-----
+</div>
+
+<div class="row">
+<div class="col-md-10 col-md-offset-1 text-center center" markdown="1">
+### Засписание богослужений по новопреставленному Евгению Плышевскому
+
+* Среда 7 июня 6:00pm: панихида и малое повечери
+* Четверг 8 июня 8:00am: божественная литургия, и в 10:00am отпевание и погребение на Свято-Владимирском кладбище
+</div>
+
 <div class="section-title center" markdown="1">
 ## О нас
 
