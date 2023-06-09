@@ -6,20 +6,6 @@ lang: en
 ---
 
 <div class="section-title center" markdown="1">
-##  ATTENTION
------
-</div>
-
-<div class="row">
-<div class="col-md-10 col-md-offset-1 text-center center" markdown="1">
-### SCHEDULE OF SERVICES FOR NEWLY REPOSED EUGENE PLISHEVSKY
-
-* Wednesday June, 7, 6:00pm: Panikhida, followed by small compline
-* Thursday June 8, 8:00am: Divine liturgy, and at 10:00am funeral at St Vladimir's Russian Orthodox cemetery
-</div>
-</div>
-
-<div class="section-title center" markdown="1">
 ##  About us
 
 -----
