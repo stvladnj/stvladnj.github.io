@@ -62,7 +62,7 @@ Special feasts during the year:
 ##  Service Schedule
 
 -----
-</div> -->
+</div>
 
 <div class="row">
 <div class="col-md-4 col-md-offset-2 text-center center" markdown="1">
@@ -72,3 +72,4 @@ Special feasts during the year:
 [Service Schedule (in Russian)](/files/schedule-ru.pdf){: .btn .btn-default}
 </div>
 </div>
+ -->
