@@ -6,9 +6,9 @@ lang: ru
 ---
 
 <div class="section-title center" markdown="1">
-## Ten Commandments of the Lord
+## Десять заповедей
 
-A guide to confession.
+Пособие для подготовки к исповеди
 
 -----
 </div>
