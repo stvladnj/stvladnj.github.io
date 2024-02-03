@@ -42,8 +42,8 @@ Special feasts during the year:
   This year Bliny Feast will be on **Sunday, Feb 25th 2024**.
   Please come and help us raise funds for St. Vladimir Memorial Church. Everyone is Welcome!
   <!-- Come and check this page often - do not miss the opportunity next yer! -->
-  * St. Vladimir's Day - the last Sunday of July. **See details [here](/files/st-vlad-day.pdf).**
-  Last year our church feast day was on July 30th 2023, .
+  * St. Vladimir's Day - the last Sunday of July.
+  Last year our church feast day was on July 30th 2023.
   Festival at our church included Praying,
   and Blessing of Water. After servicees parishiners and guests could
   buy books, souveniers, and icons. Rusian music and food was surely there!
