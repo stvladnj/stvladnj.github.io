@@ -11,6 +11,9 @@ lang: ru
 </div>
 
 <div class="row">
+<div class="text-center center" markdown="1">
+### ВНИМАНИЕ: Следующая литургия на английском языке состоится 18 февраля (в нижнем храме).
+</div>
 <div class="col-md-4 col-md-offset-2 text-center center" markdown="1">
 [Расписание (на англ.)](/files/schedule-en.pdf){: .btn .btn-default}
 </div>
