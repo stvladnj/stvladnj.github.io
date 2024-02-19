@@ -58,7 +58,7 @@ lang: ru
 </div>
 
 <div class="row">
-<div class="col-sm-4 col-sm-offset-2 text-right">20 октября</div><div class="col-sm-4 col-sm-offset-0 text-left">Св. Иоанна Маньчжурского</div>
+<div class="col-sm-4 col-sm-offset-2 text-right">20 октября</div><div class="col-sm-4 col-sm-offset-0 text-left">Св. Иона Маньчжурского</div>
 </div>
 
 <div class="row">
