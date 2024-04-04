@@ -14,7 +14,7 @@ lang: en
 
 **Panikhida** - Fri, April 5 at 6:00pm
 
-**Divine Liturgy** - Sat, Aplil 6 at 8:00am
+**Divine Liturgy** - Sat, April 6 at 8:00am
 
 **Funeral and Burial** - at 10:00am (after liturgy)
 
