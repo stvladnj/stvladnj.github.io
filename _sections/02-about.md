@@ -6,6 +6,26 @@ lang: en
 ---
 
 <div class="section-title center" markdown="1">
+## Attention!
+<div class="row">
+
+<div class="col-md-12" markdown="1">
+#### Schedule of the Memorial Services for Matushka Tamara Kizenko
+
+**Panikhida** - Fri, April 5 at 6:00pm
+
+**Divine Liturgy** - Sat, Aplil 6 at 8:00am
+
+**Funeral and Burial** - at 10:00am (after liturgy)
+
+Following the internment, a memorial luncheon will be served at Church Hall
+
+Memory eternal to dear Matushka Tamara!
+</div>
+</div>
+
+
+<div class="section-title center" markdown="1">
 ##  About us
 
 -----
