@@ -6,10 +6,6 @@ lang: en
 ---
 
 <div class="section-title center" markdown="1">
-## Attention!
-<div class="row">
-
-<div class="section-title center" markdown="1">
 ##  About us
 
 -----
