@@ -10,11 +10,8 @@ lang: en
 -----
 </div>
 <div class="row">
-<div class="col-md-4 col-md-offset-2 text-center center" markdown="1">
-[Service Schedule (in English)](/files/schedule-en.pdf){: .btn .btn-default}
-</div>
-<div class="col-md-4 col-md-offset-0 text-center center" markdown="1">
-[Service Schedule (in Russian)](/files/schedule-ru.pdf){: .btn .btn-default}
+<div class="col-md-4 col-md-offset-4 text-center center" markdown="1">
+[Service Schedule](/files/schedule.pdf){: .btn .btn-default}
 </div>
 </div>
 

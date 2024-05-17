@@ -11,11 +11,8 @@ lang: ru
 </div>
 
 <div class="row">
-<div class="col-md-4 col-md-offset-2 text-center center" markdown="1">
-[Расписание (на англ.)](/files/schedule-en.pdf){: .btn .btn-default}
-</div>
-<div class="col-md-4 col-md-offset-0 text-center center" markdown="1">
-[Расписание (на русск.)](/files/schedule-ru.pdf){: .btn .btn-default}
+<div class="col-md-4 col-md-offset-4 text-center center" markdown="1">
+[Расписание](/files/schedule.pdf){: .btn .btn-default}
 </div>
 </div>
 
