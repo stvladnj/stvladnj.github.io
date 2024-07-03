@@ -1,5 +1,6 @@
 import svelte from 'rollup-plugin-svelte';
 import resolve from '@rollup/plugin-node-resolve';
+import commonjs from '@rollup/plugin-commonjs';
 import livereload from 'rollup-plugin-livereload';
 import { terser } from 'rollup-plugin-terser';
 
@@ -8,11 +9,10 @@ const production = !process.env.ROLLUP_WATCH;
 export default {
 	input: 'src/main.js',
 	output: {
-		// browser: true,
 		sourcemap: true,
-		format: 'esm',
-		dir: '../',
-		entryFileNames: 'js/online-candle-box.js'
+		format: 'iife',
+		name: 'app',
+		file: '../js/online-candle-box.js'
 	},
 	plugins: [
 		svelte({
@@ -21,8 +21,8 @@ export default {
 			// we'll extract any component CSS out into
 			// a separate file - better for performance
 			css: css => {
-				css.write('css/online-candle-box.css');
-			},
+				css.write('../css/online-candle-box.css');
+			}
 		}),
 
 		// If you have external dependencies installed from
@@ -34,6 +34,7 @@ export default {
 			browser: true,
 			dedupe: ['svelte']
 		}),
+		commonjs(),
 
 		// In dev mode, call `npm run start` once
 		// the bundle has been generated
