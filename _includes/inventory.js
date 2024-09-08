@@ -39,14 +39,22 @@ const locations = [
 		},
         image: '/img/comm_table.png',
     },
+    // {
+    //     id: 'icon_kiev_sobor',
+    //     description: {
+    //         en: 'Saints of Kyiv-Pechersk',
+    //         ru: 'Собор святых Киево-Печерских',
+    //     },
+    //     image: '/img/kiev-sobor.png',
+    // },
     {
-        id: 'icon_kiev_sobor',
+        id: 'icon_quick_to_hear',
         description: {
-            en: 'Saints of Kyiv-Pechersk',
-            ru: 'Собор святых Киево-Печерских',
+            en: 'Mother of God "Quick to Hear"',
+            ru: 'Скоропослушница',
         },
-        image: '/img/kiev-sobor.png',
-    }
+        image: '/img/quick-to-hear.png',
+    },
 ];
 
 const candles = [
