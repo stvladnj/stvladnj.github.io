@@ -43,7 +43,7 @@ lang: ru
 <div class="col-md-12 text-center">
   <div class="space"></div>
   <form action="https://www.paypal.com/donate" method="get" target="_blank" rel="noopener">
-    <input type="hidden" name="hosted_button_id" value="N7PZC3WSWY456">
+    <input type="hidden" name="hosted_button_id" value="T7PE9T2TWTHYQ">
     <input type="hidden" name="amount" value="50.00">
     <button type="submit" class="btn btn-primary">Ремонт церкви св. Ольги</button>
   </form>
