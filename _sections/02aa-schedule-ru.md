@@ -18,51 +18,58 @@ lang: ru
 
 <div class="row">
 <div class="text-center center" markdown="1">
-### Воскресные службы в нижнем храме св. Ольги
+### Воскресные службы в нижнем храме св. Ольги на английском
 </div>
 </div>
 
 <div class="row">
-<div class="col-sm-4 col-sm-offset-2 text-right">18 февраля</div><div class="col-sm-4 col-sm-offset-0 text-left">Обращение Захарии</div>
+<div class="col-12 text-center">15 декабря 2024</div>
 </div>
 
 <div class="row">
-<div class="col-sm-4 col-sm-offset-2 text-right">24 марта</div><div class="col-sm-4 col-sm-offset-0 text-left">Торжество православия</div>
+<div class="col-12 text-center">26 января 2025</div>
 </div>
 
 <div class="row">
-<div class="col-sm-4 col-sm-offset-2 text-right">21 апреля</div><div class="col-sm-4 col-sm-offset-0 text-left">Св. Марии Египетской</div>
+<div class="col-12 text-center">23 февраля 2025</div>
 </div>
 
 <div class="row">
-<div class="col-sm-4 col-sm-offset-2 text-right">26 май</div><div class="col-sm-4 col-sm-offset-0 text-left">Исцеление расслабленного</div>
+<div class="col-12 text-center">30 марта 2025</div>
 </div>
 
 <div class="row">
-<div class="col-sm-4 col-sm-offset-2 text-right">16 июня</div><div class="col-sm-4 col-sm-offset-0 text-left">Св. отцов первого вселенского собора</div>
+<div class="col-12 text-center">27 апреля 2025</div>
 </div>
 
 <div class="row">
-<div class="col-sm-4 col-sm-offset-2 text-right">21 июля</div><div class="col-sm-4 col-sm-offset-0 text-left">Казанской иконы Божией Матери</div>
+<div class="col-12 text-center">25 мая 2025</div>
 </div>
 
 <div class="row">
-<div class="col-sm-4 col-sm-offset-2 text-right">18 августа</div><div class="col-sm-4 col-sm-offset-0 text-left">Предпразднество Преображения</div>
+<div class="col-12 text-center">29 июня 2025</div>
 </div>
 
 <div class="row">
-<div class="col-sm-4 col-sm-offset-2 text-right">15 сентября</div><div class="col-sm-4 col-sm-offset-0 text-left">12-ая неделя по Пятедесятнице</div>
+<div class="col-12 text-center">20 июля 2025</div>
 </div>
 
 <div class="row">
-<div class="col-sm-4 col-sm-offset-2 text-right">20 октября</div><div class="col-sm-4 col-sm-offset-0 text-left">Св. Иона Маньчжурского</div>
+<div class="col-12 text-center">31 август 2025</div>
 </div>
 
 <div class="row">
-<div class="col-sm-4 col-sm-offset-2 text-right">17 ноября</div><div class="col-sm-4 col-sm-offset-0 text-left">21-ая неделя по Пятедесятнице</div>
+<div class="col-12 text-center">28 сентября 2025</div>
 </div>
 
 <div class="row">
-<div class="col-sm-4 col-sm-offset-2 text-right">15 декабря</div><div class="col-sm-4 col-sm-offset-0 text-left">Св апостола Вндрея Первозванного</div>
+<div class="col-12 text-center">26 октября 2025</div>
 </div>
 
+<div class="row">
+<div class="col-12 text-center">30 ноября 2025</div>
+</div>
+
+<div class="row">
+<div class="col-12 text-center">28 декабря 2025</div>
+</div>

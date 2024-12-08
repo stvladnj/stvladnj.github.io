@@ -17,51 +17,58 @@ lang: en
 
 <div class="row">
 <div class="text-center center" markdown="1">
-### English language Sunday Divine Liturgies in our lower Church of St. Olga 
+### English language Sunday Divine Liturgies in our lower Church of St. Olga
 </div>
 </div>
 
 <div class="row">
-<div class="col-sm-4 col-sm-offset-2 text-right">February 18</div><div class="col-sm-4 col-sm-offset-0 text-left">Conversion of Zacchaeus</div>
+<div class="col-12 text-center">December 15 2024</div>
 </div>
 
 <div class="row">
-<div class="col-sm-4 col-sm-offset-2 text-right">March 24</div><div class="col-sm-4 col-sm-offset-0 text-left">Triumph of Orthodoxy</div>
+<div class="col-12 text-center">January 26 2025</div>
 </div>
 
 <div class="row">
-<div class="col-sm-4 col-sm-offset-2 text-right">April 21</div><div class="col-sm-4 col-sm-offset-0 text-left">St. Mary of Egypt</div>
+<div class="col-12 text-center">February 23 2025</div>
 </div>
 
 <div class="row">
-<div class="col-sm-4 col-sm-offset-2 text-right">May 26</div><div class="col-sm-4 col-sm-offset-0 text-left">Healing of Paralytic</div>
+<div class="col-12 text-center">March 30 2025</div>
 </div>
 
 <div class="row">
-<div class="col-sm-4 col-sm-offset-2 text-right">June 16</div><div class="col-sm-4 col-sm-offset-0 text-left">Holy Fathers of the First Eccumenical Council</div>
+<div class="col-12 text-center">April 27 2025</div>
 </div>
 
 <div class="row">
-<div class="col-sm-4 col-sm-offset-2 text-right">July 21</div><div class="col-sm-4 col-sm-offset-0 text-left">Kazan Icon of Our Lady Theotokos</div>
+<div class="col-12 text-center">May 25 2025</div>
 </div>
 
 <div class="row">
-<div class="col-sm-4 col-sm-offset-2 text-right">August 18</div><div class="col-sm-4 col-sm-offset-0 text-left">Forefeast of Transfiguration</div>
+<div class="col-12 text-center">June 29 2025</div>
 </div>
 
 <div class="row">
-<div class="col-sm-4 col-sm-offset-2 text-right">September 15</div><div class="col-sm-4 col-sm-offset-0 text-left">12th week after Pentecost</div>
+<div class="col-12 text-center">July 20 2025</div>
 </div>
 
 <div class="row">
-<div class="col-sm-4 col-sm-offset-2 text-right">October 20</div><div class="col-sm-4 col-sm-offset-0 text-left">St. Jonah of Manchuria</div>
+<div class="col-12 text-center">August 31 2025</div>
 </div>
 
 <div class="row">
-<div class="col-sm-4 col-sm-offset-2 text-right">November 17</div><div class="col-sm-4 col-sm-offset-0 text-left">21th week after Pentecost</div>
+<div class="col-12 text-center">September 28 2025</div>
 </div>
 
 <div class="row">
-<div class="col-sm-4 col-sm-offset-2 text-right">December 15</div><div class="col-sm-4 col-sm-offset-0 text-left">Apostle Andrew the First Called</div>
+<div class="col-12 text-center">October 26 2025</div>
 </div>
 
+<div class="row">
+<div class="col-12 text-center">November 30 2025</div>
+</div>
+
+<div class="row">
+<div class="col-12 text-center">December 28 2025</div>
+</div>
