@@ -22,7 +22,7 @@ lang: en
 </div>
 
 <div class="row">
-<div class="col-12 text-center">December 15 2024</div>
+<div class="col-12 text-center">December 22 2024</div>
 </div>
 
 <div class="row">
