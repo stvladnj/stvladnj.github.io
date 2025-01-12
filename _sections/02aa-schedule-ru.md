@@ -23,11 +23,7 @@ lang: ru
 </div>
 
 <div class="row">
-<div class="col-12 text-center">22 декабря 2024</div>
-</div>
-
-<div class="row">
-<div class="col-12 text-center">26 января 2025</div>
+<div class="col-12 text-center">2 февраля</div>
 </div>
 
 <div class="row">
