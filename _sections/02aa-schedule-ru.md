@@ -23,7 +23,7 @@ lang: ru
 </div>
 
 <div class="row">
-<div class="col-12 text-center">2 февраля</div>
+<div class="col-12 text-center">9 февраля</div>
 </div>
 
 <div class="row">
