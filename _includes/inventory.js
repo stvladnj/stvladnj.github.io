@@ -94,8 +94,9 @@ const candles = [
 ];
 
 
-const PROD_CLIENT_ID = 'ASaZpeX62K2Hc4JlCLt0qhusm0E4XBvBpVzAqrxzQKveDpa3nKTaHmrnP8bhi39SeP8NIpc3x4j1X2IW';
-const SANDBOX_CLIENT_ID = 'Abf-cRHoazo0I7rRJuvhv06P5rm3OyUN0u7t9hPpZe1l87q8-BCODsSTIbrgsvIUs1PJBou9_Rttn4F0';
+// const PROD_CLIENT_ID = 'ASaZpeX62K2Hc4JlCLt0qhusm0E4XBvBpVzAqrxzQKveDpa3nKTaHmrnP8bhi39SeP8NIpc3x4j1X2IW';
+// const SANDBOX_CLIENT_ID = 'Abf-cRHoazo0I7rRJuvhv06P5rm3OyUN0u7t9hPpZe1l87q8-BCODsSTIbrgsvIUs1PJBou9_Rttn4F0';
+const PROD_CLIENT_ID = 'AWV9x5m6r2j75RTdtOsl-dL7KJnmqNGKBbVCSfWUxuAC0hqGvnx7XraDYtmW0sU-uu-zpqIOfUlt_jSo'
 const paypalClientId =  PROD_CLIENT_ID;
 
 // PayPal shows this as a brand in checkout widget
