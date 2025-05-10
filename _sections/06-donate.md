@@ -20,7 +20,7 @@ Your donations support our projects and are greately appreciated.
 <div class="row">
 <div class="col-md-12 text-center">
   <form action="https://www.paypal.com/fundraiser/charity/4655967" method="get" target="_blank" rel="noopener">
-    <button type="submit" class="btn btn-primary">PayPal Giving Fund (preffered)</button>
+    <button type="submit" class="btn btn-primary">PayPal Giving Fund (preferred)</button>
   </form>
 </div>
 </div>
@@ -28,7 +28,7 @@ Your donations support our projects and are greately appreciated.
 <div class="row">
 <div class="col-md-12 text-center">
   <form action="https://www.venmo.com/u/StVladNJ" method="get" target="_blank" rel="noopener">
-    <button type="submit" class="btn btn-primary">Venmo (preffered)</button>
+    <button type="submit" class="btn btn-primary">Venmo (preferred)</button>
   </form>
 </div>
 </div>
