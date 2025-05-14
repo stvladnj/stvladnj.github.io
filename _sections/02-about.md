@@ -37,7 +37,7 @@ Twelve major Orthodox Feast Days are celebrated.
 
 Special feasts during the year:
 * **St. Vladimir's Day** - the last Sunday of July.
-  Last year our church feast day was on July 30th 2023.
+  Last year our church feast day was on July 30th.
   Festival at our church included Praying,
   and Blessing of Water. After servicees parishiners and guests could
   buy books, souveniers, and icons. Rusian music and food was surely there!
@@ -51,10 +51,10 @@ Special feasts during the year:
 * **Bliny Feast** - on Sunday before Great Lent starts.
   Crepes, fish, caviar, raffles, folk music and more!
   Please join us - its fun!
-  Laast year Bliny Feast will be on **Sunday, Feb 25th 2024**.
-  Please come next yera and help us raise funds for St. Vladimir Memorial Church. Everyone is Welcome!
+  Last year Bliny Feast was on **Sunday, Feb 25th 2024**.
+  Please come next year and help us raise funds for St. Vladimir Memorial Church. Everyone is Welcome!
   <!-- Come and check this page often - do not miss the opportunity next yer! -->
-* This year on **October 8-12** we are hosting the **32nd Annual Russian Orthodox Musicians’ Conference**! Every year, dozens of talented singers, choir directors and composers gather together to celebrate their love for Orthodox Church music. Lectures, workshops, and rehearsals will explore how liturgical music traditions of the past inform successive generations to maintain a vibrant contribution to liturgical life that is authentic without becoming static and stale. Please, support this event by [donation](#donate) and participation.
+* This year on **October 8-12 2025** we are hosting the **32nd Annual Russian Orthodox Musicians’ Conference**! Every year, dozens of talented singers, choir directors and composers gather together to celebrate their love for Orthodox Church music. Lectures, workshops, and rehearsals will explore how liturgical music traditions of the past inform successive generations to maintain a vibrant contribution to liturgical life that is authentic without becoming static and stale. Please, support this event by [donation](#donate) and participation.
 </div>
 </div>
 
