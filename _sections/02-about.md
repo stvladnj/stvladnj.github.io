@@ -36,7 +36,7 @@ Sisterhood makes luncheons every Sunday, following the Divine Liturgy.
 Twelve major Orthodox Feast Days are celebrated.
 
 Special feasts during the year:
-* St. Vladimir's Day - the last Sunday of July.
+* **St. Vladimir's Day** - the last Sunday of July.
   Last year our church feast day was on July 30th 2023.
   Festival at our church included Praying,
   and Blessing of Water. After servicees parishiners and guests could
@@ -48,14 +48,15 @@ Special feasts during the year:
   <!-- <b>Last year Cossacks from Philly set up a special "Cossack's Outpost", featuring
   the display of traditional cossack's armory, archery contests, a real warhorse, and more!</b>
   This year we are looking forward for another thrilling Cossack's Outpost! -->
-* Bliny Feast - on Sunday before Great Lent starts.
+
+* **Bliny Feast** - on Sunday before Great Lent starts.
   Crepes, fish, caviar, raffles, folk music and more!
   Please join us - its fun!
   Laast year Bliny Feast will be on **Sunday, Feb 25th 2024**.
   Please come next yera and help us raise funds for St. Vladimir Memorial Church. Everyone is Welcome!
   <!-- Come and check this page often - do not miss the opportunity next yer! -->
 
-* This year we are hosting the 32nd Annual Russian Orthodox Musicians’ Conference! Every year, dozens of talented singers, choir directors and composers gather together to celebrate their love for Orthodox Church music. And this year during October 8-12 this conference will come to St. Vladimir. Lectures, workshops, and rehearsals will explore how liturgical music traditions of the past inform successive generations to maintain a vibrant contribution to liturgical life that is authentic without becoming static and stale. Please, support this event by [donation](#donate) and
+* This year we are hosting the **32nd Annual Russian Orthodox Musicians’ Conference**! Every year, dozens of talented singers, choir directors and composers gather together to celebrate their love for Orthodox Church music. And this year during October 8-12 this conference will come to St. Vladimir. Lectures, workshops, and rehearsals will explore how liturgical music traditions of the past inform successive generations to maintain a vibrant contribution to liturgical life that is authentic without becoming static and stale. Please, support this event by [donation](#donate) and
 participation.
 
 </div>
