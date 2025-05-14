@@ -48,14 +48,12 @@ Special feasts during the year:
   <!-- <b>Last year Cossacks from Philly set up a special "Cossack's Outpost", featuring
   the display of traditional cossack's armory, archery contests, a real warhorse, and more!</b>
   This year we are looking forward for another thrilling Cossack's Outpost! -->
-
 * **Bliny Feast** - on Sunday before Great Lent starts.
   Crepes, fish, caviar, raffles, folk music and more!
   Please join us - its fun!
   Laast year Bliny Feast will be on **Sunday, Feb 25th 2024**.
   Please come next yera and help us raise funds for St. Vladimir Memorial Church. Everyone is Welcome!
   <!-- Come and check this page often - do not miss the opportunity next yer! -->
-
 * This year on October 8-12 we are hosting the **32nd Annual Russian Orthodox Musicians’ Conference**! Every year, dozens of talented singers, choir directors and composers gather together to celebrate their love for Orthodox Church music. Lectures, workshops, and rehearsals will explore how liturgical music traditions of the past inform successive generations to maintain a vibrant contribution to liturgical life that is authentic without becoming static and stale. Please, support this event by [donation](#donate) and
 participation.
 
