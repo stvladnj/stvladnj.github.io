@@ -13,7 +13,7 @@ lang: ru
 
 <div class="row">
 
-<div class="col-md-4 col-md-offset-2">
+<div class="col-md-4">
 <div class="contact-item">
 <i class="fa fa-envelope-o fa-2x"></i>
 <p><a href="mailto:info@stvladnj.org">info@stvladnj.org</a></p>
