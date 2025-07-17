@@ -58,7 +58,7 @@ lang: ru
 
 <div class="col-md-4">
 <div class="contact-item">
-<i class="fa fa-facebook fa-2x"></i>
+<i class="fa fa-instagram fa-2x"></i>
 <p><a href="{{ site.instagram }}" target="_blank" rel="noopener">instagram.com/stvladimirsnj</a></p>
 </div>
 </div>
