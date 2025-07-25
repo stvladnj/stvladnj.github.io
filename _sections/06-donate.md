@@ -13,7 +13,7 @@ lang: en
 Our church is a public charity, as recognised by IRS section 501(c)(3)
 (charity number 74-3224137). Donation could be tax-exempt (consult your tax adviser).
 <br>
-Your donations support our projects and are greately appreciated.
+Your donations support our projects and are greatly appreciated.
 </div>
 
 <div class="space"></div>
