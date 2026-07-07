@@ -14,9 +14,9 @@ cry_header:
   ru: "Внимание"
   en: "Attention"
 
-cry:
-  ru: "Изменения в расписании: служба св Иоанну Шинхайскому переносится на пятницу (3 июля 17:30 всенощная) и субботу (8:30 литкргия). В среду и четверг (1-2 июля) служб не будет."
-  en: "Schedule changes: service to St John of Shanghai is moved to Fri (July 3rd 5:30pm vespers) and Sat (July 4th 8:30 liturgy). No services this Wednesday, nor Thursday."
+# cry:
+#   ru: "Изменения в расписании: служба св Иоанну Шинхайскому переносится на пятницу (3 июля 17:30 всенощная) и субботу (8:30 литкргия). В среду и четверг (1-2 июля) служб не будет."
+#   en: "Schedule changes: service to St John of Shanghai is moved to Fri (July 3rd 5:30pm vespers) and Sat (July 4th 8:30 liturgy). No services this Wednesday, nor Thursday."
 
 facebook: https://facebook.com/stvladimirsnj
 email: info@stvladnj.org
