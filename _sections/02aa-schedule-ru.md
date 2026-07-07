@@ -55,7 +55,7 @@ lang: ru
 </div>
 
 <div class="row">
-<div class="col-12 text-center">23 августа 2023</div>
+<div class="col-12 text-center">23 августа 2026</div>
 </div>
 
 <div class="row">
