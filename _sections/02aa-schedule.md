@@ -46,7 +46,7 @@ lang: en
 </div>
 
 <div class="row">
-<div class="col-12 text-center">June 28 2025</div>
+<div class="col-12 text-center">June 28 2026</div>
 </div>
 
 <div class="row">
