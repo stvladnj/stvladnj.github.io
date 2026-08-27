@@ -296,11 +296,11 @@
 	font-size: 3em;
     position: fixed;
     top: 0;
-    left: 15px;
+    left: 0;
+    right: 0;
     z-index: 3000;
 	background-color: lightgray;
 	color: #555;
-    width: 100%;
 	text-align: center;
 	padding: 1em;
 }
