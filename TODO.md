@@ -233,3 +233,4 @@ Principle: `src/images/` is the only place images live, at the highest resolutio
 ## Estimate
 
 ~13 h of focused work; candle box (Svelte 3→5 + PayPal) is the only part with real uncertainty. The image phase is where the user‑visible speed comes from — 23 MB → ~0.5 MB.
+
