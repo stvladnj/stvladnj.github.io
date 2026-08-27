@@ -23,7 +23,6 @@ const year = new Date().getFullYear();
       <section
         id={s.data.anchor}
         class:list={['band', { parallax: !!s.data.parallax }]}
-        style={s.data.parallax && `--ar: ${(s.data.parallax.width / s.data.parallax.height).toFixed(4)}`}
       >
         {s.data.parallax && (
           <div class="bg">

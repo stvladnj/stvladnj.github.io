@@ -113,15 +113,15 @@ button, input, textarea { font: inherit; }
 .map { max-width: 800px; margin: 30px auto 0; aspect-ratio: 4 / 3; }
 .map iframe { width: 100%; height: 100%; border: 0; }
 
-/* Full-bleed photo sections. The photo is as tall as the viewport-cover height for its aspect
-   ratio (--ar, set from the image metadata) — i.e. never enlarged beyond a plain `cover` — and
-   slides by the difference between that and the section height while the section scrolls by.
-   So the lag is the maximum the screen affords at zero zoom: strong on wide desktops, gentle on
-   laptops, none on phones (where the section is taller than the cover height anyway).
+/* Full-bleed photo sections — the old jquery.parallax look, in CSS only.
+   The photo is viewport-sized (same crop as background-attachment: fixed + cover) and drifts at
+   (1 - --lag) x scroll speed while the section slides over it. Its position relative to the
+   section is -lag x (section's position in the viewport), which the section's view-timeline
+   gives us linearly. Height gets a small slack so tall sections (phones) never show a seam.
    Transform-only (compositor), works on iOS. Browsers without scroll-driven animations get a
    static cover image. Longhands only: lightningcss folds animation-timeline into the `animation`
    shorthand, which browsers reject. */
-.parallax { --ar: 1.5; isolation: isolate; overflow: hidden; padding: 140px 0; view-timeline-name: --section; }
+.parallax { --lag: .7; isolation: isolate; overflow: hidden; padding: 140px 0; view-timeline-name: --section; }
 .parallax > .bg { position: absolute; inset: 0; z-index: -2; }
 .parallax > .bg > img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; }
 .parallax::before { content: ""; position: absolute; inset: 0; z-index: -1; background: rgba(0, 0, 0, .3); }
@@ -132,10 +132,10 @@ button, input, textarea { font: inherit; }
       animation-name: parallax; animation-timing-function: linear; animation-fill-mode: both;
       animation-timeline: --section;
     }
-    .parallax > .bg > img { height: max(100%, calc(100vw / var(--ar))); }
+    .parallax > .bg > img { height: max(100vh, calc((1 - var(--lag)) * 100% + var(--lag) * 100vh)); }
     @keyframes parallax {
-      from { translate: 0 min(0px, calc(100% - 100vw / var(--ar))); }
-      to { translate: 0 0; }
+      from { translate: 0 calc(-1 * var(--lag) * 100vh); }
+      to { translate: 0 calc(var(--lag) * 100%); }
     }
   }
 }

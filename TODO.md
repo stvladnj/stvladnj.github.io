@@ -5,14 +5,20 @@
 > nav reveal + parallax animations active, candle box hydrates and computes totals, PayPal SDK loads,
 > initial transfer **543 KB** (was ~23 MB), zero console errors, only `<script>` is the island loader.
 >
-> **Not done / needs a human:**
+> **Staging (2026‑08‑27):** `staging` branch deploys to https://test.stvladnj.org via the
+> `stvladnj/website` bucket repo (deploy key + `STAGING_DEPLOY_KEY` secret). Verified live: noindex,
+> hreflang → test host, 1 script, /ru/, /admin/, /ponomar/, schedule.pdf all 200.
+>
+> **To go live:**
+> 1. Sandbox‑test the candle box on test.stvladnj.org (swap the client id in `src/data/inventory.js`, push to `staging`, buy, swap back).
+> 2. This repo → Settings → Pages → Source: **GitHub Actions** (before merging, or GitHub will try to Jekyll‑build `master`).
+> 3. `git checkout master && git merge --ff-only staging && git push`; watch the Actions run; check stvladnj.org and /ru/.
+> 4. Delete the `facelift-astro` branch. `staging` and `master` are the long‑lived branches from now on.
+>
+> **Not done:**
 > - Phase 0 reference screenshots: the live site's preloader never clears under headless Chrome, so
 >   parity was judged against the original CSS + manual visual review, not pixel diffs.
-> - GitHub → Settings → Pages → Source must be switched to **GitHub Actions** before merging to `master`.
-> - Real PayPal checkout was not exercised (only SDK load + order total). Test with the sandbox
->   client id in `src/data/inventory.ts` before going live.
 > - Lighthouse not run (no CLI here).
-> - Archiving the stale `stvladnj/website` repo.
 >
 > **Deviations from the plan:**
 > - Astro is 7.2.8 (not 5): Node ≥ 22.12, Sätteri markdown, strict HTML compiler. All content is `.mdx`
@@ -74,7 +80,7 @@ public/
   .nojekyll                 # belt and braces
 src/
   site.yaml                 # title/description/keywords/contacts/cry, per lang
-  content.config.ts         # collection schema
+  content.config.js         # collection schema
   content/sections/
     en/*.md  ru/*.md         # candles.mdx in each
   components/
@@ -96,7 +102,7 @@ src/
 
 ## Phase 3 — Content migration (2 h)
 
-- [x] `src/content.config.ts`: collection `sections`, glob loader over `src/content/sections/**/*.{md,mdx}`, schema `{ title, anchor, order: number, lang: 'en'|'ru', parallax?: string /* bg image */ }`. Derive `lang` from folder or keep in frontmatter — frontmatter, it's explicit.
+- [x] `src/content.config.js`: collection `sections`, glob loader over `src/content/sections/**/*.{md,mdx}`, schema `{ title, anchor, order: number, lang: 'en'|'ru', parallax?: string /* bg image */ }`. Derive `lang` from folder or keep in frontmatter — frontmatter, it's explicit.
 - [x] Copy each `_sections/*.md` to `src/content/sections/{en,ru}/<name>.md`; `order` from the old filename prefix (02aa=10, 02ab=20, 02=30, 02b=40, 04=50, 05=60, 06=70, 07=80).
 - [x] Strip kramdown‑isms: `{::options auto_ids="false"/}`, `markdown="1"` attributes, `{: .btn .btn-default}` IAL syntax → plain link, styled by the layout (or `<a class="btn">` if a button is really wanted).
 - [x] Replace Liquid `{{ site.phone }}` etc. — only in `contact.md`. Either hardcode (it's the contact section; that's where the phone number belongs) or make contact an `.mdx` and import `site`. Hardcode.
@@ -155,7 +161,7 @@ src/
 ## Phase 6 — Candle box island (2 h, riskiest)
 
 - [x] Move `online-candle-box/src/*.svelte` → `src/components/`. Delete `online-candle-box/` (rollup config, package.json, lockfile), `js/online-candle-box.js*`, `css/online-candle-box.css*`.
-- [x] `_includes/inventory.js` → `src/data/inventory.ts` (export `locations`, `candles`, `paypalClientId`, `brandName`, `thankYouMessage`). Leave the PayPal client id where it is (it's a public client id, not a secret).
+- [x] `_includes/inventory.js` → `src/data/inventory.js` (export `locations`, `candles`, `paypalClientId`, `brandName`, `thankYouMessage`). Leave the PayPal client id where it is (it's a public client id, not a secret).
 - [x] Svelte 3 → Svelte 5: components run in legacy mode, most Svelte 3 syntax still works. Watch for: `createEventDispatcher` (still works, deprecated), `$$props`, `<svelte:component>`, slot usage, `on:click` (works in legacy). Run `npx sv migrate svelte-5` only if something breaks.
 - [x] Check how PayPal SDK is loaded (`main.js` / `CandleBox.svelte`) — if it injects `<script src=paypal.com/sdk>` at runtime, keep; if it expected a global from `head.html`, move that into the component's `onMount`.
 - [x] `CandleBox.svelte` mounted with `client:visible` from `candles.mdx` in both languages, `lang` prop.
@@ -178,14 +184,14 @@ Principle: `src/images/` is the only place images live, at the highest resolutio
 - [x] Three delivery paths:
   1. **Templates** (`Cards.astro`, `Tiles.astro`): `import portrait from '../images/x.jpg'` → `<Picture src={portrait} widths={[400, 800]} formats={['webp']} sizes="(max-width: 600px) 90vw, 400px" alt=… />`. Astro writes `width`/`height` so nothing shifts while loading.
   2. **Markdown**: relative path `![alt](../../../images/x.jpg)` → optimized automatically. Authors never touch sizes.
-  3. **Svelte island**: `astro:assets` is unavailable inside `.svelte`, so in `candles.mdx` (or `Page.astro`) run `getImage({ src, widths: [200, 400], format: 'webp' })` for each `locations[].image` and `candles[].image`, and pass `{ src, srcSet: srcSet.attribute }` as props. Inventory in `src/data/inventory.ts` references images by `import`, not URL.
+  3. **Svelte island**: `astro:assets` is unavailable inside `.svelte`, so in `candles.mdx` (or `Page.astro`) run `getImage({ src, widths: [200, 400], format: 'webp' })` for each `locations[].image` and `candles[].image`, and pass `{ src, srcSet: srcSet.attribute }` as props. Inventory in `src/data/inventory.js` references images by `import`, not URL.
 - [x] Backgrounds: `srcset` does not exist for CSS backgrounds, so no CSS backgrounds — all three full‑bleed images are real `<Image>` elements positioned behind content with `object-fit: cover`.
   - Hero (`st-vlad.jpg`) is the LCP element → `<Image widths={[800, 1600]} sizes="100vw" fetchpriority="high" loading="eager" />`, `absolute; inset: 0; z-index: -1` inside `Hero.astro`. This is the single biggest perceived‑speed win.
   - Parallax sections (`front.jpg`, `inside.jpg`): same `<Image>` (lazy), inside `<section class="parallax">`; the CSS in Phase 4 animates it. The `parallax:` frontmatter field becomes an image import resolved in `Page.astro`.
 - [x] Widths to generate (phone / desktop): content images 400/800; hero & parallax 800/1600; candle box 200/400. Adjust after checking actual rendered sizes in devtools.
 - [x] Everything below the fold gets `loading="lazy"` (Astro's default for `<Image>`; hero overrides to eager).
 - [x] Check `dist/_astro/*.webp` sizes after build. Expected: hero ≈ 150 KB @1600w, candle icons ≈ 15 KB @400w, portraits ≈ 40 KB @800w.
-- [x] Editing workflow for the README: "drop the full‑res file in `src/images/`, reference it from Markdown or `inventory.ts`; the build handles the rest."
+- [x] Editing workflow for the README: "drop the full‑res file in `src/images/`, reference it from Markdown or `inventory.js`; the build handles the rest."
 - [x] Source library is ~35 MB in git; fine. If it grows past a few hundred MB, move to git‑lfs — not now.
 
 ## Phase 8 — Static assets & sub‑apps (½ h)

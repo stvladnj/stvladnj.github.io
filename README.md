@@ -15,6 +15,6 @@ npm run build    # -> dist/
 - **Schedule PDF**: replace `public/files/schedule.pdf`.
 - **Images**: drop the full‑resolution file in `src/images/` and reference it with a relative path (`![alt](../../../images/photo.jpg)`). The build generates WebP at the right sizes; never commit hand‑resized copies.
 - **Clergy**: `people:` list in `clergy.mdx` frontmatter.
-- **Candle box** inventory and prices: `src/data/inventory.ts`.
+- **Candle box** inventory and prices: `src/data/inventory.js`.
 
 `public/admin/` and `public/ponomar/` are separate prebuilt apps served as‑is.
