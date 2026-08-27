@@ -1,0 +1,29 @@
+---
+// Server-side wrapper: optimizes inventory images, then hands plain URLs to the Svelte island.
+import { getImage } from 'astro:assets';
+import CandleBox from './candlebox/CandleBox.svelte';
+import { locations, candles, paypalClientId, brandName, thankYouMessage } from '../data/inventory';
+import noteRed from '../images/note-red.png';
+import noteBlack from '../images/note-black.png';
+
+const { lang } = Astro.props;
+
+const responsive = async (src, widths, sizes) => {
+  const img = await getImage({ src, width: widths[widths.length - 1], widths, sizes, format: 'webp', layout: 'none' });
+  return { src: img.src, srcset: img.srcSet.attribute, sizes };
+};
+const single = async (src) => (await getImage({ src, format: 'webp', layout: 'none' })).src;
+
+const props = {
+  lang,
+  locations: await Promise.all(
+    locations.map(async (l) => ({ ...l, image: await responsive(l.image, [360, 720], '(max-width: 700px) 90vw, 360px') })),
+  ),
+  candles: await Promise.all(candles.map(async (c) => ({ ...c, image: await single(c.image) }))),
+  noteImages: { living: await single(noteRed), deceased: await single(noteBlack) },
+  paypalClientId,
+  brandName,
+  thankYouMessage,
+};
+---
+<CandleBox client:visible {...props} />

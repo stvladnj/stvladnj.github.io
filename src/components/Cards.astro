@@ -1,0 +1,13 @@
+---
+import { Image } from 'astro:assets';
+const { people } = Astro.props;
+---
+<div class="cards">
+  {people.map((p) => (
+    <div class="card">
+      <Image src={p.img} alt={p.name} width={200} height={200} widths={[200, 400]} sizes="200px" />
+      <h3>{p.role}</h3>
+      <p>{p.name}</p>
+    </div>
+  ))}
+</div>

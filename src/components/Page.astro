@@ -1,0 +1,37 @@
+---
+import { getCollection, render } from 'astro:content';
+import { Image } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import Nav from './Nav.astro';
+import Hero from './Hero.astro';
+import Cards from './Cards.astro';
+import site from '../site';
+
+const { lang } = Astro.props;
+const sections = (await getCollection('sections', (s) => s.id.startsWith(lang + '/'))).sort(
+  (a, b) => a.data.order - b.data.order,
+);
+const rendered = await Promise.all(sections.map((s) => render(s)));
+const year = new Date().getFullYear();
+---
+<Base {lang}>
+  <Nav {lang} items={sections.map((s) => ({ href: '#' + s.data.anchor, title: s.data.title }))} />
+  <Hero {lang} />
+  {sections.map((s, i) => {
+    const { Content } = rendered[i];
+    return (
+      <section id={s.data.anchor} class:list={['band', { parallax: !!s.data.parallax }]}>
+        {s.data.parallax && <Image src={s.data.parallax} alt="" width={1600} widths={[800, 1600]} sizes="100vw" layout="none" />}
+        <div class="container">
+          <Content />
+          {s.data.people && <Cards people={s.data.people} />}
+        </div>
+      </section>
+    );
+  })}
+  <footer>
+    <div class="container">
+      <p>&copy; 2017–{year} {site.title[lang]}. Template by <a href="http://www.templatewire.com" rel="nofollow">TemplateWire</a>.</p>
+    </div>
+  </footer>
+</Base>

@@ -1,9 +1,4 @@
-_site/
-.sass-cache/
-.jekyll-metadata
-.jekyll-cache
-.DS_Store
 node_modules/
-Gemfile
-Gemfile.lock
-
+dist/
+.astro/
+.DS_Store

@@ -1,0 +1,133 @@
+/* Replaces Bootstrap 3 + the Modus template theme. Same look, ~150 lines. */
+:root {
+  --accent: #e75926;
+  --accent-dark: #a13e1a;
+  --btn: #cf5022;
+  --blue: #337ab7;
+  --text: #777;
+  --heading: #555;
+  --band: #f6f6f6;
+  --dark: #333;
+  --link: #754747;
+  --link-hover: #f4d03f;
+  --nav-h: 50px;
+}
+
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text);
+  background: #fff;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3, h4 { color: var(--heading); line-height: 1.2; margin: 10px 0; }
+h2 { text-transform: uppercase; font-weight: 600; font-size: 30px; margin: 0 0 30px; }
+h3 { font-size: 16px; font-weight: 700; }
+h4 { font-size: 18px; font-weight: 500; }
+p { margin: 0 0 10px; }
+a { color: var(--link); text-decoration: none; }
+a:hover, a:focus { color: var(--link-hover); }
+img { max-width: 100%; height: auto; }
+hr { height: 4px; width: 70px; background: var(--accent); border: 0; margin: 0 auto 30px; }
+ul, ol { list-style: none; padding: 0; margin: 0 0 10px; }
+b, strong { font-weight: 700; }
+.container { max-width: 1170px; margin-inline: auto; padding-inline: 15px; }
+.icon > svg { width: 1em; height: 1em; vertical-align: -0.125em; }
+
+/* ---- nav ---- */
+.nav {
+  position: fixed; inset: 0 0 auto 0; z-index: 100;
+  background: var(--dark);
+  text-transform: uppercase; letter-spacing: 1px;
+}
+.nav .container { display: flex; flex-wrap: wrap; align-items: center; min-height: var(--nav-h); }
+.nav a { display: block; padding: 15px; color: #fff; transition: color .3s; }
+.nav a:hover, .nav a:focus { color: var(--accent); }
+.brand { display: flex; align-items: center; gap: .4em; margin-right: auto; font-weight: 600; font-size: 18px; }
+.brand .icon { color: var(--accent); }
+.menu { display: flex; margin: 0; }
+.menu-toggle { display: none; }
+.menu-btn { display: none; padding: 10px; font-size: 22px; color: #eee; cursor: pointer; }
+@media (max-width: 767px) {
+  .menu-btn { display: block; }
+  .menu { display: none; flex-direction: column; width: 100%; }
+  .menu-toggle:checked ~ .menu { display: flex; }
+}
+/* Desktop: nav appears once the hero is scrolled past. Pure CSS; browsers without
+   scroll-driven animations just show it always. */
+@media (min-width: 768px) and (prefers-reduced-motion: no-preference) {
+  .nav {
+    animation-name: nav-reveal; animation-timing-function: linear; animation-fill-mode: both;
+    animation-timeline: scroll(); animation-range: 200px 500px;
+  }
+}
+@keyframes nav-reveal {
+  from { opacity: 0; visibility: hidden; }
+  to { opacity: 1; visibility: visible; }
+}
+
+/* ---- hero ---- */
+.hero {
+  position: relative; isolation: isolate;
+  display: flex; align-items: center; justify-content: center;
+  min-height: 100vh; min-height: 100svh;
+  padding: 100px 15px;
+  background: #000; color: #fff; text-align: center;
+  overflow: hidden;
+}
+.hero > img { position: absolute; inset: 0; z-index: -1; width: 100%; height: 100%; object-fit: cover; filter: brightness(.7); }
+.cry { max-width: 900px; padding: 20px; background: rgba(0, 0, 0, .25); }
+.cry h1 { font-size: 76px; font-weight: 700; text-transform: uppercase; color: rgba(255, 255, 255, .8); }
+.cry p { font-size: 18px; letter-spacing: 1px; color: rgba(255, 255, 255, .9); }
+@media (max-width: 640px) { .cry h1 { font-size: 3em; } }
+
+/* ---- sections ---- */
+.band { position: relative; padding: 70px 0; background: var(--band); text-align: center; scroll-margin-top: var(--nav-h); }
+.cols { display: grid; grid-template-columns: repeat(var(--cols, 3), 1fr); gap: 30px; text-align: left; }
+.cols-4 { --cols: 4; }
+@media (max-width: 991px) { .cols { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 767px) { .cols { grid-template-columns: 1fr; } }
+.tiles { text-align: center; }
+.tile { padding: 20px 10px; }
+.tile .icon { display: block; margin-bottom: 10px; font-size: 28px; color: var(--accent); }
+.cards { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; }
+.card { width: 300px; padding: 9px; }
+.card img { width: 200px; height: 200px; object-fit: cover; }
+.checklist li { margin-bottom: 3px; font-size: 13px; }
+.checklist li::before { content: "✓"; padding-right: 10px; font-weight: 600; color: var(--accent); }
+.dates li { padding: 4px 0; }
+.btn {
+  display: inline-block; margin: 8px; padding: 12px 24px;
+  font-size: 18px; color: #f6f6f6; background: var(--btn);
+  border: 0; border-radius: 4px; transition: background .5s;
+}
+.btn:hover, .btn:focus { color: #f6f6f6; background: var(--accent-dark); }
+.btn-blue { background: var(--blue); }
+.btn-blue:hover, .btn-blue:focus { background: #286090; }
+.map { max-width: 800px; margin: 30px auto 0; aspect-ratio: 4 / 3; }
+.map iframe { width: 100%; height: 100%; border: 0; }
+
+/* Full-bleed photo sections. Parallax is a scroll-driven animation; without support
+   the photo just sits still (which is what iOS did with the old jQuery version anyway). */
+.parallax { isolation: isolate; overflow: hidden; padding: 140px 0; }
+.parallax > img {
+  position: absolute; inset: -20% 0; z-index: -1;
+  width: 100%; height: 140%; object-fit: cover; filter: brightness(.7);
+  animation-name: parallax; animation-timing-function: linear; animation-fill-mode: both;
+  animation-timeline: view();
+}
+@keyframes parallax { from { translate: 0 -12%; } to { translate: 0 12%; } }
+@media (prefers-reduced-motion: reduce) { .parallax > img { animation-name: none; } }
+.parallax h2, .parallax h3 { color: #f6f6f6; }
+.parallax h3 { font-size: 20px; font-weight: 600; }
+.parallax p, .parallax .tile { color: rgba(255, 255, 255, .8); }
+.parallax a:not(.btn) { color: rgba(255, 255, 255, .8); text-decoration: underline; }
+.parallax .tile .icon { font-size: 36px; }
+
+/* ---- footer ---- */
+footer { padding: 20px 0; background: var(--dark); color: #777; font-size: 13px; text-align: center; }
+footer a { color: #999; }
+footer a:hover { color: var(--accent); }

@@ -1,0 +1,9 @@
+---
+import Icon from './Icon.astro';
+const { icon, title } = Astro.props;
+---
+<div class="tile">
+  <Icon name={icon} />
+  {title && <h3>{title}</h3>}
+  <slot />
+</div>

@@ -1,0 +1,15 @@
+---
+import { Image } from 'astro:assets';
+import hero from '../images/st-vlad.jpg';
+import site from '../site';
+const { lang } = Astro.props;
+---
+<a id="top" class="hero" href="#about" aria-label={site.title[lang]}>
+  <Image src={hero} alt="" widths={[640, 1024]} sizes="100vw" layout="none" loading="eager" fetchpriority="high" />
+  {site.cry?.[lang] && (
+    <div class="cry">
+      <h1>{site.cryHeader[lang]}</h1>
+      <p>{site.cry[lang]}</p>
+    </div>
+  )}
+</a>

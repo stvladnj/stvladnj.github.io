@@ -1,0 +1,16 @@
+{
+  "name": "stvladnj",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "@astrojs/mdx": "^7.0.8",
+    "@astrojs/svelte": "^9.0.1",
+    "astro": "^7.2.8",
+    "svelte": "^5.56.10"
+  }
+}

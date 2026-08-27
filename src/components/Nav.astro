@@ -1,0 +1,18 @@
+---
+import Icon from './Icon.astro';
+import site from '../site';
+const { lang, items } = Astro.props;
+const other = lang === 'en' ? { href: '/ru/#about', label: 'RU' } : { href: '/#about', label: 'EN' };
+---
+<nav class="nav">
+  <div class="container">
+    <a class="brand" href="#top"><Icon name="flame" /><span>{site.brand[lang]}</span></a>
+    <!-- ponytail: checkbox toggle for the mobile menu; no JS -->
+    <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+    <label for="menu-toggle" class="menu-btn" aria-label="Menu"><Icon name="menu" /></label>
+    <ul class="menu">
+      {items.map((i) => <li><a href={i.href}>{i.title}</a></li>)}
+      <li><a href={other.href}>{other.label}</a></li>
+    </ul>
+  </div>
+</nav>
