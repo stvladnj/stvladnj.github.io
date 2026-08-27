@@ -13,6 +13,7 @@
   --nav-h: 50px;
 }
 
+*, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
   margin: 0;
