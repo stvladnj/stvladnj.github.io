@@ -5,6 +5,7 @@ import centerIcon from '../images/center_icon.png';
 import stVladimir from '../images/st_vladimir.png';
 import commTable from '../images/comm_table.png';
 import quickToHear from '../images/quick-to-hear.png';
+import kievSobor from '../images/kiev-sobor.png';
 import candleLarge from '../images/candle_large.png';
 import candleMedium from '../images/candle_medium.png';
 
@@ -14,6 +15,7 @@ export const locations = [
   { id: 'icon_center', description: { en: 'Festal Icon in the Center', ru: 'У центральной иконы' }, image: centerIcon },
   { id: 'icon_vladimir', description: { en: 'Icon of St. Vladimir', ru: 'У иконы св. Владимира' }, image: stVladimir },
   { id: 'icon_cross', description: { en: 'Commemoration Table', ru: 'На поминальный столик' }, image: commTable },
+  { id: 'icon_kiev_sobor', description: { en: 'Saints of Kyiv-Pechersk', ru: 'Собор святых Киево-Печерских' }, image: kievSobor },
   { id: 'icon_quick_to_hear', description: { en: 'Mother of God "Quick to Hear"', ru: 'Скоропослушница' }, image: quickToHear },
 ];
 
