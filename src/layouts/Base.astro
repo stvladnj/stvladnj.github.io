@@ -2,6 +2,8 @@
 import '../styles/global.css';
 import site from '../site';
 const { lang } = Astro.props;
+const siteUrl = Astro.site;
+const production = siteUrl?.hostname === 'stvladnj.org';
 ---
 <!doctype html>
 <html lang={lang}>
@@ -12,8 +14,9 @@ const { lang } = Astro.props;
     <meta name="keywords" content={site.keywords[lang]} />
     <title>{site.title[lang]}</title>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="alternate" hreflang="en" href="https://stvladnj.org/" />
-    <link rel="alternate" hreflang="ru" href="https://stvladnj.org/ru/" />
+    <link rel="alternate" hreflang="en" href={new URL('/', siteUrl)} />
+    <link rel="alternate" hreflang="ru" href={new URL('/ru/', siteUrl)} />
+    {!production && <meta name="robots" content="noindex" />}
   </head>
   <body>
     <slot />

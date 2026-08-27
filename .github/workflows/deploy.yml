@@ -1,8 +1,12 @@
-name: Deploy to GitHub Pages
+# master  -> production  https://stvladnj.org       (this repo's GitHub Pages, source = GitHub Actions)
+# staging -> test site   https://test.stvladnj.org  (built here, pushed to the stvladnj/website repo,
+#                                                    which only exists to serve that domain)
+# Promote staging to production with: git checkout master && git merge --ff-only staging && git push
+name: Deploy
 
 on:
   push:
-    branches: [master]
+    branches: [master, staging]
   workflow_dispatch:
 
 permissions:
@@ -10,21 +14,45 @@ permissions:
   pages: write
   id-token: write
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: withastro/action@v3
-        with:
-          node-version: 22
+concurrency:
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: true
 
-  deploy:
-    needs: build
+jobs:
+  production:
+    if: github.ref == 'refs/heads/master'
     runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
+      - uses: actions/checkout@v4
+      - uses: withastro/action@v3
+        with:
+          node-version: 22
+        env:
+          SITE_URL: https://stvladnj.org
       - id: deployment
         uses: actions/deploy-pages@v4
+
+  staging:
+    if: github.ref == 'refs/heads/staging'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+        env:
+          SITE_URL: https://test.stvladnj.org
+      - run: echo test.stvladnj.org > dist/CNAME
+      - uses: peaceiris/actions-gh-pages@v4
+        with:
+          deploy_key: ${{ secrets.STAGING_DEPLOY_KEY }}   # private key; public half is a write deploy key on stvladnj/website
+          external_repository: stvladnj/website
+          publish_branch: gh-pages                        # must match that repo's Pages source branch
+          publish_dir: ./dist
+          force_orphan: true                              # keep the bucket repo's history at one commit
