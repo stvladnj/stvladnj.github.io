@@ -72,6 +72,7 @@
 	width: 100%;
 }
 .icon > img {
+	display: block;
 	width: 100%;
 }
 .buttons {
