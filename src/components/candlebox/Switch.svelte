@@ -19,7 +19,10 @@
   }
 
   .label {
-    font-size: 1.5rem;
+    font-size: 15px;
+    font-weight: 700;
+    padding: .2em .6em .3em;
+    line-height: 1;
   }
 
   .slider {

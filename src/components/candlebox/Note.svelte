@@ -81,10 +81,10 @@
 		margin-left: 20%;
 	}
 	.number-of-names {
-		margin-left: 2rem;
+		margin-left: 20px;
 		font-weight: bold;
 	}
 	.note > textarea {
-		font-size: 2rem;
+		font-size: 20px;
 	}
 </style>

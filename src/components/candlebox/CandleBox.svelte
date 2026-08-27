@@ -236,7 +236,7 @@
 	left: 0;
 	width:100%;
 	z-index: 2000;
-	line-height: 2rem;
+	line-height: 20px;
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
@@ -280,17 +280,17 @@
 }
 .amount {
 	flex-grow: 1;
-	font-size: 3rem;
+	font-size: 30px;
 	font-weight: bolder;
-	line-height: 3rem;
+	line-height: 30px;
 	color: lightgray;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 }
 .number {
-	margin-left: 1rem;
-	margin-right: 1rem;
+	margin-left: 10px;
+	margin-right: 10px;
 }
 .thanks {
 	font-size: 3em;

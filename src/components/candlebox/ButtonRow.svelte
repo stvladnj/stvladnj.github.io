@@ -53,14 +53,14 @@
 }
 .button-title {
 	flex-grow: 1;
-	line-height: 2.5rem;
-    font-size: 1.75rem;
+	line-height: 30px;
+    font-size: 20px;
     margin-top: auto;
     margin-bottom: auto;
 }
 .quantity {
     display: inline-block;
     width: 1ch;
-	font-size: 1.75rem;
+	font-size: 20px;
 }
 </style>

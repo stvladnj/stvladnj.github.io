@@ -83,7 +83,7 @@
 }
 .button-title {
 	text-align: center;
-	font-size: 1.5rem;
+	font-size: 20px;
 	line-height: 1.2;
 	font-weight: bold;
 	color: lightyellow;
