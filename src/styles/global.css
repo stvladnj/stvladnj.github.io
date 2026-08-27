@@ -58,9 +58,9 @@ button, input, textarea { font: inherit; }
   .menu { display: none; flex-direction: column; width: 100%; }
   .menu-toggle:checked ~ .menu { display: flex; }
 }
-/* Desktop: nav appears once the hero is scrolled past. Pure CSS; browsers without
-   scroll-driven animations just show it always. */
-@media (min-width: 768px) and (prefers-reduced-motion: no-preference) {
+/* Nav appears once the hero is scrolled past (like the original). Pure CSS; browsers
+   without scroll-driven animations just show it always. */
+@media (prefers-reduced-motion: no-preference) {
   .nav {
     animation-name: nav-reveal; animation-timing-function: linear; animation-fill-mode: both;
     animation-timeline: scroll(); animation-range: 200px 500px;
