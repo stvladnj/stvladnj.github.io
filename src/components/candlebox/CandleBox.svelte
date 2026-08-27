@@ -264,19 +264,24 @@
 	background: #d9534f;
 	cursor: pointer;
 }
+/* Flexbox, not grid, so a short last row (e.g. 7 locations -> 3/3/1) centres itself. */
 .grid {
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
 	gap: 1rem;
 	margin-bottom: 1rem;
 	text-align: left;
 }
-.notes {
-	grid-template-columns: repeat(2, minmax(0, 360px));
-	justify-content: center;
+.grid > :global(.icon) {
+	flex: 0 1 calc((100% - 2rem) / 3);  /* one of 3 columns, the two 1rem gaps removed */
+}
+.notes > :global(.note) {
+	flex-basis: 360px;
 }
 @media (max-width: 767px) {
-	.grid, .notes { grid-template-columns: 1fr; }
+	.grid > :global(.icon),
+	.notes > :global(.note) { flex-basis: 100%; }
 }
 .amount {
 	flex-grow: 1;
