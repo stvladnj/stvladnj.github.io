@@ -21,7 +21,7 @@ const year = new Date().getFullYear();
     const { Content } = rendered[i];
     return (
       <section id={s.data.anchor} class:list={['band', { parallax: !!s.data.parallax }]}>
-        {s.data.parallax && <Image src={s.data.parallax} alt="" width={1600} widths={[800, 1600]} sizes="100vw" layout="none" />}
+        {s.data.parallax && <Image src={s.data.parallax} alt="" width={1600} widths={[800, 1600]} sizes="100vw" quality={90} layout="none" />}
         <div class="container">
           <Content />
           {s.data.people && <Cards people={s.data.people} />}
