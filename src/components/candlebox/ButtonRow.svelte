@@ -30,26 +30,31 @@
 <style>
 .button-row {
 	width: 100%;
+	height: 25%;
 	color: lightyellow;
 	text-align: center;
 	display: flex;
 	flex-direction: row;
 	flex-wrap: nowrap;
 }
+/* Original look: style.css .btn-default (orange) + the scoped .button-circle rules */
 .button-circle {
     height: 38px;
     width: 38px;
-    border: 1px solid #ccc;
-    background: #fff;
-    cursor: pointer;
-    line-height: 1;
-    margin-top: auto;
-    margin-bottom: auto;
+    margin: auto 8px;
+    padding: 0;
     font-size: 18px;
-	padding: 0 12px;
-	border-radius: 50%;
-	font-weight: bold;
-	color: #333;
+    line-height: 1;
+    border: 0;
+    border-radius: 50%;
+    font-weight: bold;
+    color: lightyellow;
+    background: #cf5022;
+    cursor: pointer;
+    transition: background .5s;
+}
+.button-circle:hover, .button-circle:focus {
+    background: #a13e1a;
 }
 .button-title {
 	flex-grow: 1;

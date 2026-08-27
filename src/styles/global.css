@@ -47,7 +47,7 @@ button, input, textarea { font: inherit; }
 .nav .container { display: flex; flex-wrap: wrap; align-items: center; min-height: var(--nav-h); }
 .nav a { display: block; padding: 15px; line-height: 20px; color: #fff; transition: color .3s; }
 .nav a:hover, .nav a:focus { color: var(--accent); }
-.brand { display: flex; align-items: center; gap: .4em; margin-right: auto; font-weight: 600; font-size: 18px; }
+.nav .brand { display: flex; align-items: center; gap: 5px; margin-right: auto; font-weight: 600; font-size: 18px; } /* 5px ≈ the original &nbsp; */
 .brand .icon { color: var(--accent); }
 .menu { display: flex; margin: 0; }
 .menu-toggle { display: none; }

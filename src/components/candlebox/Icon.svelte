@@ -78,16 +78,19 @@
 	position: absolute;
 	bottom: 0;
 	width: 100%;
-	padding: .5rem 0;
+	height: 30%;
 	background-color: #0008;
 }
 .button-title {
 	text-align: center;
 	font-size: 20px;
-	line-height: 1.2;
 	font-weight: bold;
 	color: lightyellow;
-	padding: 0 .5rem .25rem;
+	height: 25%;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	padding: 0 .5rem;
 }
 .candle {
 	position: absolute;
