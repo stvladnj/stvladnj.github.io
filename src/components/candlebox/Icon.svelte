@@ -48,7 +48,7 @@
 	}
 </script>
 <div class="icon">
-	<img src={src.src} srcset={src.srcset} sizes={src.sizes} loading="lazy" decoding="async" alt="">
+	<img src={src.src} srcset={src.srcset} sizes={src.sizes} width={src.width} height={src.height} loading="lazy" decoding="async" alt="">
 
 	{#each getCandles(order) as candle (candle.key)}
 		<div transition:fly={{y:120, duration:600}} class="candle" style="left: {candle.pos}%; height: {candle.height};">

@@ -45,7 +45,7 @@ button, input, textarea { font: inherit; }
   text-transform: uppercase; letter-spacing: 1px;
 }
 .nav .container { display: flex; flex-wrap: wrap; align-items: center; min-height: var(--nav-h); }
-.nav a { display: block; padding: 15px; color: #fff; transition: color .3s; }
+.nav a { display: block; padding: 15px; line-height: 20px; color: #fff; transition: color .3s; }
 .nav a:hover, .nav a:focus { color: var(--accent); }
 .brand { display: flex; align-items: center; gap: .4em; margin-right: auto; font-weight: 600; font-size: 18px; }
 .brand .icon { color: var(--accent); }
@@ -111,17 +111,22 @@ button, input, textarea { font: inherit; }
 .map { max-width: 800px; margin: 30px auto 0; aspect-ratio: 4 / 3; }
 .map iframe { width: 100%; height: 100%; border: 0; }
 
-/* Full-bleed photo sections. Parallax is a scroll-driven animation; without support
-   the photo just sits still (which is what iOS did with the old jQuery version anyway). */
-.parallax { isolation: isolate; overflow: hidden; padding: 140px 0; }
-.parallax > img {
-  position: absolute; inset: -20% 0; z-index: -1;
-  width: 100%; height: 140%; object-fit: cover; filter: brightness(.7);
-  animation-name: parallax; animation-timing-function: linear; animation-fill-mode: both;
-  animation-timeline: view();
+/* Full-bleed photo sections. The photo is pinned to the viewport while the section slides over
+   it — same look as background-attachment: fixed, but via a scroll-driven animation so it also
+   works on iOS. Browsers without support get a plain cover image. Longhands only: lightningcss
+   folds animation-timeline into the `animation` shorthand, which browsers reject. */
+.parallax { isolation: isolate; overflow: hidden; padding: 140px 0; view-timeline-name: --section; }
+.parallax > img { position: absolute; inset: 0; z-index: -1; width: 100%; height: 100%; object-fit: cover; filter: brightness(.7); }
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .parallax > img {
+      bottom: auto; height: 100vh;
+      animation-name: parallax; animation-timing-function: linear; animation-fill-mode: both;
+      animation-timeline: --section;
+    }
+    @keyframes parallax { from { top: -100vh; } to { top: 100%; } }
+  }
 }
-@keyframes parallax { from { translate: 0 -12%; } to { translate: 0 12%; } }
-@media (prefers-reduced-motion: reduce) { .parallax > img { animation-name: none; } }
 .parallax h2, .parallax h3 { color: #f6f6f6; }
 .parallax h3 { font-size: 20px; font-weight: 600; }
 .parallax p, .parallax .tile { color: rgba(255, 255, 255, .8); }

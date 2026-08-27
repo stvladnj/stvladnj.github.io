@@ -10,7 +10,7 @@ const { lang } = Astro.props;
 
 const responsive = async (src, widths, sizes) => {
   const img = await getImage({ src, width: widths[widths.length - 1], widths, sizes, format: 'webp', layout: 'none' });
-  return { src: img.src, srcset: img.srcSet.attribute, sizes };
+  return { src: img.src, srcset: img.srcSet.attribute, sizes, width: img.attributes.width, height: img.attributes.height };
 };
 const single = async (src) => (await getImage({ src, format: 'webp', layout: 'none' })).src;
 
