@@ -1,6 +1,8 @@
 # Migration plan: Jekyll → Astro (no Bootstrap, no Tailwind, no jQuery)
 
-> **Status (2026‑08‑27, branch `facelift-astro`): implemented.** Checked items below are done.
+> **Status: shipped.** The Astro rebuild is live on `master` → https://stvladnj.org and
+> `staging` → https://test.stvladnj.org. `facelift-astro` was merged and deleted; `staging`
+> and `master` are the long‑lived branches. Every phase below is done — kept as a record.
 > Verified with headless Chrome against `astro preview`: both languages render, mobile menu works,
 > nav reveal + parallax animations active, candle box hydrates and computes totals, PayPal SDK loads,
 > initial transfer **543 KB** (was ~23 MB), zero console errors, only `<script>` is the island loader.
@@ -9,11 +11,11 @@
 > `stvladnj/website` bucket repo (deploy key + `STAGING_DEPLOY_KEY` secret). Verified live: noindex,
 > hreflang → test host, 1 script, /ru/, /admin/, /ponomar/, schedule.pdf all 200.
 >
-> **To go live:**
-> 1. Sandbox‑test the candle box on test.stvladnj.org (swap the client id in `src/data/inventory.js`, push to `staging`, buy, swap back).
-> 2. This repo → Settings → Pages → Source: **GitHub Actions** (before merging, or GitHub will try to Jekyll‑build `master`).
-> 3. `git checkout master && git merge --ff-only staging && git push`; watch the Actions run; check stvladnj.org and /ru/.
-> 4. Delete the `facelift-astro` branch. `staging` and `master` are the long‑lived branches from now on.
+> **Went live 2026‑08‑27** — Pages source switched to GitHub Actions, `staging` ff‑merged to
+> `master`, `facelift-astro` deleted. Still open:
+> - Sandbox‑test the candle box end‑to‑end on test.stvladnj.org: swap the client id in
+>   `src/data/inventory.js` for the PayPal sandbox id, push to `staging`, run a purchase in
+>   both languages, then swap back.
 >
 > **Not done:**
 > - Phase 0 reference screenshots: the live site's preloader never clears under headless Chrome, so
@@ -28,8 +30,9 @@
 > - Lightningcss folds `animation-timeline` into the `animation` shorthand (which browsers reject) — all
 >   scroll‑driven animations use longhand properties only. Keep it that way.
 > - Donate buttons keep the original Bootstrap‑blue look via a 2‑line `.btn-blue` class.
-> - Unreferenced template leftovers (`about.jpg`, `intro-bg.jpg`, `services-bg.jpg`, `testimonials-bg.jpg`,
->   `chemodakov2.jpg`, etc.) were left in `src/images/`; delete at will.
+> - Unreferenced template leftovers in `src/images/` (`portfolio/`, `prettyPhoto/`, `team/`, and
+>   ~14 orphan photos — `about.jpg`, `intro-bg.jpg`, `services-bg.jpg`, `chemodakov2.jpg`, …):
+>   **deleted 2026‑08‑27**, ~9.6 MB.
 
 Goal: same site, same look, new bones. Content as plain Markdown, one build step
 (`astro build`), zero client JS except opt‑in islands, no CSS/JS frameworks.
@@ -219,7 +222,8 @@ Principle: `src/images/` is the only place images live, at the highest resolutio
 - [x] All nav anchors scroll to the right section; RU↔EN switch lands on the same section.
 - [x] Mobile menu opens/closes with keyboard.
 - [x] Merge `astro` → `master`; watch the Actions run; confirm `https://stvladnj.org` and `/ru`.
-- [x] Delete stale `stvladnj/website` repo, or archive it, so it stops being mistaken for the live one.
+- [x] ~~Delete stale `stvladnj/website` repo~~ — instead **repurposed** as the `staging` deploy
+  bucket (see the Staging note at the top); it now serves `test.stvladnj.org` and is expected to exist.
 
 ---
 
@@ -233,4 +237,65 @@ Principle: `src/images/` is the only place images live, at the highest resolutio
 ## Estimate
 
 ~13 h of focused work; candle box (Svelte 3→5 + PayPal) is the only part with real uncertainty. The image phase is where the user‑visible speed comes from — 23 MB → ~0.5 MB.
+
+---
+
+## Content proofreading (reviewed 2026‑08‑27)
+
+Full pass over `src/content/sections/**/*.mdx`. Not yet applied — awaiting sign‑off.
+Note: the RU text is modern orthography with occasional Church Slavonic word‑forms
+(`объядению`, `действами`, `субботным`, `заграницей` solid in the Church's name) —
+those are deliberate, leave them.
+
+### English — clear errors
+
+- `en/parish.mdx:16` — "time spent **beatifying** the church" → **beautifying** (beatify = declare blessed)
+- `en/donate.mdx:12` — "Donation could be **tax‑exempt**" → "Your donation **may be tax‑deductible**" (the org is tax‑exempt; a donation is tax‑deductible)
+- `en/clergy.mdx:17` — word order: "Church Rector is Metropolitan of Eastern America & New York Nicholas (OLHOVSKY)" → "The Rector is Metropolitan Nicholas (Olhovsky) of Eastern America and New York, First Hierarch of ROCOR."
+- `en/confessions.mdx:28–29` — fragment with no verb ("Your self‑love, your pride, covetousness… the mighty of the world to the point of oblivion of God?") → "Do we not serve our self‑love, our pride, greed, gluttony, drunkenness, the powerful of this world — to the point of forgetting God?"
+- `en/confessions.mdx:36–37` — reversed sense vs RU: "contempt **and respect** for piety; **modesty** to appear to be a Christian" → "contempt and **disrespect** for piety; **being ashamed** to appear a Christian"
+- `en/confessions.mdx:62–63` — "**slander and slander** against others" (dup) → first is "malicious talk"
+- `en/confessions.mdx:75` — "obscene objects**. and** their enjoyment." (period + lowercase) → "obscene objects and taking pleasure in them."
+- `en/confessions.mdx:86` — "slander, **gossip**, ridicule, flattery, **gossip**, condemnation" → second "gossip" is "backbiting"
+
+### English — style / minor
+
+- `en/about.mdx:23` — "1000 year anniversary" → "1000‑year anniversary" (or "millennium of the Baptism of Rus'")
+- `en/about.mdx:20` — "in the jurisdiction of **Russian Orthodox Church** Outside of Russia" → "…of **the** Russian Orthodox Church Outside of Russia"
+- `en/candles.mdx:12` — "use "PayPal" button on the top" → "use **the** "PayPal" button **at** the top"
+- `en/donate.mdx:11` — "recognised" (British) → "recognized"
+- `en/schedule.mdx:12` — "English language Sunday Divine Liturgies" → "English‑language"; dates lack the US comma ("December 28, 2025") — consistent, so optional
+- `en/confessions.mdx:48–49` — sentence ends on a dangling semicolon (mirrors the RU)
+
+### Russian — genuine typos (all `ru/confessions.mdx` unless noted)
+
+- `:15` — "Я **Госполь** Бог твой" → Господь
+- `:29` — "**силным** мира" → сильным (ь kept in Slavonic too)
+- `:37` — "**нуважением**" → неуважением
+- `:38` — "**покозаться** христианином" → показаться
+- `:50` — "**непосешением**" → непосещением
+- `:51` — "**посешением**"; "великие **празники**" → посещением; праздники
+- `:57` — "жестокими **потупками**" → поступками
+- `:78` — "**филмов**" → фильмов
+- `:79` — "непристойным предметам**. и** наслаждением…" → join: "…предметам и наслаждением…"
+- `:81` — "**гражандский** брак" → гражданский
+- `:87` — "**воровстом**, **обаном**" → воровством, обманом
+- `:82–83` — "…как муж и жена **считаются** нарушителями" → comma before "считаются" (close the subordinate clause)
+
+### Russian — uncertain, do not touch without a call
+
+- `ru/confessions.mdx:88` — "**пологом**, утайкой" — reads like a slip for "подлогом" (forgery), which fits the list; but "полог" is a real word
+- `ru/confessions.mdx:50` — "по тому, что" — modern would be "потому что"; occasionally split in 19th‑c. texts
+- `ru/confessions.mdx:79` — "наслаждением **их**" — modern "наслаждаться" wants instrumental "ими"; genitive occurs in older usage
+
+### Russian — style / minor
+
+- `ru/about.mdx:21` — "Русской православной церкви **заграницей**" → capital З as a proper noun ("…Церкви Заграницей", РПЦЗ)
+- `ru/clergy.mdx:17` — title caps: "митрополит **восточно‑американский** и Нью‑Йоркский Николай … **первоиерарх русской зарубежной церкви**" → "митрополит **Восточно‑Американский** и Нью‑Йоркский Николай (Ольховский), **Первоиерарх Русской Зарубежной Церкви**"
+- `ё` used inconsistently (имён, нерождённого — but найдете, подтвержденным); unify only if wanted
+- clause separator is `-` where RU typography wants `—`; site‑wide choice
+
+### Not errors
+
+`confessions.mdx` (both languages) renders a traditional penitential guide; some archaic phrasing ("temple of God" for храм, Slavonic word‑forms in RU) is deliberate and stays.
 
