@@ -20,8 +20,16 @@ const year = new Date().getFullYear();
   {sections.map((s, i) => {
     const { Content } = rendered[i];
     return (
-      <section id={s.data.anchor} class:list={['band', { parallax: !!s.data.parallax }]}>
-        {s.data.parallax && <Image src={s.data.parallax} alt="" width={1600} widths={[800, 1600, 2048]} sizes="100vw" quality={90} layout="none" />}
+      <section
+        id={s.data.anchor}
+        class:list={['band', { parallax: !!s.data.parallax }]}
+        style={s.data.parallax && `--ar: ${(s.data.parallax.width / s.data.parallax.height).toFixed(4)}`}
+      >
+        {s.data.parallax && (
+          <div class="bg">
+            <Image src={s.data.parallax} alt="" width={1600} widths={[800, 1600, 2048]} sizes="100vw" quality={90} layout="none" />
+          </div>
+        )}
         <div class="container">
           <Content />
           {s.data.people && <Cards people={s.data.people} />}

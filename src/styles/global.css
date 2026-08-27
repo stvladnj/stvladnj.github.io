@@ -113,24 +113,30 @@ button, input, textarea { font: inherit; }
 .map { max-width: 800px; margin: 30px auto 0; aspect-ratio: 4 / 3; }
 .map iframe { width: 100%; height: 100%; border: 0; }
 
-/* Full-bleed photo sections. The photo is taller than the section by --parallax and slides
-   that much less than the section does, so it scrolls at ~(1 - X/(section+viewport)) of scroll
-   speed. Scroll-driven, transform-only (compositor), works on iOS. Browsers without support get a
+/* Full-bleed photo sections. The photo is as tall as the viewport-cover height for its aspect
+   ratio (--ar, set from the image metadata) — i.e. never enlarged beyond a plain `cover` — and
+   slides by the difference between that and the section height while the section scrolls by.
+   So the lag is the maximum the screen affords at zero zoom: strong on wide desktops, gentle on
+   laptops, none on phones (where the section is taller than the cover height anyway).
+   Transform-only (compositor), works on iOS. Browsers without scroll-driven animations get a
    static cover image. Longhands only: lightningcss folds animation-timeline into the `animation`
-   shorthand, which browsers reject.
-   --parallax trades lag for zoom: ~30vh keeps the original crop on laptop screens (photo at ~0.8x
-   scroll speed); 100vh gives ~0.4x but enlarges the photo ~1.6x. */
-.parallax { --parallax: 30vh; isolation: isolate; overflow: hidden; padding: 140px 0; view-timeline-name: --section; }
-.parallax > img { position: absolute; inset: 0; z-index: -2; width: 100%; height: 100%; object-fit: cover; }
+   shorthand, which browsers reject. */
+.parallax { --ar: 1.5; isolation: isolate; overflow: hidden; padding: 140px 0; view-timeline-name: --section; }
+.parallax > .bg { position: absolute; inset: 0; z-index: -2; }
+.parallax > .bg > img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; }
 .parallax::before { content: ""; position: absolute; inset: 0; z-index: -1; background: rgba(0, 0, 0, .3); }
 @supports (animation-timeline: view()) {
   @media (prefers-reduced-motion: no-preference) {
-    .parallax > img {
-      bottom: auto; height: calc(100% + var(--parallax)); will-change: transform;
+    .parallax > .bg {
+      will-change: transform;
       animation-name: parallax; animation-timing-function: linear; animation-fill-mode: both;
       animation-timeline: --section;
     }
-    @keyframes parallax { from { translate: 0 calc(-1 * var(--parallax)); } to { translate: 0 0; } }
+    .parallax > .bg > img { height: max(100%, calc(100vw / var(--ar))); }
+    @keyframes parallax {
+      from { translate: 0 min(0px, calc(100% - 100vw / var(--ar))); }
+      to { translate: 0 0; }
+    }
   }
 }
 .parallax h2, .parallax h3 { color: #f6f6f6; }
