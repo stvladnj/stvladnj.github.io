@@ -47,6 +47,20 @@ linter, no CI beyond the deploy).
 
 Keep en and ru in sync — a change to one language's section almost always needs the mirror.
 
+## Editing prose — conventions & things not to "fix"
+
+- **Dashes**: spaced em dash `—` for a sentence break, in both languages. Hyphens only in
+  compounds (`Храм-Памятник`, `pre-Lenten`, `Нью-Йоркский`) and numbers (`74-3224137`, `2-й`).
+- **Russian** is modern orthography and uses `ё` where it's phonetically required — *except*
+  `confessions.mdx`, a traditional pre-confession guide that deliberately keeps some Church
+  Slavonic word-forms (`объядению`, `действами`, `субботным`, `иные боги`) and archaic
+  phrasing. Don't "correct" these. (`наслаждением их` there is an older genitive, left as-is.)
+- **`clergy.mdx`** (both languages): the see-before-name title order — "Metropolitan of
+  Eastern America & New York Nicholas", "митрополит Восточно-Американский … Николай" — is the
+  ecclesiastical convention and is intentional; the all-caps surname matches the frontmatter.
+- **`schedule.mdx`** date list: a fixed annual block, reissued each December by Fr. Serge and
+  swapped wholesale (en + ru). Past dates in it are expected, not stale.
+
 ## Conventions & gotchas
 
 - **Images**: drop the full-resolution original in `src/images/`, reference it with a
@@ -69,4 +83,3 @@ Keep en and ru in sync — a change to one language's section almost always need
 
 - Conventional-ish subject lines describing the user-visible effect (see `git log`).
 - Commit on `staging`; don't push unless asked.
-- `TODO.md` holds the migration history and open items.
