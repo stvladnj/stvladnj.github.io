@@ -42,7 +42,9 @@ linter, no CI beyond the deploy).
   optional `parallax` (bg image), optional `people` (clergy cards). Schema in `src/content.config.js`.
 - **Site-wide settings + the hero "cry" announcement banner**: `src/site.js`.
 - **Candle box** inventory, prices, PayPal client id, thank-you text: `src/data/inventory.js`.
-- **Schedule PDF**: `public/files/schedule.pdf`.
+- **Schedule PDF**: `src/files/schedule.pdf`. Both `schedule.mdx` files `import … ?url`, so the
+  build fingerprints the filename — to publish a new schedule, just replace this file (same
+  path) and deploy; the download URL updates itself and no cache can serve the old one.
 - **Clergy**: `people:` list in `clergy.mdx` frontmatter.
 
 Keep en and ru in sync — a change to one language's section almost always needs the mirror.
