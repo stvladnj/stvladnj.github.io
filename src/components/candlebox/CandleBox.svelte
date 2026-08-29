@@ -61,27 +61,39 @@
 		total = computeTotal();
 	}
 
-    let paypalReady = false;
 	let mounted = false;
+	let sdkRequested = false;
 
-    onMount(() => {
+	onMount(() => {
 		mounted = true;
+		// Warm the connections now so only the transfer itself is left once there is a total.
+		// Done here, not in the layout: the island is client:visible, so this costs nothing
+		// for visitors who never scroll down to the candle box.
+		for (const href of ['https://www.paypal.com', 'https://www.paypalobjects.com']) {
+			const link = document.createElement('link');
+			link.rel = 'preconnect';
+			link.href = href;
+			link.crossOrigin = '';
+			document.head.appendChild(link);
+		}
+	});
+
+	// The SDK is ~100 KB, so it is not fetched until there is something to pay for.
+	// The total bar takes 2s to slide in, which hides most of the download.
+	$: if (mounted && total > 0) loadPayPalSdk();
+
+	function loadPayPalSdk() {
+		if (sdkRequested) return;
+		sdkRequested = true;
 		if (window.paypal) {
-			initializePayPal();
+			loadPayPalButton();
 			return;
 		}
 		const script = document.createElement('script');
 		script.src = `https://www.paypal.com/sdk/js?client-id=${paypalClientId}&currency=USD&disable-funding=card,credit`;
 		script.dataset.sdkIntegrationSource = 'button-factory';
-		script.onload = initializePayPal;
+		script.onload = loadPayPalButton;
 		document.head.appendChild(script);
-	});
-
-	function initializePayPal() {
-		paypalReady = true;
-		if (mounted) {
-			loadPayPalButton();
-		}
 	}
 
 	function createOrder(data, actions) {
