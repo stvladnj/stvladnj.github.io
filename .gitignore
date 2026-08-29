@@ -2,3 +2,9 @@ node_modules/
 dist/
 .astro/
 .DS_Store
+
+# npm is the package manager here; package-lock.json is the only lockfile.
+bun.lock
+bun.lockb
+yarn.lock
+pnpm-lock.yaml

@@ -14,7 +14,7 @@ stack is gone — do not reintroduce it.
 Node **≥ 22.12** is required (Astro 7). If `node -v` shows older, run `nvm use 22`.
 
 ```sh
-npm ci                 # install (package-lock.json is authoritative; bun.lock is stale, ignore it)
+npm ci                 # install — npm only; package-lock.json is the one lockfile
 npm run dev            # http://localhost:4321
 npm run build          # -> dist/
 SITE_URL=https://test.stvladnj.org npm run build   # what the staging deploy runs
