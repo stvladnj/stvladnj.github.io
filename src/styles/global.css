@@ -4,7 +4,7 @@
   --accent-dark: #a13e1a;
   --btn: #bf471c; /* darkened from #cf5022 for AA contrast with #f6f6f6 button text */
   --blue: #337ab7;
-  --text: #5f5f5f;
+  --text: #4a4a4a;
   --heading: #555;
   --band: #f6f6f6;
   --dark: #333;
@@ -18,16 +18,16 @@ html { scroll-behavior: smooth; }
 body {
   margin: 0;
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  font-size: 14px;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 1.6;
   color: var(--text);
   background: #fff;
   -webkit-font-smoothing: antialiased;
 }
 h1, h2, h3, h4 { color: var(--heading); line-height: 1.2; margin: 10px 0; }
 h2 { text-transform: uppercase; font-weight: 600; font-size: 30px; margin: 0 0 30px; }
-h3 { font-size: 18px; font-weight: 600; }
-h4 { font-size: 16px; font-weight: 700; }
+h3 { font-size: 21px; font-weight: 600; }
+h4 { font-size: 18px; font-weight: 700; }
 p { margin: 0 0 10px; }
 a { color: var(--link); text-decoration: none; }
 a:hover, a:focus { color: var(--link-hover); }
@@ -48,7 +48,7 @@ button, input, textarea { font: inherit; }
   text-transform: uppercase; letter-spacing: 1px;
 }
 .nav .container { display: flex; flex-wrap: wrap; align-items: center; min-height: var(--nav-h); }
-.nav a { display: block; padding: 15px; line-height: 20px; color: #fff; transition: color .3s; }
+.nav a { display: block; padding: 15px; line-height: 20px; font-size: 14px; color: #fff; transition: color .3s; }
 .nav a:hover, .nav a:focus { color: var(--accent); }
 .nav .brand { display: flex; align-items: center; gap: 5px; margin-right: auto; font-weight: 600; font-size: 18px; } /* 5px ≈ the original &nbsp; */
 .brand .icon { color: var(--accent); }
@@ -95,18 +95,24 @@ button, input, textarea { font: inherit; }
 .cols-4 { --cols: 4; }
 @media (max-width: 991px) { .cols { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 767px) { .cols { grid-template-columns: 1fr; } }
+/* Continuous prose (e.g. the 10 Commandments) flowed into balanced columns — no
+   hand-split wrapper divs, so no dead space where an uneven column ends. */
+.colflow { columns: 20rem; column-gap: 30px; text-align: left; }
+.colflow > :first-child { margin-top: 0; }
+.colflow h3 { break-after: avoid-column; }
+.colflow p { break-inside: avoid-column; }
 .tiles { text-align: center; }
 .tile { padding: 20px 10px; }
 .tile .icon { display: block; margin-bottom: 10px; font-size: 28px; color: var(--accent); }
 .cards { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; }
 .card { width: 300px; padding: 9px; }
 .card img { width: 200px; height: 200px; object-fit: cover; }
-.checklist li { margin-bottom: 3px; font-size: 13px; }
+.checklist li { margin-bottom: 3px; font-size: 16px; }
 .checklist li::before { content: "✓"; padding-right: 10px; font-weight: 600; color: var(--accent); }
 .dates li { padding: 4px 0; }
 .btn {
   display: inline-block; margin: 8px; padding: 12px 24px;
-  font-size: 18px; color: #f6f6f6; background: var(--btn);
+  font-size: 20px; color: #f6f6f6; background: var(--btn);
   border: 0; border-radius: 4px; transition: background .5s;
 }
 .btn:hover, .btn:focus { color: #f6f6f6; background: var(--accent-dark); }
@@ -142,10 +148,9 @@ button, input, textarea { font: inherit; }
   }
 }
 .parallax h2, .parallax h3 { color: #f6f6f6; }
-.parallax h3 { font-size: 20px; font-weight: 600; }
 .parallax p, .parallax .tile { color: rgba(255, 255, 255, .8); }
 .parallax a:not(.btn) { color: rgba(255, 255, 255, .8); text-decoration: underline; }
 .parallax .tile .icon { font-size: 36px; }
 
 /* ---- footer ---- */
-footer { padding: 20px 0; background: var(--dark); color: #a8a8a8; font-size: 13px; text-align: center; }
+footer { padding: 20px 0; background: var(--dark); color: #a8a8a8; font-size: 14px; text-align: center; }
