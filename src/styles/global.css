@@ -101,15 +101,25 @@ button, input, textarea { font: inherit; }
 .colflow > :first-child { margin-top: 0; }
 .colflow h3 { break-after: avoid-column; }
 .colflow p { break-inside: avoid-column; }
+/* About: image in column 1; the text flows across two balanced columns (2 + 3). */
+.about { display: grid; grid-template-columns: 1fr 2fr; gap: 30px; text-align: left; align-items: start; }
+.about > p:first-child { margin: 0; }
+.about > p:first-child img { display: block; width: 100%; }
+.about-text { columns: 2; column-gap: 30px; }
+.about-text > :first-child { margin-top: 0; }
+.about-text h3, .about-text h4 { break-after: avoid-column; }
+.about-text p { break-inside: avoid-column; }
+.about-text h4 { font-size: 19px; margin-top: 1em; }
+.about-text h4::before { content: "✓ "; color: var(--accent); font-weight: 700; }
+@media (max-width: 767px) { .about { grid-template-columns: 1fr; } .about-text { columns: 1; } }
 .tiles { text-align: center; }
 .tile { padding: 20px 10px; }
 .tile .icon { display: block; margin-bottom: 10px; font-size: 28px; color: var(--accent); }
 .cards { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; }
 .card { width: 300px; padding: 9px; }
 .card img { width: 200px; height: 200px; object-fit: cover; }
-.checklist li { margin-bottom: 3px; font-size: 16px; }
-.checklist li::before { content: "✓"; padding-right: 10px; font-weight: 600; color: var(--accent); }
-.dates li { padding: 4px 0; }
+#schedule li { padding: 4px 0; }
+.btn-stack { display: flex; flex-direction: column; align-items: center; }
 .btn {
   display: inline-block; margin: 8px; padding: 12px 24px;
   font-size: 20px; color: #f6f6f6; background: var(--btn);
