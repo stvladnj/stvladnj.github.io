@@ -22,6 +22,12 @@ const heroPreload = await getImage({
     <meta name="keywords" content={site.keywords[lang]} />
     <title>{site.title[lang]}</title>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <meta name="theme-color" content="#333333" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content={site.brand[lang]} />
     <link rel="alternate" hreflang="en" href={new URL('/', siteUrl)} />
     <link rel="alternate" hreflang="ru" href={new URL('/ru/', siteUrl)} />
     <link
