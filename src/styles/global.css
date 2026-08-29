@@ -84,10 +84,16 @@ button, input, textarea { font: inherit; }
 }
 .hero > img { position: absolute; inset: 0; z-index: -2; width: 100%; height: 100%; object-fit: cover; }
 .hero::before { content: ""; position: absolute; inset: 0; z-index: -1; background: rgba(0, 0, 0, .3); }
+/* Quiet wordmark pinned to the bottom — also the page's LCP element. */
+.hero h1 {
+  position: absolute; left: 0; right: 0; bottom: 28px; margin: 0;
+  font-size: clamp(1.6rem, 4vw, 2.5rem); font-weight: 600; letter-spacing: .5px;
+  color: rgba(255, 255, 255, .85); text-shadow: 0 1px 8px rgba(0, 0, 0, .6);
+}
+@media (max-width: 640px) { .hero h1 { bottom: 18px; } }
 .cry { max-width: 900px; padding: 20px; background: rgba(0, 0, 0, .25); }
-.cry h1 { font-size: 76px; font-weight: 700; text-transform: uppercase; color: rgba(255, 255, 255, .8); }
+.cry-header { font-size: 24px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: rgba(255, 255, 255, .85); }
 .cry p { font-size: 18px; letter-spacing: 1px; color: rgba(255, 255, 255, .9); }
-@media (max-width: 640px) { .cry h1 { font-size: 3em; } }
 
 /* ---- sections ---- */
 .band { position: relative; padding: 70px 0; background: var(--band); text-align: center; scroll-margin-top: var(--nav-h); }
