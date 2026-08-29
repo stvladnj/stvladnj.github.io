@@ -1,5 +1,5 @@
 <script>
-    import { createEventDispatcher } from 'svelte';
+    import { createEventDispatcher, tick } from 'svelte';
 	import Switch from './Switch.svelte';
 
 	export let names = [];
@@ -13,10 +13,22 @@
 	let text = '';
 	let activeText = names.join('\n');
 	let shadowActive = active;
+	let textareaEl;
+
+	async function focusEnd() {
+		await tick();
+		if (!textareaEl) return;
+		textareaEl.focus();
+		const end = textareaEl.value.length;
+		textareaEl.setSelectionRange(end, end);
+		textareaEl.scrollTop = textareaEl.scrollHeight;
+	}
+
 	$: if (shadowActive !== active) {
 		if (active) {
 			// from not active to active:
 			text = activeText;
+			focusEnd();
 		} else {
 			// from active to not active:
 			activeText = text;
@@ -51,10 +63,10 @@
 <div class="note">
 	<img src={image.src} width={image.width} height={image.height} alt="">
 	<div class="title">
-  		<Switch bind:checked={active} label={living ? title[lang] : titleDeceased[lang]} color={living ? '#c36266' : 'gray'} />
-		<span class="number-of-names" style="color: {living? '#c36266' : 'gray'};">{active ? names.length : ''}</span>
+  		<Switch bind:checked={active} label={living ? title[lang] : titleDeceased[lang]} color={living ? '#a84e52' : '#6b6b6b'} />
+		<span class="number-of-names" style="color: {living ? '#a84e52' : '#6b6b6b'};">{active ? names.length : ''}</span>
 	</div>
-	<textarea class="notes" rows="12" bind:value={text} readonly={!active} placeholder={active ? '' : message[lang]}></textarea>
+	<textarea class="notes" rows="12" bind:this={textareaEl} bind:value={text} readonly={!active} aria-label={living ? title[lang] : titleDeceased[lang]} placeholder={active ? '' : message[lang]}></textarea>
 </div>
 
 <style>
@@ -70,6 +82,7 @@
 		border: none;
 		margin: 0;
 	}
+	.notes:focus { outline: none; }
 	.note {
 		width: 100%;
 		border: 1px solid lightgray;

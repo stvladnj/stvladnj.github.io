@@ -58,7 +58,7 @@
 </style>
 
 <label class="switch">
-  <input type="checkbox" bind:checked />
+  <input type="checkbox" bind:checked aria-label={label} />
   <span class="slider" style="background-color: {checked ? color : '#ccc'};"></span>
 </label>
 <span class="label" style="color: {color}">{label}</span>
