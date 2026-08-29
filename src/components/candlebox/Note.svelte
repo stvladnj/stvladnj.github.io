@@ -6,7 +6,7 @@
 	export let lang = 'en';
 	export let active = false;
 	export let living = true;
-	export let image = '';
+	export let image = {};  // { src, width, height } from the build
 
 	const dispatch = createEventDispatcher();
 
@@ -49,7 +49,7 @@
 
 </script>
 <div class="note">
-	<img src={image} alt="">
+	<img src={image.src} width={image.width} height={image.height} alt="">
 	<div class="title">
   		<Switch bind:checked={active} label={living ? title[lang] : titleDeceased[lang]} color={living ? '#c36266' : 'gray'} />
 		<span class="number-of-names" style="color: {living? '#c36266' : 'gray'};">{active ? names.length : ''}</span>

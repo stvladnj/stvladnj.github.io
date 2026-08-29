@@ -13,6 +13,7 @@ const responsive = async (src, widths, sizes) => {
   return { src: img.src, srcset: img.srcSet.attribute, sizes, width: img.attributes.width, height: img.attributes.height };
 };
 const single = async (src) => (await getImage({ src, format: 'webp', layout: 'none' })).src;
+const sized = async (src) => ({ src: await single(src), width: src.width, height: src.height });
 
 const props = {
   lang,
@@ -20,7 +21,7 @@ const props = {
     locations.map(async (l) => ({ ...l, image: await responsive(l.image, [360, 720], '(max-width: 700px) 90vw, 360px') })),
   ),
   candles: await Promise.all(candles.map(async (c) => ({ ...c, image: await single(c.image) }))),
-  noteImages: { living: await single(noteRed), deceased: await single(noteBlack) },
+  noteImages: { living: await sized(noteRed), deceased: await sized(noteBlack) },
   paypalClientId,
   brandName,
   thankYouMessage,
