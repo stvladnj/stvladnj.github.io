@@ -5,9 +5,10 @@ Guidance for AI agents working in this repo. Humans: see `README.md`.
 ## What this is
 
 Static website for St. Vladimir Memorial Church, Jackson, NJ — bilingual (en / ru),
-built with [Astro](https://astro.build). Content is MDX; the only client-side JS is
-one Svelte island (the candle box). Migrated from Jekyll + Bootstrap + jQuery; that
-stack is gone — do not reintroduce it.
+built with [Astro](https://astro.build). Content is MDX; client-side JS is one Svelte
+island (the candle box) plus a ~10-line inline script in `Nav.astro` that closes the
+mobile menu. Keep it that way — no frameworks, no jQuery. Migrated from Jekyll +
+Bootstrap + jQuery; that stack is gone, do not reintroduce it.
 
 ## Setup & commands
 

@@ -7,7 +7,7 @@ const other = lang === 'en' ? { href: '/ru/#about', label: 'RU' } : { href: '/#a
 <nav class="nav">
   <div class="container">
     <a class="brand" href="#top"><Icon name="flame" /><span>{site.brand[lang]}</span></a>
-    <!-- ponytail: checkbox toggle for the mobile menu; no JS -->
+    {/* Checkbox toggle for the mobile menu; CSS opens it, the script below closes it. */}
     <input type="checkbox" id="menu-toggle" class="menu-toggle" />
     <label for="menu-toggle" class="menu-btn" aria-label="Menu"><Icon name="menu" /></label>
     <ul class="menu">
@@ -16,3 +16,21 @@ const other = lang === 'en' ? { href: '/ru/#about', label: 'RU' } : { href: '/#a
     </ul>
   </div>
 </nav>
+<script is:inline>
+  // The checkbox hack can't uncheck itself, so the open menu would stay over the
+  // page after tapping a link. Close it on navigation, on Escape, and on a tap
+  // outside. Without JS the menu still opens and closes via the hamburger.
+  (() => {
+    const toggle = document.getElementById('menu-toggle');
+    const nav = document.querySelector('.nav');
+    if (!toggle || !nav) return;
+    const close = () => { toggle.checked = false; };
+    nav.querySelector('.menu')?.addEventListener('click', (e) => {
+      if (e.target.closest('a')) close();
+    });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
+    document.addEventListener('click', (e) => {
+      if (toggle.checked && !nav.contains(e.target)) close();
+    });
+  })();
+</script>
