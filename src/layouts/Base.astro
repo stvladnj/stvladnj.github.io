@@ -28,8 +28,17 @@ const heroPreload = await getImage({
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-title" content={site.brand[lang]} />
+    <link rel="canonical" href={new URL(Astro.url.pathname, siteUrl)} />
     <link rel="alternate" hreflang="en" href={new URL('/', siteUrl)} />
     <link rel="alternate" hreflang="ru" href={new URL('/ru/', siteUrl)} />
+    <link rel="alternate" hreflang="x-default" href={new URL('/', siteUrl)} />
+    {/* Link previews in Telegram/Facebook, where the parish shares the site. */}
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={site.title[lang]} />
+    <meta property="og:description" content={site.description[lang]} />
+    <meta property="og:url" content={new URL(Astro.url.pathname, siteUrl)} />
+    <meta property="og:image" content={new URL(heroPreload.src, siteUrl)} />
+    <meta name="twitter:card" content="summary_large_image" />
     <link
       rel="preload"
       as="image"
