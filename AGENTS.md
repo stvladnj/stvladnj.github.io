@@ -46,6 +46,10 @@ linter, no CI beyond the deploy).
   build fingerprints the filename — to publish a new schedule, just replace this file (same
   path) and deploy; the download URL updates itself and no cache can serve the old one.
 - **Clergy**: `people:` list in `clergy.mdx` frontmatter.
+- **PWA**: `public/manifest.webmanifest` + `public/icon-*.png` / `apple-touch-icon.png`. Icons
+  are rasterised from `public/favicon.svg` — if the logo changes, regenerate them with a
+  `sharp` script (flame trimmed, centred on a `#333` tile for the maskable / apple-touch).
+  No service worker, by design (Chrome doesn't need one to be installable).
 
 Keep en and ru in sync — a change to one language's section almost always needs the mirror.
 
@@ -75,6 +79,11 @@ Keep en and ru in sync — a change to one language's section almost always need
 - **Scroll-driven animations** (nav reveal, parallax) in `src/styles/global.css` use
   **longhand properties only** — lightningcss folds `animation-timeline` into the
   `animation` shorthand, which browsers reject. Keep it longhand.
+- **Hero preload**: `Base.astro` emits a `<link rel="preload">` for the hero whose
+  `getImage` call must mirror the `<Image>` params in `Hero.astro` (widths/sizes/quality/
+  format) exactly — otherwise the browser downloads the hero twice. Change both together.
+- `build.inlineStylesheets: 'always'` in `astro.config.mjs` — the one stylesheet is small
+  and shipping it as a `<link>` was render-blocking. Keep it inlined.
 - **MDX not MD**: sections are `.mdx` because column layouts use components (`<Tile>`,
   `<CandleBox>`) with JSX children. Plain `.md` still parses.
 - `public/admin/` and `public/ponomar/` are separate prebuilt apps served as-is — don't

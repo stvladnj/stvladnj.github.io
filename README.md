@@ -1,12 +1,16 @@
 # stvladnj.org
 
-Website of St. Vladimir Memorial Church, Jackson, NJ. Static site built with [Astro](https://astro.build); deployed to GitHub Pages by the workflow in `.github/workflows/deploy.yml` on every push to `master`.
+Website of St. Vladimir Memorial Church, Jackson, NJ. Static site built with [Astro](https://astro.build).
 
 ```sh
-npm install
+npm ci
 npm run dev      # http://localhost:4321
 npm run build    # -> dist/
 ```
+
+`.github/workflows/deploy.yml` deploys on push: `master` → production (https://stvladnj.org), `staging` → preview (https://test.stvladnj.org). Work on `staging`; promote with `git checkout master && git merge --ff-only staging && git push`.
+
+Deeper conventions and gotchas (branch model, prose/translation rules, the things not to "fix"): see [`AGENTS.md`](AGENTS.md).
 
 ## Editing content
 
