@@ -2,7 +2,6 @@
 import '../styles/global.css';
 import { getImage } from 'astro:assets';
 import site from '../site';
-import heroImg from '../hero';
 const { lang } = Astro.props;
 const siteUrl = Astro.site;
 const production = siteUrl?.hostname === 'stvladnj.org';
@@ -10,7 +9,7 @@ const production = siteUrl?.hostname === 'stvladnj.org';
 // Preload the hero (the LCP element) so its fetch starts during <head> parsing.
 // Same params as the <Image> in Hero.astro, so the preloaded file is the one it renders.
 const heroPreload = await getImage({
-  src: heroImg, format: 'webp', widths: [480, 640, 1024, 1600], sizes: '100vw', quality: 72, layout: 'none',
+  src: site.hero, format: 'webp', widths: [480, 640, 1024, 1600], sizes: '100vw', quality: 72, layout: 'none',
 });
 ---
 <!doctype html>

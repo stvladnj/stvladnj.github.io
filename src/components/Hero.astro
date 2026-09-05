@@ -1,11 +1,10 @@
 ---
 import { Image } from 'astro:assets';
-import hero from '../hero';
 import site from '../site';
 const { lang } = Astro.props;
 ---
 <a id="top" class="hero" href="#about" aria-label={site.title[lang]}>
-  <Image src={hero} alt="" widths={[480, 640, 1024, 1600]} sizes="100vw" quality={72} layout="none" loading="eager" fetchpriority="high" />
+  <Image src={site.hero} alt="" widths={[480, 640, 1024, 1600]} sizes="100vw" quality={72} layout="none" loading="eager" fetchpriority="high" />
   <h1>{site.title[lang]}</h1>
   {site.cry?.[lang] && (
     <div class="cry">
