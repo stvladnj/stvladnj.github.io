@@ -7,6 +7,9 @@ name: Deploy
 on:
   push:
     branches: [master, staging]
+  # The hero photo is picked by season at build time — rebuild monthly so it turns.
+  schedule:
+    - cron: '0 7 1 * *'
   workflow_dispatch:
 
 permissions:
