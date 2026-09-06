@@ -1,13 +1,26 @@
 // Site-wide settings. Edit the "cry" banner here to show an announcement on the hero.
-import stVlad from './images/st-vlad.jpg';
+import stVladDefault from './images/stvlad.jpg';
+import stVladWinter from './images/stvlad-winter.jpg';
+import stVladSpring from './images/stvlad-spring.jpg';
+import stVladFall from './images/stvlad-fall.jpg';
 
 // Which hero photo belongs to which season — the one knob worth turning here.
-// All four are still the one photo we have; swap an import as each real shot lands.
+// No summer shot yet, so summer falls through to stVladDefault below.
 // They must be imports, not strings: that is how Astro optimizes and fingerprints them.
-const seasonHero = { winter: stVlad, spring: stVlad, summer: stVlad, fall: stVlad };
+const seasonHero = {
+  winter: stVladWinter,
+  spring: stVladSpring,
+  fall: stVladFall,
+};
+
+function getSeason() {
+  return ['winter', 'spring', 'summer', 'fall'][((new Date().getMonth() + 1) % 12 / 3) | 0];
+}
 
 // Dec-Feb winter, Mar-May spring, and so on round the year.
-const season = ['winter', 'spring', 'summer', 'fall'][((new Date().getMonth() + 1) % 12 / 3) | 0];
+// Picked at BUILD time — the site is static, so the season only turns when the
+// deploy workflow reruns (it has a monthly cron).
+const hero = seasonHero[getSeason()] || stVladDefault;
 
 export default {
   title: {
@@ -27,9 +40,7 @@ export default {
   // Set to { en: '...', ru: '...' } to show a banner on the hero image; null hides it.
   cry: null,
 
-  // Picked at BUILD time — the site is static, so the season only turns when the
-  // deploy workflow reruns (it has a monthly cron).
-  hero: seasonHero[season],
+  hero,  // landing page bg image
 
   email: 'info@stvladnj.org',
   phone: '+1 732 928 1248',
