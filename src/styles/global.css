@@ -135,6 +135,9 @@ button, input, textarea { font: inherit; }
 @media (max-width: 767px) {
   #candles > .container {
     display: flex; gap: var(--peek-gap); padding-right: var(--peek);
+    /* Not stretch: an icon's +/- buttons are absolutely positioned against the card,
+       so a stretched card drops them below the image, onto empty space. */
+    align-items: flex-start;
     /* .container IS the scroller here, so snapping to "start" would scroll its own
        15px left padding out of view and put the card flush against the edge.
        scroll-padding insets the snap position instead. */
