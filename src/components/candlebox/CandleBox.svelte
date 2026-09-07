@@ -284,17 +284,18 @@
 	margin-bottom: 1rem;
 	text-align: left;
 }
-.grid > :global(.icon) {
-	flex: 0 1 calc((100% - 2rem) / 3);  /* one of 3 columns, the two 1rem gaps removed */
-}
-.notes > :global(.note) {
-	flex-basis: 360px;
-}
+/* On a phone these rows dissolve: their icons and notes become cards of the .strip
+   in global.css. The flattening has to be declared here, not there — this stylesheet
+   loads after global.css, so an equal-specificity rule there loses to .grid above. */
 @media (max-width: 767px) {
-	/* The strip that swallows these rows lives in global.css (#candles), where the
-	   section heading is a slide too — it is outside this island. */
-	.grid > :global(.icon),
-	.notes > :global(.note) { flex-basis: 100%; }
+	.grid { display: contents; }
+}
+/* Desktop only: on a phone the cards are sized by the .strip. */
+@media (min-width: 768px) {
+	.grid > :global(.icon) {
+		flex: 0 1 calc((100% - 2rem) / 3);  /* one of 3 columns, the two 1rem gaps removed */
+	}
+	.notes > :global(.note) { flex-basis: 360px; }
 }
 .amount {
 	flex-grow: 1;

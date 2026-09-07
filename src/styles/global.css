@@ -13,7 +13,9 @@
   --nav-h: 50px;
   --peek: 7%;  /* how much of the next card shows on a mobile swipe strip */
   --peek-gap: .5rem;  /* and the space between two cards */
-  --strip-h: calc(100dvh - 140px);  /* one viewport, less the .band's 70px top+bottom padding */
+  --strip-h: calc(100svh - 140px);  /* one viewport, less the .band's 70px top+bottom padding.
+                                      svh, not dvh: a height that changes when the URL bar
+                                      retracts resizes the strip mid-gesture and cancels taps. */
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -138,16 +140,17 @@ button, input, textarea { font: inherit; }
     display: flex; gap: var(--peek-gap); padding-right: var(--peek);
     height: var(--strip-h);
     align-items: flex-start;  /* stretched cards break anything positioned against them */
-    overflow-x: auto; scroll-snap-type: x mandatory;
+    overflow-x: auto; scroll-snap-type: x proximity;  /* not mandatory: it re-snaps
+       mid-touch and cancels taps on the icons' +/- buttons */
     overscroll-behavior-x: contain;  /* keep swipes off the browser's back gesture */
   }
   /* Cards are the strip's children — plus, where a wrapper below is flattened, the
      grandchildren it lets through. */
   .strip > *, .strip .icon, .strip .note { flex: 0 0 100%; scroll-snap-align: start; }
-  /* The candle box's cards sit two wrappers deep inside its island; display:contents
-     lifts them into the strip. Note this is why the island hydrates on idle, not on
-     visible: Astro's observer watches these children, and a boxless one never fires. */
-  .strip astro-island, .strip .grid { display: contents; }
+  /* A section whose cards sit inside a component wrapper must flatten that wrapper
+     itself, in its own stylesheet — see CandleBox.svelte. (Astro already gives
+     astro-island display:contents, and that is why its island hydrates on idle, not
+     on visible: the visible observer watches children that have no box.) */
 }
 /* About: image in column 1; the text flows across two balanced columns (2 + 3). */
 .about { display: grid; grid-template-columns: 1fr 2fr; gap: 30px; text-align: left; align-items: start; }
