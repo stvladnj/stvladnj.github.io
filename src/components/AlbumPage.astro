@@ -7,6 +7,7 @@
 // A photo with something to say gets an (i) in the corner and flips to show it.
 import { Image } from 'astro:assets';
 import Base from '../layouts/Base.astro';
+import Icon from './Icon.astro';
 
 const { album, lang } = Astro.props;
 const home = lang === 'en' ? '/' : '/ru/';
@@ -15,29 +16,36 @@ const photos = album.data.photos;
 ---
 <Base {lang} htmlClass="viewer-page">
   <div class="viewer">
-    <p class="viewer-back"><a href={`${home}#photos`} aria-label={back[lang]}>&larr;</a></p>
+    <p class="viewer-back"><a href={`${home}#photos`} aria-label={back[lang]}><Icon name="arrow-left" /></a></p>
     <div class="viewer-strip">
-      {photos.map((p, i) => (
+      {photos.map((p, i) => {
+        const caption = p.title || p.text;
+        // The whole face is the flip control when there is something to read, so a tap
+        // anywhere on the photo turns it. Without a caption it stays a plain <div>.
+        const Face = caption ? 'label' : 'div';
+        const flips = caption ? { for: `flip-${i}` } : {};
+        return (
         <figure class="viewer-slide" id={`photo-${i}`} style={`--ar: ${(p.src.width / p.src.height).toFixed(4)}`}>
           {/* A checkbox, not a script: the mobile menu in this site flips the same way. */}
-          <input class="flip-toggle" type="checkbox" id={`flip-${i}`} hidden={!(p.title || p.text)} />
+          <input class="flip-toggle" type="checkbox" id={`flip-${i}`} hidden={!caption} />
           <div class="flip">
-            <div class="flip-face">
+            <Face class="flip-face" {...flips}>
               <Image src={p.src} alt={p.alt ?? ''} widths={[800, 1600]} sizes="100vw" quality={80}
                      layout="none" loading={i === 0 ? 'eager' : 'lazy'} decoding="async" />
-            </div>
-            {(p.title || p.text) && (
-              <div class="flip-face flip-back">
+            </Face>
+            {caption && (
+              <label class="flip-face flip-back" for={`flip-${i}`}>
                 <div>
                   {p.title && <h3>{p.title}</h3>}
                   {p.text && <p>{p.text}</p>}
                 </div>
-              </div>
+              </label>
             )}
           </div>
-          {(p.title || p.text) && <label class="flip-btn" for={`flip-${i}`} aria-label="Caption">i</label>}
+          {caption && <label class="flip-btn" for={`flip-${i}`} aria-label="Caption">i</label>}
         </figure>
-      ))}
+        );
+      })}
     </div>
   </div>
 </Base>

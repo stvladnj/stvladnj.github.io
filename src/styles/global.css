@@ -152,13 +152,13 @@ button, input, textarea { font: inherit; }
     display: flex; gap: var(--peek-gap); padding-right: var(--peek);
     height: var(--strip-h);
     align-items: flex-start;  /* stretched cards break anything positioned against them */
-    overflow-x: auto; scroll-snap-type: x proximity;  /* not mandatory: it re-snaps
-       mid-touch and cancels taps on the icons' +/- buttons */
+    overflow-x: auto;  /* no snapping: it fought the finger, and re-snapping mid-touch
+       was what cancelled taps on the icons' +/- buttons */
     overscroll-behavior-x: contain;  /* keep swipes off the browser's back gesture */
   }
   /* Cards are the strip's children — plus, where a wrapper below is flattened, the
      grandchildren it lets through. */
-  .strip > *, .strip .icon, .strip .note { flex: 0 0 100%; scroll-snap-align: start; }
+  .strip > *, .strip .icon, .strip .note { flex: 0 0 100%; }
   /* A section whose cards sit inside a component wrapper must flatten that wrapper
      itself, in its own stylesheet — see CandleBox.svelte. (Astro already gives
      astro-island display:contents, and that is why its island hydrates on idle, not
@@ -228,10 +228,14 @@ button, input, textarea { font: inherit; }
 }
 .flip-toggle { position: absolute; width: 0; height: 0; opacity: 0; }
 .flip-toggle:checked ~ .flip { transform: rotateY(180deg); }
+label.flip-face { cursor: pointer; }
 .flip-face { grid-area: 1 / 1; height: 100%; min-height: 0; display: grid; place-items: center; backface-visibility: hidden; }
 .flip-back {
-  transform: rotateY(180deg); overflow-y: auto; align-content: center;
-  padding: 40px 24px; background: #fff; color: var(--text);
+  transform: rotateY(180deg); overflow-y: auto;
+  /* safe: plain centring pushes the top of a long caption above the scrollable area,
+     where it cannot be reached — the card loses its top margin and its first line. */
+  align-content: safe center;
+  padding: 20px 24px; background: #fff; color: var(--text);
   text-align: left; font-size: 17px;
 }
 .flip-back h3 { margin: 0 0 .5em; font-size: 26px; font-weight: 700; }
