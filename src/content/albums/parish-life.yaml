@@ -7,20 +7,34 @@ order: 10
 photos:
   - src: ../../images/front.jpg
     alt: The church from the road
-    title: The church from the road
-    text: |
-      Placeholder caption. This is roughly the length a real story might run to —
-      a few sentences about who is in the photograph, when it was taken, and what
-      was happening that day.
+    title:
+      en: The church from the road
+      ru: Храм со стороны дороги
+    text:
+      en: |
+        Placeholder caption. This is roughly the length a real story might run to —
+        a few sentences about who is in the photograph, when it was taken, and what
+        was happening that day.
 
-      A second paragraph, to check that the back of the card scrolls when the text
-      outgrows the photo it belongs to.
+        A second paragraph, to check that the back of the card scrolls when the text
+        outgrows the photo it belongs to.
+      ru: |
+        Placeholder — текст на русском. Примерно такой длины, какой бывает настоящая
+        подпись: несколько предложений о том, кто на снимке, когда он сделан и что
+        происходило в тот день.
+
+        Второй абзац — чтобы проверить, что оборот карточки прокручивается, когда
+        текста больше, чем помещается.
   - src: ../../images/st_vlad_st_olga.jpg
   - src: ../../images/inside.jpg
   - src: ../../images/icon_theotokos.png
   - src: ../../images/stvlad-winter.jpg
-    title: Winter
-    text: A short one — most captions will look like this, a single line.
+    title:
+      en: Winter
+      ru: Зима
+    text:
+      en: A short one — most captions will look like this, a single line.
+      ru: Короткая подпись — обычно они такие, в одну строку.
   - src: ../../images/st_nicolas.png
   - src: ../../images/stvlad-fall.jpg
   - src: ../../images/mn_official_portrait_rus-scaled.jpg

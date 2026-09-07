@@ -33,8 +33,10 @@ const albums = defineCollection({
         z.object({
           src: image(),
           alt: z.string().optional(),
-          title: z.string().optional(),
-          text: z.string().optional(),
+          // Per language, like the album's own title. A caption present in only one
+          // language simply does not appear on the other — no (i), no empty card.
+          title: z.object({ en: z.string(), ru: z.string() }).partial().optional(),
+          text: z.object({ en: z.string(), ru: z.string() }).partial().optional(),
         }),
       ),
     }),

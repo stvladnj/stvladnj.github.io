@@ -19,7 +19,9 @@ const photos = album.data.photos;
     <p class="viewer-back"><a href={`${home}#photos`} aria-label={back[lang]}><Icon name="arrow-left" /></a></p>
     <div class="viewer-strip">
       {photos.map((p, i) => {
-        const caption = p.title || p.text;
+        const title = p.title?.[lang];
+        const text = p.text?.[lang];
+        const caption = title || text;
         // The whole face is the flip control when there is something to read, so a tap
         // anywhere on the photo turns it. Without a caption it stays a plain <div>.
         const Face = caption ? 'label' : 'div';
@@ -32,17 +34,21 @@ const photos = album.data.photos;
             <Face class="flip-face" {...flips}>
               <Image src={p.src} alt={p.alt ?? ''} widths={[800, 1600]} sizes="100vw" quality={80}
                      layout="none" loading={i === 0 ? 'eager' : 'lazy'} decoding="async" />
+              {/* On the photo's own corner, not the screen's: the card is the photo's
+                  box, so the badge stays put instead of drifting through the black. */}
+              {caption && <span class="flip-btn"><Icon name="book-open" /></span>}
             </Face>
             {caption && (
               <label class="flip-face flip-back" for={`flip-${i}`}>
+                {/* Mirrored: the same control, turning the card the other way. */}
+                <span class="flip-btn"><Icon name="image" /></span>
                 <div>
-                  {p.title && <h3>{p.title}</h3>}
-                  {p.text && <p>{p.text}</p>}
+                  {title && <h3>{title}</h3>}
+                  {text && <p>{text}</p>}
                 </div>
               </label>
             )}
           </div>
-          {caption && <label class="flip-btn" for={`flip-${i}`} aria-label="Caption">i</label>}
         </figure>
         );
       })}
