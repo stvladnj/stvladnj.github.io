@@ -20,7 +20,13 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  /* Quiet, not absent: the bar still says how long the page is and where you are,
+     it just stops competing with the dark nav. */
+  scrollbar-width: thin;
+  scrollbar-color: #ccc transparent;
+}
 body {
   margin: 0;
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
@@ -68,6 +74,11 @@ button, input, textarea { font: inherit; }
 }
 /* Nav appears once the hero is scrolled past (like the original). Pure CSS; browsers
    without scroll-driven animations just show it always. */
+/* Nine sections plus the brand only just fit at full width; below that they wrapped
+   to a second row, which also breaks every anchor, since --nav-h assumes one row. */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .nav a { padding: 15px 9px; letter-spacing: .5px; }
+}
 @media (prefers-reduced-motion: no-preference) {
   .nav {
     animation-name: nav-reveal; animation-timing-function: linear; animation-fill-mode: both;
@@ -173,13 +184,23 @@ button, input, textarea { font: inherit; }
    (see .strip). The strip is always visible, so #photo-3 scrolls straight to it. */
 /* svh, not dvh: a height that changes as the URL bar retracts makes the slide taller
    than the screen mid-scroll, and the photo gets clipped rather than refitted. */
-.viewer { background: #000; height: 100svh; overflow: hidden; position: relative; }
+/* Fixed, not just 100svh tall: in flow it counted toward the document height and the
+   page grew its own vertical scrollbar next to a screen that never scrolls. The
+   document is then locked outright — an album page has nothing else on it. The class
+   goes on <html>, because that is the element that actually scrolls; overflow on
+   <body> alone leaves the root scrollbar sitting there. */
+.viewer-page, .viewer-page body { height: 100%; overflow: hidden; }
+.viewer { background: #000; position: fixed; inset: 0; overflow: hidden; }
 .viewer-strip {
   height: 100%;
   display: flex; overflow-x: auto; overflow-y: hidden;  /* the strip pages sideways only */
   scroll-snap-type: x proximity; overscroll-behavior-x: contain;
-  scroll-behavior: smooth;  /* the arrows glide; html's smooth scrolling does not reach here */
+  scroll-behavior: smooth;  /* fragment links glide; html's smooth scrolling does not reach here */
+  /* The swipe is the interface; a scrollbar across the photo is not. Hiding it also
+     gives back the ~15px of height it was stealing from the slide on desktop. */
+  scrollbar-width: none;
 }
+.viewer-strip::-webkit-scrollbar { display: none; }
 .viewer-slide {
   /* No height here: as a flex item it stretches to the strip, which is what we want.
      Percentage heights down the chain kept resolving against something indefinite. */

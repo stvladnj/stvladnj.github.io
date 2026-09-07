@@ -2,7 +2,7 @@
 import '../styles/global.css';
 import { getImage } from 'astro:assets';
 import site from '../site';
-const { lang } = Astro.props;
+const { lang, htmlClass } = Astro.props;
 const siteUrl = Astro.site;
 const production = siteUrl?.hostname === 'stvladnj.org';
 
@@ -13,7 +13,7 @@ const heroPreload = await getImage({
 });
 ---
 <!doctype html>
-<html lang={lang}>
+<html lang={lang} class={htmlClass}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />

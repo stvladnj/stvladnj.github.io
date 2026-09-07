@@ -13,7 +13,7 @@ const home = lang === 'en' ? '/' : '/ru/';
 const back = { en: 'Photo albums', ru: 'Фотоальбомы' };
 const photos = album.data.photos;
 ---
-<Base {lang}>
+<Base {lang} htmlClass="viewer-page">
   <div class="viewer">
     <p class="viewer-back"><a href={`${home}#photos`} aria-label={back[lang]}>&larr;</a></p>
     <div class="viewer-strip">
