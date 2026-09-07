@@ -18,4 +18,26 @@ const sections = defineCollection({
     }),
 });
 
-export const collections = { sections };
+// One file per album, in src/content/albums/*.yaml. Images are declared with image()
+// so the build optimizes them and a wrong path fails the build instead of shipping a hole.
+const albums = defineCollection({
+  loader: glob({ pattern: '**/*.yaml', base: './src/content/albums' }),
+  schema: ({ image }) =>
+    z.object({
+      title: z.object({ en: z.string(), ru: z.string() }),
+      order: z.number(),
+      cover: image().optional(),  // defaults to the first photo
+      // alt describes the picture for a screen reader; text is the story behind it,
+      // shown on the back of the photo. Most photos have neither.
+      photos: z.array(
+        z.object({
+          src: image(),
+          alt: z.string().optional(),
+          title: z.string().optional(),
+          text: z.string().optional(),
+        }),
+      ),
+    }),
+});
+
+export const collections = { sections, albums };

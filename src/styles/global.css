@@ -13,6 +13,7 @@
   --nav-h: 50px;
   --peek: 7%;  /* how much of the next card shows on a mobile swipe strip */
   --peek-gap: .5rem;  /* and the space between two cards */
+  --thumb: 150px;  /* album cover size; the grid fits as many per row as it can */
   --strip-h: calc(100svh - 140px);  /* one viewport, less the .band's 70px top+bottom padding.
                                       svh, not dvh: a height that changes when the URL bar
                                       retracts resizes the strip mid-gesture and cancels taps. */
@@ -152,6 +153,78 @@ button, input, textarea { font: inherit; }
      astro-island display:contents, and that is why its island hydrates on idle, not
      on visible: the visible observer watches children that have no box.) */
 }
+/* Album index: one square cover per album. Covers crop and stay uniform — ragged
+   sizes are what makes a wall of pictures look busy — and the album page shows the
+   photographs themselves uncropped. */
+.albums {
+  /* flex, not grid: auto-fill grid keeps the empty tracks, so centring the tracks
+     leaves three covers sitting left of centre. Flex centres the items themselves. */
+  display: flex; flex-wrap: wrap; justify-content: center;
+  gap: 4px;
+  margin-bottom: 20px;
+}
+/* .band underlines its links; a cover is a picture, not a sentence. */
+.band a.album-cover { width: var(--thumb); text-decoration: none; }
+.album-cover img { width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; display: block; }
+.album-cover span { display: block; margin-top: 6px; font-size: 15px; text-align: center; }
+.album-cover small { color: #888; font-size: 13px; }
+/* An album page is the viewer: full-screen photos side by side, swipe for the next.
+   Snapping is proximity, not mandatory — mandatory re-snaps mid-touch and eats taps
+   (see .strip). The strip is always visible, so #photo-3 scrolls straight to it. */
+/* svh, not dvh: a height that changes as the URL bar retracts makes the slide taller
+   than the screen mid-scroll, and the photo gets clipped rather than refitted. */
+.viewer { background: #000; height: 100svh; overflow: hidden; position: relative; }
+.viewer-strip {
+  height: 100%;
+  display: flex; overflow-x: auto; overflow-y: hidden;  /* the strip pages sideways only */
+  scroll-snap-type: x proximity; overscroll-behavior-x: contain;
+  scroll-behavior: smooth;  /* the arrows glide; html's smooth scrolling does not reach here */
+}
+.viewer-slide {
+  /* No height here: as a flex item it stretches to the strip, which is what we want.
+     Percentage heights down the chain kept resolving against something indefinite. */
+  flex: 0 0 100%; scroll-snap-align: center;
+  display: grid; place-items: center; position: relative;
+  margin: 0; padding: 0;
+}
+/* The photo fills the card exactly, because the card already has its aspect ratio. */
+.viewer-slide img { width: 100%; height: 100%; object-fit: contain; display: block; }
+/* The caption is on the back of the photo. Checkbox, not script — same trick as the
+   mobile menu. The (i) sits outside the flipping box so it can flip the card back.
+   No perspective on purpose: the card fills the screen, and a projected 3D rotation
+   swings its corners past the viewport edge, where the scroller clips them. Flat
+   rotation just squashes it, so nothing ever leaves the box. */
+.flip {
+  /* The card IS the photo: its fitted box, computed from the aspect ratio the build
+     knows, in viewport units. No percentage chain to resolve, so nothing can stretch
+     it — and the caption on the back is the same box, so the flip looks like one card.
+     100svh is the whole slide: the back link floats over it rather than taking space. */
+  grid-area: 1 / 1;
+  width: min(100vw, calc(100svh * var(--ar)));
+  height: min(100svh, calc(100vw / var(--ar)));
+  display: grid; grid-template-rows: 100%;
+  transform-style: preserve-3d; transition: transform .6s;
+}
+.flip-toggle { position: absolute; width: 0; height: 0; opacity: 0; }
+.flip-toggle:checked ~ .flip { transform: rotateY(180deg); }
+.flip-face { grid-area: 1 / 1; height: 100%; min-height: 0; display: grid; place-items: center; backface-visibility: hidden; }
+.flip-back {
+  transform: rotateY(180deg); overflow-y: auto; align-content: center;
+  padding: 40px 24px; background: #fff; color: var(--text);
+  text-align: left; font-size: 17px;
+}
+.flip-back h3 { margin: 0 0 .5em; font-size: 26px; font-weight: 700; }
+.flip-back p { margin: 0; white-space: pre-line; }  /* blank lines in the YAML stay paragraphs */
+.flip-btn {
+  position: absolute; top: 12px; right: 12px; z-index: 2;
+  width: 34px; height: 34px; border-radius: 50%;
+  display: grid; place-items: center; cursor: pointer;
+  background: #0007; color: #fff; font: italic 700 19px/1 Georgia, serif;
+}
+.flip-toggle:focus-visible ~ .flip-btn { outline: 2px solid var(--accent); outline-offset: 2px; }
+@media (prefers-reduced-motion: reduce) { .flip { transition: none; } }
+.viewer-back { position: absolute; top: 0; left: 0; z-index: 3; margin: 0; padding: 10px 15px; text-align: left; }
+.viewer-back a { color: #ddd; text-decoration: none; }
 /* About: image in column 1; the text flows across two balanced columns (2 + 3). */
 .about { display: grid; grid-template-columns: 1fr 2fr; gap: 30px; text-align: left; align-items: start; }
 .about > p:first-child { margin: 0; }

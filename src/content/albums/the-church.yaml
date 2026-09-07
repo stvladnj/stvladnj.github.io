@@ -1,0 +1,16 @@
+# Placeholder album — see parish-life.yaml.
+title:
+  en: The church building
+  ru: Храм
+order: 30
+photos:
+  - src: ../../images/front.jpg
+  - src: ../../images/stvlad-winter.jpg
+    alt: The church in winter
+  - src: ../../images/inside.jpg
+  - src: ../../images/stvlad-fall.jpg
+  - src: ../../images/comm_table.png
+  - src: ../../images/kiev-sobor.png
+  - src: ../../images/st_vlad_st_olga.jpg
+  - src: ../../images/stvlad.jpg
+  - src: ../../images/st_vladimir.png

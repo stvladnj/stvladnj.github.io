@@ -1,0 +1,15 @@
+# Placeholder album — see parish-life.yaml.
+title:
+  en: Feast days
+  ru: Праздники
+order: 20
+cover: ../../images/stvlad-spring.jpg
+photos:
+  - src: ../../images/icon_theotokos.png
+  - src: ../../images/stvlad-spring.jpg
+    alt: The church in spring
+  - src: ../../images/quick-to-hear.png
+  - src: ../../images/inside.jpg
+  - src: ../../images/st_nicolas.png
+  - src: ../../images/stvlad.jpg
+  - src: ../../images/center_icon.png

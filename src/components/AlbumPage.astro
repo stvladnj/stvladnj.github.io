@@ -1,0 +1,43 @@
+---
+// One album IS the viewer: a full-screen horizontal strip, one photo per screen,
+// swipe for the next. No overlay, no close button, no dismiss semantics — Back goes
+// to the index, which is the browser's job. Deep links work too: #photo-3 scrolls the
+// strip to that photo natively, because the strip is a scroll container. Swiping is
+// the only way forward — no arrows on the photo.
+// A photo with something to say gets an (i) in the corner and flips to show it.
+import { Image } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+
+const { album, lang } = Astro.props;
+const home = lang === 'en' ? '/' : '/ru/';
+const back = { en: 'Photo albums', ru: 'Фотоальбомы' };
+const photos = album.data.photos;
+---
+<Base {lang}>
+  <div class="viewer">
+    <p class="viewer-back"><a href={`${home}#photos`}>&larr; {back[lang]} &middot; {album.data.title[lang]}</a></p>
+    <div class="viewer-strip">
+      {photos.map((p, i) => (
+        <figure class="viewer-slide" id={`photo-${i}`} style={`--ar: ${(p.src.width / p.src.height).toFixed(4)}`}>
+          {/* A checkbox, not a script: the mobile menu in this site flips the same way. */}
+          <input class="flip-toggle" type="checkbox" id={`flip-${i}`} hidden={!(p.title || p.text)} />
+          <div class="flip">
+            <div class="flip-face">
+              <Image src={p.src} alt={p.alt ?? ''} widths={[800, 1600]} sizes="100vw" quality={80}
+                     layout="none" loading={i === 0 ? 'eager' : 'lazy'} decoding="async" />
+            </div>
+            {(p.title || p.text) && (
+              <div class="flip-face flip-back">
+                <div>
+                  {p.title && <h3>{p.title}</h3>}
+                  {p.text && <p>{p.text}</p>}
+                </div>
+              </div>
+            )}
+          </div>
+          {(p.title || p.text) && <label class="flip-btn" for={`flip-${i}`} aria-label="Caption">i</label>}
+        </figure>
+      ))}
+    </div>
+  </div>
+</Base>
