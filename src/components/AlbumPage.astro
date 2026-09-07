@@ -15,7 +15,7 @@ const photos = album.data.photos;
 ---
 <Base {lang}>
   <div class="viewer">
-    <p class="viewer-back"><a href={`${home}#photos`}>&larr; {back[lang]} &middot; {album.data.title[lang]}</a></p>
+    <p class="viewer-back"><a href={`${home}#photos`} aria-label={back[lang]}>&larr;</a></p>
     <div class="viewer-strip">
       {photos.map((p, i) => (
         <figure class="viewer-slide" id={`photo-${i}`} style={`--ar: ${(p.src.width / p.src.height).toFixed(4)}`}>

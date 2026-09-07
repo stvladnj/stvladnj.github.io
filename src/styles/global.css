@@ -223,8 +223,12 @@ button, input, textarea { font: inherit; }
 }
 .flip-toggle:focus-visible ~ .flip-btn { outline: 2px solid var(--accent); outline-offset: 2px; }
 @media (prefers-reduced-motion: reduce) { .flip { transition: none; } }
-.viewer-back { position: absolute; top: 0; left: 0; z-index: 3; margin: 0; padding: 10px 15px; text-align: left; }
-.viewer-back a { color: #ddd; text-decoration: none; }
+.viewer-back { position: absolute; top: 12px; left: 12px; z-index: 3; margin: 0; padding: 0; }
+/* Just the arrow, big enough to hit and legible over a photo of any colour. */
+.viewer-back a {
+  display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%;
+  background: #0007; color: #fff; font-size: 20px; line-height: 1; text-decoration: none;
+}
 /* About: image in column 1; the text flows across two balanced columns (2 + 3). */
 .about { display: grid; grid-template-columns: 1fr 2fr; gap: 30px; text-align: left; align-items: start; }
 .about > p:first-child { margin: 0; }
