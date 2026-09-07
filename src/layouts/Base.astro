@@ -51,5 +51,12 @@ const heroPreload = await getImage({
   </head>
   <body>
     <slot />
+    <script>
+      // A swipe strip left half-read is confusing to come back to: rewind it to the
+      // first card once it is fully off-screen. No-op on desktop, where it does not scroll.
+      for (const strip of document.querySelectorAll('.colflow, #candles > .container')) {
+        new IntersectionObserver(([e]) => { if (!e.isIntersecting) e.target.scrollLeft = 0; }).observe(strip);
+      }
+    </script>
   </body>
 </html>

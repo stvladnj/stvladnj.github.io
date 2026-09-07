@@ -292,6 +292,8 @@
 	flex-basis: 360px;
 }
 @media (max-width: 767px) {
+	/* The strip that swallows these rows lives in global.css (#candles), where the
+	   section heading is a slide too — it is outside this island. */
 	.grid > :global(.icon),
 	.notes > :global(.note) { flex-basis: 100%; }
 }
