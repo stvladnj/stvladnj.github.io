@@ -11,7 +11,7 @@ import Icon from './Icon.astro';
 
 const { album, lang } = Astro.props;
 const home = lang === 'en' ? '/' : '/ru/';
-const back = { en: 'Photo albums', ru: 'Фотоальбомы' };
+const back = { en: 'Albums', ru: 'Альбомы' };
 const photos = album.data.photos;
 ---
 <Base {lang} htmlClass="viewer-page">
