@@ -11,8 +11,9 @@
   --link: #754747;
   --link-hover: #f4d03f;
   --nav-h: 50px;
-  --peek: 10%;  /* how much of the next card shows on a mobile swipe strip */
+  --peek: 7%;  /* how much of the next card shows on a mobile swipe strip */
   --peek-gap: .5rem;  /* and the space between two cards */
+  --strip-h: calc(100dvh - 140px);  /* one viewport, less the .band's 70px top+bottom padding */
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -119,7 +120,7 @@ button, input, textarea { font: inherit; }
 @media (max-width: 767px) {
   .colflow {
     columns: 100%; column-gap: var(--peek-gap); padding-right: var(--peek);
-    height: calc(100dvh - 140px);  /* full height, less the .band's 70px top+bottom padding */
+    height: var(--strip-h);
     overflow-x: auto; scroll-snap-type: x mandatory;
     overscroll-behavior-x: contain;  /* keep swipes off the browser's back gesture */
   }
@@ -127,31 +128,26 @@ button, input, textarea { font: inherit; }
   .colflow-head { column-span: none; scroll-snap-align: start; }
   .colflow h3 { break-before: column; scroll-snap-align: start; }
 }
-/* Mobile candle box: same swipe strip as the commandments, but assembled from three
-   DOM levels — the heading (in the MDX), the icon row and the note row (inside the
-   Svelte island). display:contents flattens the wrappers so all of them become slides
-   of one scroller: heading, 7 icons, then the two notes at the far right.
-   The total bar and the thanks banner are position:fixed, so they stay out of it. */
+/* A swipe strip: on a phone, lay a section's cards out sideways, one per screen,
+   instead of stacking them into a scroll tunnel. Put class="strip" on a wrapper and
+   its children become the cards — heading, photos, whatever the section is made of.
+   Desktop is left alone: each section keeps the layout it already has.
+   The prose variant is .colflow above, which needs no card elements at all. */
 @media (max-width: 767px) {
-  #candles > .container {
+  .strip {
     display: flex; gap: var(--peek-gap); padding-right: var(--peek);
-    /* Not stretch: an icon's +/- buttons are absolutely positioned against the card,
-       so a stretched card drops them below the image, onto empty space. */
-    align-items: flex-start;
-    /* .container IS the scroller here, so snapping to "start" would scroll its own
-       15px left padding out of view and put the card flush against the edge.
-       scroll-padding insets the snap position instead. */
-    scroll-padding-left: 15px;
-    height: calc(100dvh - 140px);  /* full height, less the .band's 70px top+bottom padding */
+    height: var(--strip-h);
+    align-items: flex-start;  /* stretched cards break anything positioned against them */
     overflow-x: auto; scroll-snap-type: x mandatory;
     overscroll-behavior-x: contain;  /* keep swipes off the browser's back gesture */
   }
-  #candles astro-island, #candles .grid { display: contents; }
-  /* 100%, not 100% - --peek: padding-right above already narrows the box the slide
-     fills, so the peek matches the commandments instead of doubling up. */
-  #candles .candlebox-head, #candles .icon, #candles .note {
-    flex: 0 0 100%; scroll-snap-align: start;
-  }
+  /* Cards are the strip's children — plus, where a wrapper below is flattened, the
+     grandchildren it lets through. */
+  .strip > *, .strip .icon, .strip .note { flex: 0 0 100%; scroll-snap-align: start; }
+  /* The candle box's cards sit two wrappers deep inside its island; display:contents
+     lifts them into the strip. Note this is why the island hydrates on idle, not on
+     visible: Astro's observer watches these children, and a boxless one never fires. */
+  .strip astro-island, .strip .grid { display: contents; }
 }
 /* About: image in column 1; the text flows across two balanced columns (2 + 3). */
 .about { display: grid; grid-template-columns: 1fr 2fr; gap: 30px; text-align: left; align-items: start; }
