@@ -27,4 +27,7 @@ const props = {
   thankYouMessage,
 };
 ---
-<CandleBox client:visible {...props} />
+{/* client:idle, not client:visible: on mobile the strip gives the island's children
+    display:contents, and Astro's visible observer watches those children — boxless
+    elements never intersect, so the box would never hydrate on a phone. */}
+<CandleBox client:idle {...props} />

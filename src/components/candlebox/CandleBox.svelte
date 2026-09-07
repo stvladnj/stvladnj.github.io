@@ -67,8 +67,7 @@
 	onMount(() => {
 		mounted = true;
 		// Warm the connections now so only the transfer itself is left once there is a total.
-		// Done here, not in the layout: the island is client:visible, so this costs nothing
-		// for visitors who never scroll down to the candle box.
+		// Done here, not in the layout: it costs nothing until the island hydrates.
 		for (const href of ['https://www.paypal.com', 'https://www.paypalobjects.com']) {
 			const link = document.createElement('link');
 			link.rel = 'preconnect';
