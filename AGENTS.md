@@ -12,7 +12,9 @@ Bootstrap + jQuery; that stack is gone, do not reintroduce it.
 
 ## Setup & commands
 
-Node **≥ 22.12** is required (Astro 7). If `node -v` shows older, run `nvm use 22`.
+Node **≥ 22.23.4** is required (Astro 7.4 raised the floor from 22.12). If `node -v`
+shows older, run `nvm install 22` — `nvm use 22` only picks the newest 22.x you already
+have, which may predate the floor.
 
 ```sh
 npm ci                 # install — npm only; package-lock.json is the one lockfile
