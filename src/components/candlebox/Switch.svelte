@@ -1,13 +1,25 @@
+<script context="module">
+  let count = 0;  // module-scoped so server and client agree on the id
+</script>
+
 <script>
   export let checked = false;
   export let label = '';
   export let color = "#2196F3";
+
+  const id = `switch-${count++}`;
 </script>
 
 <style>
   .switch {
     position: relative;
     display: inline-block;
+    /* The 0x0 input inside gives this box a text baseline, which floats the pill
+       above the label. Centre the pill on the text instead -- then nudge 1px, as
+       `middle` centres on the parent's x-height while the label is all-caps, whose
+       optical centre sits slightly higher. Measured, not guessed. */
+    vertical-align: middle;
+    top: -1px;
     width: 30px;
     height: 17px;
   }
@@ -23,6 +35,12 @@
     font-weight: 700;
     padding: .2em .6em .3em;
     line-height: 1;
+    cursor: pointer;
+  }
+
+  .switch input:focus-visible + .slider {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
   }
 
   .slider {
@@ -58,7 +76,7 @@
 </style>
 
 <label class="switch">
-  <input type="checkbox" bind:checked aria-label={label} />
+  <input type="checkbox" {id} bind:checked />
   <span class="slider" style="background-color: {checked ? color : '#ccc'};"></span>
 </label>
-<span class="label" style="color: {color}">{label}</span>
+<label class="label" for={id} style="color: {color}">{label}</label>
