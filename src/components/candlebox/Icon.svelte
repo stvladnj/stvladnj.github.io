@@ -35,7 +35,10 @@
 			for (let i = 0; i < (order[c.id] ?? 0); i++) {
 				activeCandles.push({
 					image: c.image,
-					pos: 100 * (0.25 + positions.pos[pos_index+i]) / maxCandles,
+					// Inset by one slot at each end: the candle is placed by its left edge, so the
+					// band has to leave room for its own width plus the rotation's reach (~21px for
+					// a large candle at 5deg) or it hangs outside the icon. Spans 5.9%..88.2%.
+					pos: 100 * (1 + positions.pos[pos_index+i]) / (maxCandles + 2),
 					height: c.height,
 					rotate: positions.rotation[pos_index+i],
 					key: (pos_index + i),
