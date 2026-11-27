@@ -110,7 +110,7 @@
 							value: c.price.toFixed(2),
 						},
 						quantity: q,
-						description: c.description[lang] + ' :: ' + c.description[lang],
+						description: c.description[lang] + ' :: ' + loc.description[lang],
 						category: 'DIGITAL_GOODS',
 					});
 				}
@@ -230,12 +230,12 @@
 <div class="total" class:visible={total > 0}>
 	<div id="paypal-button-container" class="paypal-ugly"></div>
 	<div class="amount">
-		<span class="number">${total.toFixed(2)}</span>
+		<span class="number" role="status">${total.toFixed(2)}</span>
 		<button class="cancel" on:click={clearOrder} aria-label="Cancel">&times;</button>
 	</div>
 </div>
 {#if thanks}
-<div class="thanks" transition:fade>
+<div class="thanks" role="status" transition:fade>
 	{thankYouMessage[lang]}
 </div>
 {/if}

@@ -10,7 +10,7 @@
 
 	const shuffle = array => {
 		for(let i = array.length - 1; i > 0; i--) {
-			const j = Math.floor(Math.random() * i)
+			const j = Math.floor(Math.random() * (i + 1))
 			const temp = array[i]
 			array[i] = array[j]
 			array[j] = temp
@@ -32,7 +32,7 @@
 		const activeCandles = [];
 		var pos_index = 0;
 		for (const c of candles) {
-			for (let i = 0; i < order[c.id] || 0; i++) {
+			for (let i = 0; i < (order[c.id] ?? 0); i++) {
 				activeCandles.push({
 					image: c.image,
 					pos: 100 * (0.25 + positions.pos[pos_index+i]) / maxCandles,
@@ -64,9 +64,6 @@
 	</div>
 </div>
 <style>
-:root {
-	--responsive-scale: 1;
-}
 .icon {
 	position: relative;
 	width: 100%;
