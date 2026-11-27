@@ -21,12 +21,12 @@
 
 *, *::before, *::after { box-sizing: border-box; }
 html {
-  scroll-behavior: smooth;
   /* Quiet, not absent: the bar still says how long the page is and where you are,
      it just stops competing with the dark nav. */
   scrollbar-width: thin;
   scrollbar-color: #ccc transparent;
 }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
 body {
   margin: 0;
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;

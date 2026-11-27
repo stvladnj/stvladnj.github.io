@@ -32,10 +32,6 @@ export default {
     en: 'Russian orthodox memorial church in Jackson, NJ',
     ru: 'Русский православный храм-памятник в г. Джексон, Нью-Джерси',
   },
-  keywords: {
-    en: 'russian orthodox church nj',
-    ru: 'русская православная церковь',
-  },
   cryHeader: { en: 'Attention', ru: 'Внимание' },
   // Set to { en: '...', ru: '...' } to show a banner on the hero image; null hides it.
   cry: null,
