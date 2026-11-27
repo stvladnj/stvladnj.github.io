@@ -88,6 +88,9 @@
 		border: 1px solid lightgray;
 	}
 	.note > img {
+		/* block, or the inline baseline adds ~9px of phantom space below the image
+		   and the switch row below it is no longer centred. */
+		display: block;
 		width: 100%;
 	}
 	.title {
