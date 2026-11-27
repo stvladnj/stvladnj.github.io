@@ -24,6 +24,22 @@ SITE_URL=https://test.stvladnj.org npm run build   # what the staging deploy run
 Always `npm run build` before committing — it's the only check (no test suite, no
 linter, no CI beyond the deploy).
 
+There is no browser tooling here, so **check a visual change by rendering it**, don't
+reason about the CSS — that way lies three wrong fixes in a row. `npm run dev`, then:
+
+```sh
+CHROME="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+"$CHROME" --headless=new --disable-gpu --window-size=800,2400 \
+  --virtual-time-budget=6000 --screenshot=out.png http://localhost:4321/
+```
+
+For numbers rather than a picture, put a `<script is:inline>` on the page that writes
+`getBoundingClientRect()` into a `<pre>` and read it back with `--dump-dom`. Boxes lie
+about where text *looks*: for optical alignment measure the glyph ink, via canvas
+`measureText()`'s `actualBoundingBoxAscent` / `Descent`. A scratch page under
+`src/pages/` can render one component on its own — but **don't name it `_foo.astro`**,
+Astro excludes underscore-prefixed files from routing and you'll screenshot a 404.
+
 ## Branches & deploy
 
 | Branch | Deploys to | How |
@@ -43,6 +59,13 @@ linter, no CI beyond the deploy).
   optional `parallax` (bg image), optional `people` (clergy cards). Schema in `src/content.config.js`.
 - **Site-wide settings + the hero "cry" announcement banner**: `src/site.js`.
 - **Candle box** inventory, prices, PayPal client id, thank-you text: `src/data/inventory.js`.
+  Orders leave here and land in a separate repo: the PayPal webhook
+  `pgmmpk/online-candle-box-webhook` (a GCF at `us-central1-church-1917.cloudfunctions.net`)
+  parses the capture into Datastore, and `public/admin/` reads it back. **The sku is the
+  contract** — `<candle id>/<location id>`, built from the `id`s in `inventory.js`. The admin
+  PDF's Take/Place tables and its `parseSku` both split on it, and `parseSku` *throws* on an
+  id it doesn't recognise. Renaming an `id` there breaks the admin tool for every order after
+  it. The line-item `description` is passed through verbatim and read by nobody.
 - **Schedule PDF**: `src/files/schedule.pdf`. Both `schedule.mdx` files `import … ?url`, so the
   build fingerprints the filename — to publish a new schedule, just replace this file (same
   path) and deploy; the download URL updates itself and no cache can serve the old one.
