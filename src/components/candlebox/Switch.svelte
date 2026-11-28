@@ -1,13 +1,7 @@
-<script context="module">
-  let count = 0;  // module-scoped so server and client agree on the id
-</script>
-
 <script>
   export let checked = false;
   export let label = '';
   export let color = "#2196F3";
-
-  const id = `switch-${count++}`;
 </script>
 
 <style>
@@ -75,8 +69,11 @@
   }
 </style>
 
-<label class="switch">
-  <input type="checkbox" {id} bind:checked />
-  <span class="slider" style="background-color: {checked ? color : '#ccc'};"></span>
+<!-- One label wraps both, so clicking the text toggles it without an id/for pair. -->
+<label>
+  <span class="switch">
+    <input type="checkbox" bind:checked />
+    <span class="slider" style="background-color: {checked ? color : '#ccc'};"></span>
+  </span>
+  <span class="label" style="color: {color}">{label}</span>
 </label>
-<label class="label" for={id} style="color: {color}">{label}</label>
