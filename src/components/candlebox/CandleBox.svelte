@@ -11,7 +11,7 @@
 	export let brandName = {};  // brand to send to PayPal
 	export let thankYouMessage = {};
 	export let noteImages = {};  // { living, deceased } image URLs
-	export let order = {};  // output is a dictionary of location ids, with values being a dictionary of landle ids
+	let order = {};  // { [location id]: { [candle id]: quantity } }
 
 	const namesPerNote = 10;
 	const notePrice = 1.00;
@@ -92,8 +92,16 @@
 		script.src = `https://www.paypal.com/sdk/js?client-id=${paypalClientId}&currency=USD&disable-funding=card,credit`;
 		script.dataset.sdkIntegrationSource = 'button-factory';
 		script.onload = loadPayPalButton;
+		script.onerror = () => {  // blocked or offline: allow a retry on the next change
+			script.remove();
+			sdkRequested = false;
+			showError();
+		};
 		document.head.appendChild(script);
 	}
+
+	// PayPal rejects an item description over 127 chars, so a long name line would fail the order.
+	const MAX_DESCRIPTION = 127;
 
 	function createOrder(data, actions) {
 		const items = [];
@@ -128,7 +136,7 @@
 						value: amount.toFixed(2),
 					},
 					quantity: 1,
-					description: name,
+					description: name.slice(0, MAX_DESCRIPTION),
 					category: 'DIGITAL_GOODS',
 				});
 				amount = 0;  // we charge full price to the first name
@@ -147,23 +155,21 @@
 						value: amount.toFixed(2),
 					},
 					quantity: 1,
-					description: name,
+					description: name.slice(0, MAX_DESCRIPTION),
 					category: 'DIGITAL_GOODS',
 				});
 				amount = 0;  // we charge full price to the first name
 			}
 		}
 
+		// Sum the items in cents, so item_total always equals the line items PayPal checks it against.
+		const cents = items.reduce((sum, i) => sum + Math.round(i.unit_amount.value * 100) * i.quantity, 0);
+		const value = (cents / 100).toFixed(2);
 		const purchase_unit = {
 			amount: {
 				currency_code: 'USD',
-				value: total.toFixed(2),
-				breakdown: {
-					item_total: {
-						currency_code: 'USD',
-						value: total.toFixed(2),
-					}
-				}
+				value,
+				breakdown: { item_total: { currency_code: 'USD', value } },
 			},
 			description: 'Candles',
 			items: items,
@@ -177,19 +183,23 @@
 		});
 	}
 
-	function onApprove(data, actions) {
-		return actions.order.capture().then(function(details) {
-			// console.log(details.payer);
-			// console.log(details);
-			// alert('Transaction completed by ' + details.payer.name.given_name + '!');
-			clearOrder();
-			sayThanks();
-		});
+	async function onApprove(data, actions) {
+		try {
+			await actions.order.capture();
+		} catch (err) {
+			// Card declined: reopen the PayPal window so the buyer can pick another funding source.
+			if (err?.details?.[0]?.issue === 'INSTRUMENT_DECLINED') return actions.restart();
+			onError(err);
+			return;
+		}
+		clearOrder();
+		say(thankYouMessage[lang]);
 	}
 
-	const onCancel = data => {
-		console.log('Cancelled:', data);
-	};
+	function onError(err) {
+		console.error(err);
+		showError();
+	}
 
     function loadPayPalButton() {
 		paypal.Buttons({
@@ -203,15 +213,23 @@
 			},
 			createOrder,
 			onApprove,
-			onCancel,
+			onError,
 		}).render('#paypal-button-container');
 	}
 
-	let thanks = false;
-	function sayThanks() {
-		thanks = true;
-		setTimeout(()=>{thanks=false}, 2500);
+	// One always-present live region, so screen readers announce what is put into it.
+	let banner = '';
+	let bannerTimer;
+	function say(text, ms = 2500) {
+		banner = text;
+		clearTimeout(bannerTimer);
+		bannerTimer = setTimeout(() => { banner = ''; }, ms);
 	}
+	const errorMessage = {
+		en: 'Payment did not go through. Please try again, or contact us.',
+		ru: 'Платёж не прошёл. Попробуйте ещё раз или свяжитесь с нами.',
+	};
+	const showError = () => say(errorMessage[lang], 6000);
 
 	clearOrder();
 
@@ -226,18 +244,18 @@
 	<Note image={noteImages.living} bind:names={namesLiving} bind:active={activeLiving} on:names={onQuantityChanged} {lang} />
 	<Note image={noteImages.deceased} living={false} bind:names={namesDeceased} bind:active={activeDeceased} on:names={onQuantityChanged} {lang} />
 </div>
-<div class="total" class:visible={total > 0}>
+<div class="total" class:visible={total > 0} inert={total === 0}>
 	<div id="paypal-button-container" class="paypal-ugly"></div>
 	<div class="amount">
-		<span class="number" role="status">${total.toFixed(2)}</span>
-		<button class="cancel" on:click={clearOrder} aria-label="Cancel">&times;</button>
+		<span class="number">${total.toFixed(2)}</span>
+		<button class="cancel" on:click={clearOrder} aria-label={lang === 'ru' ? 'Отменить' : 'Cancel'}>&times;</button>
 	</div>
 </div>
-{#if thanks}
-<div class="thanks" role="status" transition:fade>
-	{thankYouMessage[lang]}
+<div role="status">
+	{#if banner}
+	<div class="thanks" transition:fade>{banner}</div>
+	{/if}
 </div>
-{/if}
 
 <style>
 .total {

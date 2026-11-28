@@ -30,7 +30,7 @@
 
 	const getCandles = order => {
 		const activeCandles = [];
-		var pos_index = 0;
+		let pos_index = 0;
 		for (const c of candles) {
 			for (let i = 0; i < (order[c.id] ?? 0); i++) {
 				activeCandles.push({
@@ -62,7 +62,7 @@
 	<div class="buttons">
 		<div class="button-title">{name[lang]}</div>
 		{#each candles as c}
-		<ButtonRow label={c.description[lang]} price={c.price} limit={c.limit} bind:quantity={order[c.id]} on:quantity />
+		<ButtonRow label={c.description[lang]} where={name[lang]} {lang} price={c.price} limit={c.limit} bind:quantity={order[c.id]} on:quantity />
 		{/each}
 	</div>
 </div>

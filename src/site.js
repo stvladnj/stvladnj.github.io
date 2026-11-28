@@ -29,7 +29,7 @@ export default {
   },
   brand: { en: 'St. Vladimir', ru: 'Св. Владимир' },
   description: {
-    en: 'Russian orthodox memorial church in Jackson, NJ',
+    en: 'Russian Orthodox memorial church in Jackson, NJ',
     ru: 'Русский православный храм-памятник в г. Джексон, Нью-Джерси',
   },
   cryHeader: { en: 'Attention', ru: 'Внимание' },
@@ -37,10 +37,4 @@ export default {
   cry: null,
 
   hero,  // landing page bg image
-
-  email: 'info@stvladnj.org',
-  phone: '+1 732 928 1248',
-  facebook: 'https://facebook.com/stvladimirsnj',
-  instagram: 'https://www.instagram.com/stvladimirsnj',
-  telegram: 'https://t.me/stvladnj',
 };

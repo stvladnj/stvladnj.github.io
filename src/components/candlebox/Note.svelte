@@ -46,7 +46,7 @@
 
 	const message = {
 		ru: 'Включите  \u21E7  эту кнопку и введите имена крещёных православных христиан.',
-		en: 'Toggle  \u21E7  this switch and enter names of baptised orthodox christians.',
+		en: 'Toggle  \u21E7  this switch and enter names of baptised Orthodox Christians.',
 	}
 
 	const title = {
