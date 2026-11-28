@@ -9,7 +9,7 @@
   --band: #f6f6f6;
   --dark: #333;
   --link: #754747;
-  --link-hover: #f4d03f;
+  --link-hover: #f4d03f; /* on dark backgrounds only — too light for the #f6f6f6 band */
   --nav-h: 50px;
 }
 
@@ -33,6 +33,7 @@ a { color: var(--link); text-decoration: none; }
 a:hover, a:focus { color: var(--link-hover); }
 /* Links inside sections: underline so they don't rely on colour alone (WCAG). */
 .band a:not(.btn) { text-decoration: underline; }
+.band a:not(.btn):hover, .band a:not(.btn):focus { color: var(--accent-dark); }
 img { max-width: 100%; height: auto; }
 hr { height: 4px; width: 70px; background: var(--accent); border: 0; margin: 0 auto 30px; }
 ul, ol { list-style: none; padding: 0; margin: 0 0 10px; }
@@ -49,11 +50,12 @@ button, input, textarea { font: inherit; }
 }
 .nav .container { display: flex; flex-wrap: wrap; align-items: center; min-height: var(--nav-h); }
 .nav a { display: block; padding: 15px; line-height: 20px; font-size: 14px; color: #fff; transition: color .3s; }
-.nav a:hover, .nav a:focus { color: var(--accent); }
+.nav a:hover, .nav a:focus { color: var(--link-hover); }
 .nav .brand { display: flex; align-items: center; gap: 5px; margin-right: auto; font-weight: 600; font-size: 18px; } /* 5px ≈ the original &nbsp; */
 .brand .icon { color: var(--accent); }
 .menu { display: flex; margin: 0; }
-.menu-toggle { display: none; }
+.menu-toggle { position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
+.menu-toggle:focus-visible + .menu-btn { outline: 2px solid #fff; outline-offset: -4px; }
 .menu-btn { display: none; padding: 10px; font-size: 22px; color: #eee; cursor: pointer; }
 @media (max-width: 767px) {
   .menu-btn { display: block; }
@@ -97,8 +99,7 @@ button, input, textarea { font: inherit; }
 
 /* ---- sections ---- */
 .band { position: relative; padding: 70px 0; background: var(--band); text-align: center; scroll-margin-top: var(--nav-h); }
-.cols { display: grid; grid-template-columns: repeat(var(--cols, 3), 1fr); gap: 30px; text-align: left; }
-.cols-4 { --cols: 4; }
+.cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; text-align: left; }
 @media (max-width: 991px) { .cols { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 767px) { .cols { grid-template-columns: 1fr; } }
 /* Continuous prose (e.g. the 10 Commandments) flowed into balanced columns — no
@@ -166,6 +167,7 @@ button, input, textarea { font: inherit; }
 .parallax h2, .parallax h3 { color: #f6f6f6; }
 .parallax p, .parallax .tile { color: rgba(255, 255, 255, .8); }
 .parallax a:not(.btn) { color: rgba(255, 255, 255, .8); text-decoration: underline; }
+.parallax a:not(.btn):hover, .parallax a:not(.btn):focus { color: var(--link-hover); }
 .parallax .tile .icon { font-size: 36px; }
 
 /* ---- footer ---- */

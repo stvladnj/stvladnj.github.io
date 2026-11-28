@@ -5,6 +5,8 @@
     export let limit = 5;
     export let quantity = 0;
     export let label = '';
+    export let where = '';  // location name, so 21 identical "More" buttons are told apart
+    export let lang = 'en';
 
     const dispatch = createEventDispatcher();
 
@@ -23,9 +25,9 @@
     }
 </script>
 <div class="button-row">
-    <button class="button-circle" on:click={decrement} aria-label="Less">&minus;</button>
+    <button class="button-circle" on:click={decrement} aria-label="{lang === 'ru' ? 'Меньше' : 'Less'}: {label}, {where}">&minus;</button>
     <div class="button-title">{label} ${price.toFixed(2)} &times;<span class="quantity">{quantity}</span></div>
-    <button class="button-circle" on:click={increment} aria-label="More">+</button>
+    <button class="button-circle" on:click={increment} aria-label="{lang === 'ru' ? 'Больше' : 'More'}: {label}, {where}">+</button>
 </div>
 <style>
 .button-row {
